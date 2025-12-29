@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Song Editor – Hợp Âm Thờ Phượng</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+}
+h1 { text-align: center; }
+h2 { margin-top: 28px; }
+input, textarea, select, button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+textarea {
+  min-height: 200px;
+  font-family: monospace;
+}
+button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+.secondary {
+  background: #616161;
+}
+.song-item {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  cursor: pointer;
+}
+.song-item:hover {
+  background: #eee;
+}
+.flex {
+  display: flex;
+  gap: 8px;
+}
+.flex button {
+  flex: 1;
+}
+pre {
+  background: #f5f5f5;
+  padding: 12px;
+  white-space: pre-wrap;
+  border-radius: 6px;
+  max-height: 300px;
+  overflow: auto;
+}
+.note {
+  font-size: 14px;
+  color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1>🎶 Song Editor</h1>
+
+<p class="note">
+✏️ Nhập lời + hợp âm dạng <code>[C]</code><br>
+📦 Xuất file <code>songs.js</code> dùng ngay cho app
+</p>
+
+<hr>
+
+<h2>1️⃣ NHẬP / SỬA BÀI HÁT</h2>
+
+<input id="title" placeholder="Tên bài hát" />
+<input id="artist" placeholder="Tác giả / Nguồn (tuỳ chọn)" />
+
+<select id="key">
+  <option value="">Giọng gốc</option>
+  <option>C</option><option>D</option><option>E</option>
+  <option>F</option><option>G</option><option>A</option><option>B</option>
+</select>
+
+<textarea id="content" placeholder="Ví dụ:
+[C]Lạy Chúa con đến
+[Am]Trước ngai vinh hiển
+[F]Lòng con thờ [G]lạy Ngài"></textarea>
+
+<div class="flex">
+  <button onclick="addOrUpdateSong()">➕ Thêm / Cập nhật</button>
+  <button class="secondary" onclick="clearForm()">🧹 Xoá form</button>
+</div>
+
+<hr>
+
+<h2>2️⃣ DANH SÁCH BÀI HÁT</h2>
+<div id="songList"></div>
+
+<hr>
+
+<h2>3️⃣ XUẤT FILE <code>songs.js</code></h2>
+<button onclick="exportSongs()">⬇️ Tải songs.js</button>
+
+<pre id="preview"></pre>
+
+<script>
+/* ===============================
+   DATA
+================================ */
+let songs = [];
+
+/* ===============================
+   CRUD
+================================ */
+function addOrUpdateSong() {
+  const title = titleEl.value.trim();
+  const artist = artistEl.value.trim();
+  const key = keyEl.value;
+  const content = contentEl.value.trim();
+
+  if (!title || !key || !content) {
+    alert("⚠️ Vui lòng nhập Tên bài – Giọng – Nội dung");
+    return;
+  }
+
+  const existing = songs.find(s => s.title === title);
+
+  if (existing) {
+    existing.artist = artist;
+    existing.key = key;
+    existing.content = content;
+  } else {
+    songs.push({
+      id: Date.now(),
+      title,
+      artist,
+      key,
+      content
+    });
+  }
+
+  renderList();
+  renderPreview();
+}
+
+function renderList() {
+  const list = document.getElementById("songList");
+  list.innerHTML = "";
+
+  songs.forEach(song => {
+    const div = document.createElement("div");
+    div.className = "song-item";
+    div.textContent = song.title;
+    div.onclick = () => loadSong(song);
+    list.appendChild(div);
+  });
+}
+
+function loadSong(song) {
+  titleEl.value = song.title;
+  artistEl.value = song.artist;
+  keyEl.value = song.key;
+  contentEl.value = song.content;
+}
+
+function clearForm() {
+  titleEl.value = "";
+  artistEl.value = "";
+  keyEl.value = "";
+  contentEl.value = "";
+}
+
+/* ===============================
+   EXPORT songs.js
+================================ */
+function exportSongs() {
+  const text =
+`const songs = [
+${songs.map(s => `
+{
+  id: ${s.id},
+  title: "${s.title.replace(/"/g, '\\"')}",
+  artist: "${s.artist.replace(/"/g, '\\"')}",
+  key: "${s.key}",
+  content: \`
+${s.content}
+  \`
+}`).join(",\n")}
+];`;
+
+  const blob = new Blob([text], { type: "application/javascript" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "songs.js";
+  a.click();
+
+  renderPreview(text);
+}
+
+function renderPreview(text = "") {
+  document.getElementById("preview").textContent = text;
+}
+
+/* ===============================
+   ELEMENTS
+================================ */
+const titleEl = document.getElementById("title");
+const artistEl = document.getElementById("artist");
+const keyEl = document.getElementById("key");
+const contentEl = document.getElementById("content");
+</script>
+
+</body>
+</html>
