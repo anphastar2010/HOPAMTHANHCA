@@ -1,118 +1,139 @@
-/**********************
- * CẤU HÌNH NỐT NHẠC
- **********************/
-const notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+const songListEl = document.getElementById("songList");
+const contentEl = document.getElementById("songContent");
+const searchInput = document.getElementById("searchInput");
+const keySelect = document.getElementById("keySelect");
+const wakeBtn = document.getElementById("wakeBtn");
 
-/**********************
- * BIẾN TOÀN CỤC
- **********************/
 let currentSong = null;
 let currentStep = 0;
+let showChords = true;
+let bigText = false;
 
-/**********************
- * DOM ELEMENTS
- **********************/
-const select = document.getElementById("songSelect");
-const contentEl = document.getElementById("songContent");
-const keyEl = document.getElementById("keyDisplay");
-const searchInput = document.getElementById("searchInput");
+/* WAKE LOCK */
+let wakeLock = null;
+let wakeEnabled = false;
 
-/**********************
- * TRANSPOSE 1 HỢP ÂM
- **********************/
-function transposeChord(chord, step) {
-  const match = chord.match(/^([A-G]#?)(.*)$/);
-  if (!match) return chord;
+/* NOTE MAP */
+const notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
 
-  const root = match[1];
-  const suffix = match[2];
-
-  const index = notes.indexOf(root);
-  if (index === -1) return chord;
-
-  const newIndex = (index + step + notes.length) % notes.length;
-  return notes[newIndex] + suffix;
+/* RENDER DANH SÁCH */
+function renderList(list) {
+  songListEl.innerHTML = "";
+  list.forEach(song => {
+    const li = document.createElement("li");
+    li.textContent = song.title;
+    li.onclick = () => selectSong(song);
+    songListEl.appendChild(li);
+  });
 }
 
-/**********************
- * RENDER NỘI DUNG BÀI
- **********************/
+/* CHỌN BÀI */
+function selectSong(song) {
+  currentSong = song;
+  currentStep = 0;
+  renderSong();
+}
+
+/* RENDER BÀI */
 function renderSong() {
   if (!currentSong) return;
 
   let text = currentSong.content;
 
   text = text.replace(/\[([^\]]+)\]/g, (_, chord) => {
+    if (!showChords) return "";
     return "[" + transposeChord(chord, currentStep) + "]";
   });
 
   contentEl.innerText = text;
-  keyEl.innerText =
-    "Giọng: " + transposeChord(currentSong.key, currentStep);
+  contentEl.classList.toggle("big-text", bigText);
+
+  const newKey = transposeChord(currentSong.key, currentStep);
+  keySelect.value = notes.includes(newKey) ? newKey : "";
 }
 
-/**********************
- * TĂNG / GIẢM TÔNG
- **********************/
+/* TRANSPOSE */
 function transpose(step) {
   currentStep += step;
   renderSong();
 }
 
-/**********************
- * RENDER DANH SÁCH BÀI
- **********************/
-function renderSongList(list) {
-  select.innerHTML = "";
-
-  if (list.length === 0) {
-    contentEl.innerText = "❌ Không tìm thấy bài phù hợp.";
-    keyEl.innerText = "";
-    return;
+function setKey(targetKey) {
+  if (!currentSong) return;
+  const from = notes.indexOf(currentSong.key);
+  const to = notes.indexOf(targetKey);
+  if (from >= 0 && to >= 0) {
+    currentStep = to - from;
+    renderSong();
   }
+}
 
-  list.forEach(song => {
-    const opt = document.createElement("option");
-    opt.value = song.id;
-    opt.textContent = song.title + " – " + song.artist;
-    select.appendChild(opt);
-  });
+function transposeChord(chord, step) {
+  const match = chord.match(/^([A-G]#?)(.*)$/);
+  if (!match) return chord;
+  const i = notes.indexOf(match[1]);
+  if (i < 0) return chord;
+  return notes[(i + step + 12) % 12] + match[2];
+}
 
-  currentSong = list[0];
-  currentStep = 0;
+/* TÌM KIẾM */
+function searchSongs() {
+  const q = searchInput.value.toLowerCase();
+  const filtered = songs.filter(s =>
+    s.title.toLowerCase().includes(q) ||
+    s.content.toLowerCase().includes(q)
+  );
+  renderList(filtered);
+}
+
+/* TOGGLE */
+function toggleChords() {
+  showChords = !showChords;
   renderSong();
 }
 
-/**********************
- * ĐỔI BÀI HÁT
- **********************/
-select.addEventListener("change", () => {
-  currentSong = songs.find(s => s.id == select.value);
-  currentStep = 0;
+function toggleBigText() {
+  bigText = !bigText;
   renderSong();
-});
+}
 
-/**********************
- * TÌM KIẾM BÀI HÁT
- **********************/
-searchInput.addEventListener("input", () => {
-  const keyword = searchInput.value.toLowerCase().trim();
+/* WAKE LOCK */
+async function enableWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    wakeEnabled = true;
+    wakeBtn.textContent = "🔒";
+    wakeBtn.classList.add("active");
 
-  if (keyword === "") {
-    renderSongList(songs);
-    return;
+    wakeLock.addEventListener("release", () => {
+      wakeEnabled = false;
+      wakeBtn.textContent = "🔓";
+      wakeBtn.classList.remove("active");
+    });
+  } catch {
+    alert("Thiết bị không hỗ trợ giữ màn hình sáng.");
   }
+}
 
-  const filtered = songs.filter(song =>
-    song.title.toLowerCase().includes(keyword) ||
-    song.artist.toLowerCase().includes(keyword) ||
-    song.content.toLowerCase().includes(keyword)
-  );
+async function disableWakeLock() {
+  if (wakeLock) {
+    await wakeLock.release();
+    wakeLock = null;
+  }
+  wakeEnabled = false;
+  wakeBtn.textContent = "🔓";
+  wakeBtn.classList.remove("active");
+}
 
-  renderSongList(filtered);
+function toggleWakeLock() {
+  wakeEnabled ? disableWakeLock() : enableWakeLock();
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (wakeEnabled && document.visibilityState === "visible") {
+    enableWakeLock();
+  }
 });
 
-/**********************
- * KHỞI TẠO ỨNG DỤNG
- **********************/
-renderSongList(songs);
+/* INIT */
+renderList(songs);
