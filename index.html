@@ -2,36 +2,46 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tra cứu hợp âm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hợp Âm Thờ Phượng</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>🎵 Hợp Âm</h1>
-</header>
+  <h1>🎶 Hợp Âm Thờ Phượng</h1>
 
-<div class="container">
-<input
-  type="text"
-  id="searchInput"
-  placeholder="🔍 Tìm bài hoặc lời hát..."
-/>
+  <!-- TÌM KIẾM -->
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 Tìm bài hát hoặc lời..."
+    oninput="searchSongs()"
+  />
 
-  <select id="songSelect"></select>
+  <!-- DANH SÁCH BÀI -->
+  <ul id="songList"></ul>
 
+  <!-- ĐIỀU KHIỂN -->
   <div class="controls">
     <button onclick="transpose(-1)">–</button>
-    <span id="keyDisplay">Giọng: C</span>
+
+    <select id="keySelect" onchange="setKey(this.value)">
+      <option value="">Giọng</option>
+      <option>C</option><option>D</option><option>E</option>
+      <option>F</option><option>G</option><option>A</option><option>B</option>
+    </select>
+
     <button onclick="transpose(1)">+</button>
+
+    <button onclick="toggleChords()">🎼</button>
+    <button onclick="toggleBigText()">🔠</button>
+    <button onclick="toggleWakeLock()" id="wakeBtn">🔓</button>
   </div>
 
+  <!-- NỘI DUNG BÀI HÁT -->
   <pre id="songContent"></pre>
 
-</div>
-
-<script src="songs.js"></script>
-<script src="app.js"></script>
+  <script src="songs.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
