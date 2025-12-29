@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tra cứu hợp âm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>🎵 Hợp Âm</h1>
+</header>
+
+<div class="container">
+
+  <select id="songSelect"></select>
+
+  <div class="controls">
+    <button onclick="transpose(-1)">–</button>
+    <span id="keyDisplay">Giọng: C</span>
+    <button onclick="transpose(1)">+</button>
+  </div>
+
+  <pre id="songContent"></pre>
+
+</div>
+
+<script src="songs.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
