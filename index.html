@@ -1,47 +1,259 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hợp Âm Thờ Phượng</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<title>Song Editor – Hợp Âm Thờ Phượng</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+  background: #fafafa;
+}
+
+h1 { text-align: center; }
+h2 { margin-top: 28px; }
+
+input, textarea, select, button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  min-height: 200px;
+  font-family: monospace;
+}
+
+button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.secondary {
+  background: #616161;
+}
+
+.song-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.song-item:hover {
+  background: #eee;
+}
+
+.flex {
+  display: flex;
+  gap: 8px;
+}
+
+.flex button { flex: 1; }
+
+.note {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== CHORD PREVIEW ===== */
+.preview-box {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.chord {
+  color: #0d47a1;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  margin-right: 2px;
+}
+
+pre {
+  background: #f0f0f0;
+  padding: 12px;
+  white-space: pre-wrap;
+  border-radius: 6px;
+  max-height: 300px;
+  overflow: auto;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>🎶 Hợp Âm Thờ Phượng</h1>
+<h1>🎶 Song Editor</h1>
 
-  <!-- TÌM KIẾM -->
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Tìm bài hát hoặc lời..."
-    oninput="searchSongs()"
-  />
+<p class="note">
+✏️ Nhập lời + hợp âm dạng <code>[C]</code> <code>[F#m]</code> <code>[Bb]</code><br>
+🎼 Preview hiển thị đúng chuẩn khi trình chiếu<br>
+📦 Xuất <code>songs.js</code> dùng ngay cho web app
+</p>
 
-  <!-- DANH SÁCH BÀI -->
-  <ul id="songList"></ul>
+<hr>
 
-  <!-- ĐIỀU KHIỂN -->
-  <div class="controls">
-    <button onclick="transpose(-1)">–</button>
+<h2>0️⃣ IMPORT songs.js</h2>
+<textarea id="importInput" placeholder="Dán toàn bộ nội dung file songs.js vào đây"></textarea>
+<button class="secondary" onclick="importSongs()">🔄 Import songs.js</button>
 
-    <select id="keySelect" onchange="setKey(this.value)">
-      <option value="">Giọng</option>
-      <option>C</option><option>D</option><option>E</option>
-      <option>F</option><option>G</option><option>A</option><option>B</option>
-    </select>
+<hr>
 
-    <button onclick="transpose(1)">+</button>
+<h2>1️⃣ NHẬP / SỬA BÀI HÁT</h2>
 
-    <button onclick="toggleChords()">🎼</button>
-    <button onclick="toggleBigText()">🔠</button>
-    <button onclick="toggleWakeLock()" id="wakeBtn">🔓</button>
-  </div>
+<input id="title" placeholder="Tên bài hát" />
+<input id="artist" placeholder="Tác giả / Nguồn (tuỳ chọn)" />
 
-  <!-- NỘI DUNG BÀI HÁT -->
-  <pre id="songContent"></pre>
+<select id="key">
+  <option value="">Giọng gốc</option>
+  <option>C</option>
+  <option>C#</option><option>Db</option>
+  <option>D</option>
+  <option>D#</option><option>Eb</option>
+  <option>E</option>
+  <option>F</option>
+  <option>F#</option><option>Gb</option>
+  <option>G</option>
+  <option>G#</option><option>Ab</option>
+  <option>A</option>
+  <option>A#</option><option>Bb</option>
+  <option>B</option>
+</select>
 
-  <script src="songs.js"></script>
-  <script src="app.js"></script>
+<textarea id="content" placeholder="[C]Lạy Chúa con đến
+[Am]Trước ngai vinh hiển
+[F]Lòng con thờ [G]lạy Ngài"></textarea>
+
+<div class="flex">
+  <button onclick="addOrUpdateSong()">➕ Thêm / Cập nhật</button>
+  <button class="secondary" onclick="clearForm()">🧹 Xoá form</button>
+</div>
+
+<hr>
+
+<h2>2️⃣ DANH SÁCH BÀI HÁT</h2>
+<div id="songList"></div>
+
+<hr>
+
+<h2>3️⃣ PREVIEW HIỂN THỊ HỢP ÂM</h2>
+<div id="formattedPreview" class="preview-box"></div>
+
+<hr>
+
+<h2>4️⃣ XUẤT FILE songs.js</h2>
+<button onclick="exportSongs()">⬇️ Tải songs.js</button>
+<pre id="rawPreview"></pre>
+
+<script>
+let songs = [];
+
+/* ========= IMPORT ========= */
+function importSongs() {
+  const text = importInput.value.trim();
+  if (!text.includes("const songs")) return alert("Sai định dạng");
+
+  try {
+    const arrayText = text
+      .replace(/^[\s\S]*?const songs\s*=\s*/, "")
+      .replace(/;?\s*$/, "");
+    songs = eval(arrayText);
+    renderList();
+    alert("✅ Import " + songs.length + " bài");
+  } catch {
+    alert("❌ Import lỗi");
+  }
+}
+
+/* ========= CRUD ========= */
+function addOrUpdateSong() {
+  if (!title.value || !key.value || !content.value)
+    return alert("Thiếu dữ liệu");
+
+  const s = songs.find(x => x.title === title.value);
+  if (s) {
+    Object.assign(s, getForm());
+  } else {
+    songs.push({ id: Date.now(), ...getForm() });
+  }
+
+  renderList();
+  renderFormattedPreview(content.value);
+}
+
+function getForm() {
+  return {
+    title: title.value,
+    artist: artist.value,
+    key: key.value,
+    content: content.value
+  };
+}
+
+function renderList() {
+  songList.innerHTML = "";
+  songs.forEach(s => {
+    const d = document.createElement("div");
+    d.className = "song-item";
+    d.textContent = s.title;
+    d.onclick = () => loadSong(s);
+    songList.appendChild(d);
+  });
+}
+
+function loadSong(s) {
+  title.value = s.title;
+  artist.value = s.artist;
+  key.value = s.key;
+  content.value = s.content;
+  renderFormattedPreview(s.content);
+}
+
+function clearForm() {
+  title.value = artist.value = content.value = "";
+  key.value = "";
+}
+
+/* ========= PREVIEW ========= */
+function renderFormattedPreview(text) {
+  formattedPreview.innerHTML = text
+    .replace(/\[([^\]]+)\]/g, '<span class="chord">[$1]</span>')
+    .replace(/\n/g, "<br>");
+}
+
+/* ========= EXPORT ========= */
+function exportSongs() {
+  const text =
+`const songs = [
+${songs.map(s => `
+{
+  id: ${s.id},
+  title: "${s.title}",
+  artist: "${s.artist}",
+  key: "${s.key}",
+  content: \`
+${s.content}
+  \`
+}`).join(",")}
+];`;
+
+  const blob = new Blob([text], { type: "application/javascript" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "songs.js";
+  a.click();
+
+  rawPreview.textContent = text;
+}
+</script>
+
 </body>
 </html>
