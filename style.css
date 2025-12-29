@@ -1,65 +1,70 @@
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8f8f8;
+  font-family: system-ui, sans-serif;
+  margin: 10px;
+  background: #f9f9f9;
 }
 
-header {
-  background: #222;
-  color: #fff;
-  padding: 12px;
+h1 {
   text-align: center;
 }
 
-.container {
-  padding: 12px;
-}
-
-select {
+input {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  margin-bottom: 12px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+li:hover {
+  background: #eee;
 }
 
 .controls {
   display: flex;
+  gap: 6px;
+  margin: 10px 0;
   justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
 }
 
-button {
-  font-size: 22px;
-  padding: 6px 18px;
-  border: none;
-  border-radius: 6px;
-  background: #333;
-  color: #fff;
-}
-
-button:active {
-  background: #555;
-}
-
-#keyDisplay {
+.controls button,
+.controls select {
+  padding: 8px 10px;
   font-size: 16px;
-  font-weight: bold;
+}
+
+#wakeBtn.active {
+  background: #d32f2f;
+  color: white;
 }
 
 pre {
-  background: #fff;
-  padding: 12px;
-  font-family: monospace;
-  font-size: 17px;
-  line-height: 1.6;
   white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.6;
+  background: white;
+  padding: 12px;
   border-radius: 6px;
 }
-#searchInput {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 10px;
+
+/* Ẩn hợp âm */
+.hide-chords {
+  color: transparent;
+}
+
+/* Chữ to cho thờ phượng */
+.big-text {
+  font-size: 24px !important;
+  line-height: 1.8;
 }
