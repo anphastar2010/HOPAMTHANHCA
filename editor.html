@@ -67,8 +67,16 @@ pre {
 
 <p class="note">
 ✏️ Nhập lời + hợp âm dạng <code>[C]</code><br>
-📦 Xuất file <code>songs.js</code> dùng ngay cho app
+🔄 Import <code>songs.js</code> cũ để sửa tiếp<br>
+📦 Xuất <code>songs.js</code> dùng ngay cho app
 </p>
+
+<hr>
+
+<h2>0️⃣ IMPORT songs.js CŨ</h2>
+
+<textarea id="importInput" placeholder="Dán toàn bộ nội dung file songs.js vào đây"></textarea>
+<button class="secondary" onclick="importSongs()">🔄 Import songs.js</button>
 
 <hr>
 
@@ -112,6 +120,44 @@ pre {
 let songs = [];
 
 /* ===============================
+   IMPORT songs.js
+================================ */
+function importSongs() {
+  const text = document.getElementById("importInput").value.trim();
+
+  if (!text.includes("const songs")) {
+    alert("⚠️ Không đúng định dạng songs.js");
+    return;
+  }
+
+  try {
+    const arrayText = text
+      .replace(/^[\s\S]*?const songs\s*=\s*/, "")
+      .replace(/;?\s*$/, "");
+
+    // ⚠️ eval chỉ dùng local, do chính bạn dán
+    const imported = eval(arrayText);
+
+    if (!Array.isArray(imported)) throw new Error();
+
+    songs = imported.map(s => ({
+      id: s.id || Date.now(),
+      title: s.title || "",
+      artist: s.artist || "",
+      key: s.key || "C",
+      content: s.content || ""
+    }));
+
+    renderList();
+    renderPreview();
+    alert("✅ Import thành công: " + songs.length + " bài");
+
+  } catch {
+    alert("❌ Không thể import. Kiểm tra lại nội dung songs.js");
+  }
+}
+
+/* ===============================
    CRUD
 ================================ */
 function addOrUpdateSong() {
@@ -121,7 +167,7 @@ function addOrUpdateSong() {
   const content = contentEl.value.trim();
 
   if (!title || !key || !content) {
-    alert("⚠️ Vui lòng nhập Tên bài – Giọng – Nội dung");
+    alert("⚠️ Vui lòng nhập Tên – Giọng – Nội dung");
     return;
   }
 
