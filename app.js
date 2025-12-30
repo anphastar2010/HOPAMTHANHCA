@@ -41,8 +41,10 @@ function renderSong(song) {
     .split("\n")
     .map(line =>
       `<div class="song-line">${
-        line.replace(/\[([^\]]+)\]/g,
-        '<span class="chord">$1</span>')
+        line.replace(
+          /\[([^\]]+)\]/g,
+          '<span class="chord">[$1]</span>'
+        )
       }</div>`
     )
     .join("");
