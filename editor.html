@@ -2,31 +2,42 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
-<title>Song Editor – Hợp Âm Thờ Phượng</title>
+<title>Song Editor & Bulk Importer – Hợp Âm Thờ Phượng</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
 body {
-  font-family: system-ui, sans-serif;
-  max-width: 900px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 1000px;
   margin: auto;
-  padding: 16px;
-  background: #f8f9fa;
+  padding: 20px;
+  background: #f4f6f9;
   color: #333;
+  line-height: 1.5;
 }
-h1 { text-align: center; color: #1976d2; }
-h2 { margin-top: 28px; border-bottom: 2px solid #1976d2; padding-bottom: 6px; color: #1976d2; font-size: 20px;}
+h1 { text-align: center; color: #1976d2; margin-bottom: 5px; }
+.sub-title { text-align: center; color: #666; font-size: 14px; margin-bottom: 25px; }
+h2 { margin-top: 30px; border-bottom: 2px solid #1976d2; padding-bottom: 6px; color: #1976d2; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px;}
+
 input, textarea, select, button {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccd1d9;
   border-radius: 6px;
   box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #1976d2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
 }
 textarea {
-  min-height: 220px;
-  font-family: monospace;
+  min-height: 280px;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 15px;
+  white-space: pre;
 }
 button {
   background: #1976d2;
@@ -37,138 +48,155 @@ button {
   font-weight: bold;
 }
 button:hover { background: #1565c0; }
-.secondary {
-  background: #616161;
-}
-.secondary:hover { background: #424242; }
+.secondary { background: #656d78; }
+.secondary:hover { background: #434a54; }
 .danger {
-  background: #d32f2f;
+  background: #da4453;
   width: auto;
-  padding: 4px 10px;
+  padding: 6px 12px;
   font-size: 13px;
   margin: 0;
 }
-.danger:hover { background: #b71c1c; }
+.danger:hover { background: #c9302c; }
+
 .song-item {
-  border-bottom: 1px solid #ddd;
-  padding: 12px;
+  border: 1px solid #e6e9ed;
+  padding: 14px;
   background: white;
-  margin-bottom: 4px;
-  border-radius: 4px;
+  margin-bottom: 6px;
+  border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 .song-info {
   cursor: pointer;
   flex: 1;
 }
 .song-item:hover {
-  background: #e3f2fd;
+  background: #e6f2ff;
+  border-color: #bcd4f5;
 }
 .flex {
   display: flex;
-  gap: 8px;
+  gap: 12px;
 }
 .flex button {
   flex: 1;
 }
 pre {
-  background: #212121;
-  color: #a5d6a7;
-  padding: 12px;
+  background: #1e222b;
+  color: #a0e8a2;
+  padding: 15px;
   white-space: pre-wrap;
   border-radius: 6px;
-  max-height: 300px;
+  max-height: 350px;
   overflow: auto;
-  font-family: monospace;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
 }
 .note {
   font-size: 14px;
-  color: #555;
-  background: #e3f2fd;
-  padding: 12px;
-  border-left: 4px solid #1976d2;
+  color: #4a5568;
+  background: #ebf8ff;
+  padding: 14px;
+  border-left: 4px solid #3182ce;
   border-radius: 4px;
+  margin-bottom: 20px;
+}
+.import-panels {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
 }
 .import-box {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 6px;
-  margin-bottom: 12px;
+  flex: 1;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
-.bg-xml { background: #e8f5e9; border: 2px dashed #2e7d32; }
-.bg-js { background: #fff3e0; border: 2px dashed #f57c00; }
-.file-label { font-weight: bold; display: block; margin-bottom: 6px; color: #333; }
+.bg-js { background: #fff9db; border: 2px dashed #f59f00; }
+.bg-xml { background: #e6fcf5; border: 2px dashed #0ca678; }
+.file-label { font-weight: bold; display: block; margin-bottom: 8px; color: #2b303a; font-size: 15px; }
+.file-input-wrapper { background: white; border-radius: 4px; padding: 4px; }
 </style>
 </head>
 <body>
 
-<h1>🎶 Song Editor & Bulk Importer</h1>
+<h1>🎶 SONG EDITOR & BULK IMPORTER</h1>
+<div class="sub-title">Dự án Hợp Âm Thờ Phượng (HOPAMTHANHCA)</div>
 
 <p class="note">
-🔄 <b>Bước 1:</b> Chọn file <code>songs.js</code> cũ duy nhất 1 lần để nạp thư viện hiện tại.<br>
-🎼 <b>Bước 2:</b> Chọn file <code>.musicxml</code> số 1 ➔ Kiểm tra chỉnh sửa ➔ Bấm "Thêm / Cập nhật" (Form sẽ tự trống).<br>
-✨ <b>Bước 3:</b> Tiếp tục chọn file <code>.musicxml</code> số 2, số 3... lặp lại liên tục bước 2.<br>
-💾 <b>Bước 4:</b> Kết thúc phiên làm việc, kéo xuống cuối bấm nút màu xanh lá để tải file tổng hợp về.
+🚀 <b>QUY TRÌNH SỬ DỤNG LIÊN TỤC:</b><br>
+1. <b>Nạp dữ liệu gốc (Chỉ cần 1 lần duy nhất đầu phiên):</b> Chọn file <code>songs.js</code> hiện tại của bạn vào ô màu vàng để nạp danh sách cũ.<br>
+2. <b>Import file nhạc liên tục:</b> Tải file <code>.musicxml</code> vào ô màu xanh lá. Hệ thống sẽ tự động quét bóc tách sạch sẽ <b>Lời 1</b> và <b>Lời 2</b> (giữ nguyên hợp âm đôi chuẩn xác).<br>
+3. <b>Lưu trữ tạm thời:</b> Kiểm tra phông nền, sửa đổi thông tin nếu cần thiết rồi bấm nút <b>"Thêm / Cập nhật vào danh sách tổng"</b>. Form sẽ tự xóa trống để bạn chọn tiếp file XML tiếp theo.<br>
+4. <b>Xuất file tổng hợp:</b> Khi hoàn thành toàn bộ công việc, kéo xuống cuối trang chọn nút màu xanh lá để tải file <code>songs.js</code> mới về đè lên file cũ.
 </p>
 
 <hr>
 
-<h2>0️⃣ NẠP DỮ LIỆU BÀI HÁT</h2>
-<div class="flex">
-  <div class="import-box bg-js" style="flex: 1;">
-    <label class="file-label">📂 Chỉ nạp 1 lần - Chọn file songs.js gốc:</label>
-    <input type="file" id="jsFileInput" accept=".js" style="background: white;" />
+<h2>0️⃣ BƯỚC NẠP FILE (DỮ LIỆU ĐẦU VÀO)</h2>
+<div class="import-panels">
+  <div class="import-box bg-js">
+    <label class="file-label">📂 Thư viện gốc (Chỉ nạp 1 lần):</label>
+    <div class="file-input-wrapper">
+      <input type="file" id="jsFileInput" accept=".js" style="margin: 0;" />
+    </div>
   </div>
   
-  <div class="import-box bg-xml" style="flex: 1;">
+  <div class="import-box bg-xml">
     <label class="file-label">🎼 Tải file MusicXML lên liên tục:</label>
-    <input type="file" id="xmlFileInput" accept=".musicxml,.xml" style="background: white;" />
+    <div class="file-input-wrapper">
+      <input type="file" id="xmlFileInput" accept=".musicxml,.xml" style="margin: 0;" />
+    </div>
   </div>
 </div>
 
 <hr>
 
-<h2>1️⃣ KHU VỰC CHỈNH SỬA BÀI HÁT HIỆN TẠI</h2>
-<input id="title" placeholder="Tên bài hát" />
-<input id="artist" placeholder="Tác giả / Nguồn (tuỳ chọn)" />
+<h2>1️⃣ KHU VỰC SOẠN THẢO / CHỈNH SỬA BÀI HÁT</h2>
+<div class="flex">
+  <input id="title" placeholder="Tên bài hát" style="flex: 2;" />
+  <input id="artist" placeholder="Tác giả / Sáng tác" style="flex: 1;" />
+  <select id="key" style="flex: 0.8;">
+    <option value="">Giọng gốc</option>
+    <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
+    <option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option>
+    <option>Am</option><option>Bbm</option><option>Bm</option><option>Cm</option><option>Dm</option><option>Em</option><option>Fm</option><option>Gm</option>
+  </select>
+</div>
 
-<select id="key">
-  <option value="">Giọng gốc</option>
-  <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
-  <option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option>
-</select>
-
-<textarea id="content" placeholder="Nội dung bài hát dạng [C]Hợp [Am]Âm sẽ tự động nhảy vào đây khi bạn chọn file XML..."></textarea>
+<textarea id="content" placeholder="Nội dung bài hát dạng hợp âm chữ bọc ngoặc vuông [C] lời [Am] nhạc..."></textarea>
 
 <div class="flex">
-  <button onclick="addOrUpdateSong()" style="background: #1976d2; font-size: 18px;">➕ Thêm / Cập nhật vào danh sách tổng</button>
-  <button class="secondary" onclick="clearForm()">🧹 Xoá sạch Form</button>
+  <button onclick="addOrUpdateSong()" style="background: #1c7ed6; font-size: 16px; padding: 14px;">➕ Thêm / Cập nhật vào danh sách tổng</button>
+  <button class="secondary" onclick="clearForm()" style="max-width: 150px;">🧹 Xoá trống form</button>
 </div>
 
 <hr>
 
-<h2>2️⃣ DANH SÁCH TOÀN BỘ BÀI HÁT ĐÃ LƯU TRONG PHIÊN (<span id="songCount">0</span> bài)</h2>
+<h2>2️⃣ BỘ NHỚ TẠM THỜI TRONG PHIÊN LÀM VIỆC (<span id="songCount" style="font-weight: bold; color: #1976d2;">0</span> bài)</h2>
 <div id="songList"></div>
 
 <hr>
 
-<h2>3️⃣ KẾT THÚC PHIÊN - XUẤT FILE <code>songs.js</code> MỚI</h2>
-<button style="background: #2e7d32; font-size: 18px;" onclick="exportSongs()">⬇️ Tải file songs.js chứa tất cả bài hát</button>
+<h2>3️⃣ KẾT THÚC PHIÊN - XUẤT THÀNH PHẨM</h2>
+<button style="background: #2b8a3e; font-size: 18px; padding: 15px;" onclick="exportSongs()">⬇️ XUẤT & TẢI FILE SONGS.JS MỚI VỀ MÁY</button>
 
-<pre id="preview"></pre>
+<h3 style="font-size: 14px; margin-top: 15px; color: #555;">Xem trước file xuất (Preview):</h3>
+<pre id="preview">Chưa có dữ liệu xuất...</pre>
 
 <script>
-/* ===============================
-   DATA STORE
-================================ */
+/* ==========================================================================
+   DATA STORAGE
+   ========================================================================== */
 let songs = [];
 
-/* ===============================
-   ĐỌC FILE songs.js GỐC (CHỈ LÀM 1 LẦN)
-================================ */
+/* ==========================================================================
+   ĐỌC FILE SONGS.JS GỐC ĐỂ PHỤC HỒI DỮ LIỆU CŨ
+   ========================================================================== */
 document.getElementById('jsFileInput').addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (!file) return;
@@ -178,7 +206,7 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
     const text = evt.target.result.trim();
 
     if (!text.includes("const songs")) {
-      alert("⚠️ File chọn không đúng định dạng cấu trúc songs.js");
+      alert("⚠️ Lỗi: File này không đúng định dạng cấu trúc dữ liệu của dự án (Thiếu mảng const songs)!");
       return;
     }
 
@@ -187,6 +215,7 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
         .replace(/^[\s\S]*?const songs\s*=\s*/, "")
         .replace(/;?\s*$/, "");
 
+      // Thực thi đoạn text mảng một cách an toàn trên trình duyệt cục bộ
       const imported = eval(arrayText);
 
       if (!Array.isArray(imported)) throw new Error();
@@ -195,27 +224,28 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
         id: s.id || Date.now(),
         title: s.title || "",
         artist: s.artist || "",
-        key: s.key || "C",
+        key: s.key || "",
         content: s.content || ""
       }));
 
       renderList();
-      alert("✅ Đã nạp thành công " + songs.length + " bài hát cũ vào hệ thống!");
+      alert("🎉 Nạp dữ liệu thành công! Đã khôi phục " + songs.length + " bài hát cũ vào danh sách.");
 
     } catch (err) {
-      alert("❌ Lỗi cấu trúc file songs.js, không thể đọc dữ liệu.");
+      alert("❌ Có lỗi xảy ra khi phân tích cú pháp dữ liệu file songs.js cũ.");
     }
   };
   reader.readAsText(file);
 });
 
-/* ===============================
-   ĐỌC FILE MUSICXML LIÊN TỤC
-================================ */
+/* ==========================================================================
+   BỘ PHÂN TÍCH MUSICXML THÔNG MINH (BÓC TRỌN VẸN LỜI 1 & LỜI 2)
+   ========================================================================== */
 document.getElementById('xmlFileInput').addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (!file) return;
 
+  // Đoán tên bài hát tự động dựa trên tên file
   const guessedTitle = file.name.replace(/\.[^/.]+$/, "");
   document.getElementById("title").value = guessedTitle;
 
@@ -225,21 +255,31 @@ document.getElementById('xmlFileInput').addEventListener('change', function(e) {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(evt.target.result, "text/xml");
       
-      let chordSheet = "";
       const measures = xmlDoc.getElementsByTagName("measure");
-
       if(measures.length === 0) {
         alert("⚠️ File XML không đúng cấu trúc chuẩn MusicXML.");
         return;
       }
 
+      // Đọc thông tin tác giả nếu có lưu trong XML
+      const composer = xmlDoc.getElementsByTagName("creator")[0]?.textContent || "";
+      if(composer && !document.getElementById("artist").value) {
+        document.getElementById("artist").value = composer;
+      }
+
+      let lyric1Sheet = "1. ";
+      let lyric2Sheet = "2. ";
+      let currentChord = "";
+      let measureCount = 0;
+
       for (let i = 0; i < measures.length; i++) {
         const children = measures[i].children;
-        let currentChord = "";
+        let hasLyricsInMeasure = false;
 
         for (let j = 0; j < children.length; j++) {
           const el = children[j];
 
+          // Bước A: Nhặt hợp âm
           if (el.tagName === "harmony") {
             const root = el.getElementsByTagName("root-step")[0]?.textContent || "";
             let alter = el.getElementsByTagName("root-alter")[0]?.textContent || "";
@@ -249,159 +289,74 @@ document.getElementById('xmlFileInput').addEventListener('change', function(e) {
             if (alter === "1") alterSign = "#";
             if (alter === "-1") alterSign = "b";
 
+            // Chuẩn hóa ký hiệu hợp âm về chuẩn phổ thông
             if (kind === "minor") kind = "m";
             else if (kind === "major" || kind === "dominant" || kind === "major-seventh") kind = "";
             else if (kind === "minor-seventh") kind = "m7";
             else if (kind === "seventh") kind = "7";
+            else if (kind === "suspended-fourth") kind = "sus4";
+            else if (kind === "diminished") kind = "dim";
 
             currentChord = `[${root}${alterSign}${kind}]`;
           }
 
+          // Bước B: Nhặt nốt nhạc và bóc tách lyric number 1 & 2
           if (el.tagName === "note") {
-            const lyricEl = el.getElementsByTagName("text")[0];
-            if (lyricEl) {
-              const word = lyricEl.textContent;
-              chordSheet += currentChord + word + " ";
-              currentChord = ""; 
+            const lyricsList = el.getElementsByTagName("lyric");
+            
+            if (lyricsList.length > 0) {
+              hasLyricsInMeasure = true;
+              let txt1 = "";
+              let txt2 = "";
+
+              // Quét tìm dữ liệu của từng lời
+              for (let l = 0; l < lyricsList.length; l++) {
+                const lyr = lyricsList[l];
+                const num = lyr.getAttribute("number");
+                const textVal = lyr.getElementsByTagName("text")[0]?.textContent || "";
+
+                if (num === "1" || !num) {
+                  txt1 = textVal;
+                } else if (num === "2") {
+                  txt2 = textVal;
+                }
+              }
+
+              // Gán lời hát vào bản thảo đi kèm hợp âm
+              lyric1Sheet += currentChord + txt1;
+              
+              // Nếu nốt này có lời 2 thì lấy lời 2, nếu không có lời 2 (đoạn điệp khúc chung) thì mượn chữ lời 1
+              lyric2Sheet += currentChord + (txt2 ? txt2 : txt1);
+              
+              // Thêm khoảng trắng phân tách chữ nếu chữ không kết thúc bằng gạch nối từ
+              const syllabic = lyricsList[0].getElementsByTagName("syllabic")[0]?.textContent || "";
+              if (syllabic !== "begin" && syllabic !== "middle") {
+                lyric1Sheet += " ";
+                lyric2Sheet += " ";
+              }
+
+              currentChord = ""; // Dùng xong hợp âm thì reset để tránh lặp
             } else if (currentChord !== "") {
-              chordSheet += currentChord;
+              // Hợp âm chuyển dạo hoặc ngân giữa câu không có lời hát
+              lyric1Sheet += currentChord;
+              lyric2Sheet += currentChord;
               currentChord = "";
             }
           }
         }
-        if ((i + 1) % 4 === 0) {
-          chordSheet += "\n";
+
+        // Tự động xuống hàng sau mỗi 4 ô nhịp chứa từ để định hình câu thơ/câu nhạc
+        if (hasLyricsInMeasure) {
+          measureCount++;
+          if (measureCount % 4 === 0) {
+            lyric1Sheet += "\n";
+            lyric2Sheet += "\n";
+          }
         }
       }
 
-      document.getElementById("content").value = chordSheet.replace(/ +/g, ' ').trim();
+      // Tiến hành xử lý dọn dẹp khoảng trắng dư thừa
+      let clean1 = lyric1Sheet.replace(/ +/g, ' ').replace(/\n /g, '\n').trim();
+      let clean2 = lyric2Sheet.replace(/ +/g, ' ').replace(/\n /g, '\n').trim();
 
-    } catch (err) {
-      alert("❌ Lỗi khi đọc file XML: " + err.message);
-    }
-  };
-  reader.readAsText(file);
-});
-
-/* ===============================
-   XỬ LÝ THÊM, CẬP NHẬT, XÓA
-================================ */
-function addOrUpdateSong() {
-  const title = titleEl.value.trim();
-  const artist = artistEl.value.trim();
-  const key = keyEl.value;
-  const content = contentEl.value.trim();
-
-  if (!title || !key || !content) {
-    alert("⚠️ Vui lòng điền đủ thông tin bài hát trước khi lưu!");
-    return;
-  }
-
-  const existingIndex = songs.findIndex(s => s.title.toLowerCase() === title.toLowerCase());
-
-  if (existingIndex > -1) {
-    // Cập nhật bài đã có sẵn
-    songs[existingIndex].artist = artist;
-    songs[existingIndex].key = key;
-    songs[existingIndex].content = content;
-  } else {
-    // Thêm bài hoàn toàn mới
-    songs.push({
-      id: Date.now(),
-      title,
-      artist,
-      key,
-      content
-    });
-  }
-
-  renderList();
-  clearForm(); // Tự động làm trống form để bạn import tiếp file khác ngay lập tức
-}
-
-function deleteSong(id, event) {
-  event.stopPropagation(); // Ngăn sự kiện kích hoạt loadSong
-  if(confirm("Bạn chắc chắn muốn xoá bài hát này khỏi danh sách phiên làm việc?")) {
-    songs = songs.filter(s => s.id !== id);
-    renderList();
-  }
-}
-
-function renderList() {
-  const list = document.getElementById("songList");
-  list.innerHTML = "";
-  document.getElementById("songCount").textContent = songs.length;
-
-  songs.forEach(song => {
-    const div = document.createElement("div");
-    div.className = "song-item";
-    
-    div.innerHTML = `
-      <div class="song-info" onclick="loadSong(${JSON.stringify(song).replace(/"/g, '&quot;')})">
-        <strong>${song.title}</strong> - <small>${song.artist || 'Không rõ'}</small> (Tone: ${song.key})
-      </div>
-      <button class="danger" onclick="deleteSong(${song.id}, event)">Xoá</button>
-    `;
-    list.appendChild(div);
-  });
-}
-
-function loadSong(song) {
-  titleEl.value = song.title;
-  artistEl.value = song.artist;
-  keyEl.value = song.key;
-  keyEl.value = song.key; // Fallback select
-  contentEl.value = song.content;
-}
-
-function clearForm() {
-  titleEl.value = "";
-  artistEl.value = "";
-  keyEl.value = "";
-  contentEl.value = "";
-  document.getElementById('xmlFileInput').value = ""; // Reset ô chọn file để chọn lại file cũ nếu muốn
-}
-
-/* ===============================
-   XUẤT FILE TỔNG CUỐI PHIÊN
-================================ */
-function exportSongs() {
-  if (songs.length === 0) {
-    alert("⚠️ Danh sách trống, không thể xuất file.");
-    return;
-  }
-
-  const text =
-`const songs = [
-${songs.map(s => `
-{
-  id: ${s.id},
-  title: "${s.title.replace(/"/g, '\\"')}",
-  artist: "${s.artist.replace(/"/g, '\\"')}",
-  key: "${s.key}",
-  content: \`
-${s.content.trim()}
-  \`
-}`).join(",\n")}
-];`;
-
-  const blob = new Blob([text], { type: "application/javascript" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "songs.js";
-  a.click();
-
-  document.getElementById("preview").textContent = text;
-}
-
-/* ===============================
-   ELEMENTS
-================================ */
-const titleEl = document.getElementById("title");
-const artistEl = document.getElementById("artist");
-const keyEl = document.getElementById("key");
-const contentEl = document.getElementById("content");
-</script>
-
-</body>
-</html>
+      // Kết xuất và gộp 2 lời
