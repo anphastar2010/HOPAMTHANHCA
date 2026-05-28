@@ -359,4 +359,151 @@ document.getElementById('xmlFileInput').addEventListener('change', function(e) {
       let clean1 = lyric1Sheet.replace(/ +/g, ' ').replace(/\n /g, '\n').trim();
       let clean2 = lyric2Sheet.replace(/ +/g, ' ').replace(/\n /g, '\n').trim();
 
-      // Kết xuất và gộp 2 lời
+      // Kết xuất và gộp 2 lời thành văn bản hoàn chỉnh
+      document.getElementById("content").value = clean1 + "\n\n" + clean2;
+      alert("🎉 Chuyển đổi MusicXML thành công! Đã bóc tách trọn vẹn Lời 1 & Lời 2.");
+
+    } catch (err) {
+      alert("❌ Lỗi hệ thống khi phân tích file XML: " + err.message);
+    }
+  };
+  reader.readAsText(file);
+});
+
+/* ==========================================================================
+   XỬ LÝ DỮ LIỆU: THÊM, CẬP NHẬT, XÓA BÀI HÁT
+   ========================================================================== */
+function addOrUpdateSong() {
+  const title = titleEl.value.trim();
+  const artist = artistEl.value.trim();
+  const key = keyEl.value;
+  const content = contentEl.value.trim();
+
+  if (!title || !content) {
+    alert("⚠️ Vui lòng nhập tối thiểu: Tên bài hát và Nội dung lời nhạc!");
+    return;
+  }
+
+  const existingIndex = songs.findIndex(s => s.title.toLowerCase() === title.toLowerCase());
+
+  if (existingIndex > -1) {
+    // Sửa bài hát cũ đã có trong thư viện
+    songs[existingIndex].artist = artist;
+    songs[existingIndex].key = key;
+    songs[existingIndex].content = content;
+    alert("🔄 Đã cập nhật chỉnh sửa bài hát: " + title);
+  } else {
+    // Lưu một bài hát mới hoàn toàn
+    songs.push({
+      id: Date.now(),
+      title,
+      artist,
+      key,
+      content
+    });
+    alert("➕ Đã lưu bài hát mới vào danh sách!");
+  }
+
+  renderList();
+  clearForm(); // Form tự động làm trống để sẵn sàng cho file tiếp theo
+}
+
+function deleteSong(id, event) {
+  event.stopPropagation(); // Ngăn chặn kích hoạt hành động click dòng để load ngược lại form
+  if(confirm("Bạn có chắc chắn muốn xóa bài hát này khỏi danh sách dữ liệu hiện tại?")) {
+    songs = songs.filter(s => s.id !== id);
+    renderList();
+  }
+}
+
+function renderList() {
+  const list = document.getElementById("songList");
+  list.innerHTML = "";
+  document.getElementById("songCount").textContent = songs.length;
+
+  if (songs.length === 0) {
+    list.innerHTML = "<div style='text-align:center; color:#999; padding:20px; background:white; border-radius:6px;'>Chưa có bài hát nào trong bộ nhớ tạm.</div>";
+    return;
+  }
+
+  songs.forEach(song => {
+    const div = document.createElement("div");
+    div.className = "song-item";
+    
+    // Encode chuỗi an toàn khi truyền vào thuộc tính HTML
+    const safeSongObj = JSON.stringify(song).replace(/"/g, '&quot;');
+    
+    div.innerHTML = `
+      <div class="song-info" onclick="loadSong(${safeSongObj})">
+        <strong>${song.title}</strong> - <small>${song.artist || 'Chưa rõ tác giả'}</small> ${song.key ? `(Tone: ${song.key})` : ''}
+      </div>
+      <button class="danger" onclick="deleteSong(${song.id}, event)">Xóa</button>
+    `;
+    list.appendChild(div);
+  });
+}
+
+function loadSong(song) {
+  titleEl.value = song.title;
+  artistEl.value = song.artist;
+  keyEl.value = song.key;
+  contentEl.value = song.content;
+}
+
+function clearForm() {
+  titleEl.value = "";
+  artistEl.value = "";
+  keyEl.value = "";
+  contentEl.value = "";
+  document.getElementById('xmlFileInput').value = ""; // Đặt lại ô chọn file XML
+}
+
+/* ==========================================================================
+   XUẤT & ĐÓNG GÓI THÀNH PHẨM FILE SONGS.JS
+   ========================================================================== */
+function exportSongs() {
+  if (songs.length === 0) {
+    alert("⚠️ Không có bài hát nào trong danh sách để kết xuất file!");
+    return;
+  }
+
+  // Định dạng lại nội dung mảng theo đúng kiểu file cấu trúc gốc của bạn
+  const text =
+`const songs = [
+${songs.map(s => `
+{
+  id: ${s.id},
+  title: "${s.title.replace(/"/g, '\\"')}",
+  artist: "${s.artist.replace(/"/g, '\\"')}",
+  key: "${s.key}",
+  content: \`
+${s.content.trim()}
+  \`
+}`).join(",\n")}
+];`;
+
+  // Tạo file Blob chứa mã nguồn Javascript để tải về máy khách
+  const blob = new Blob([text], { type: "application/javascript;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "songs.js";
+  a.click();
+
+  // Hiển thị mã nguồn bản xem trước lên khung preview phía dưới cùng
+  document.getElementById("preview").textContent = text;
+}
+
+/* ==========================================================================
+   DOM ELEMENTS INITIALIZATION
+   ========================================================================== */
+const titleEl = document.getElementById("title");
+const artistEl = document.getElementById("artist");
+const keyEl = document.getElementById("key");
+const contentEl = document.getElementById("content");
+
+// Khởi chạy render danh sách trống lúc ban đầu
+renderList();
+</script>
+
+</body>
+</html>
