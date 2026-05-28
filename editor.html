@@ -194,7 +194,7 @@ pre {
 let songs = [];
 
 /* ==========================================================================
-   BỘ ĐỌC VÀ CHUYỂN ĐỔI SONGS.JS THÀNH JSON CHUẨN (KHÔNG DÙNG EVAL)
+   BỘ GIẢI MÃ SONGS.JS SIÊU CẤP CHUẨN XÁC (HỖ TRỢ MỌI PHONG CÁCH COPPY CODE)
    ========================================================================== */
 document.getElementById('jsFileInput').addEventListener('change', function(e) {
   const file = e.target.files[0];
@@ -202,49 +202,69 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
 
   const reader = new FileReader();
   reader.onload = function(evt) {
-    let text = evt.target.result.trim();
+    const rawText = evt.target.result.trim();
 
-    if (!text.includes("const songs")) {
-      alert("⚠️ Lỗi: File này không đúng định dạng chứa danh sách bài hát!");
+    if (!rawText.includes("const songs")) {
+      alert("⚠️ Lỗi: File này không đúng cấu trúc danh sách bài hát (thiếu biến const songs)!");
       return;
     }
 
     try {
-      // Bỏ đoạn "const songs =" ở đầu và dấu ";" ở cuối
-      let cleanText = text.replace(/^[\s\S]*?const songs\s*=\s*/, "").replace(/;?\s*$/, "").trim();
+      // Tìm vị trí mở mảng [ và đóng mảng ] đầu tiên và cuối cùng
+      const startIdx = rawText.indexOf('[');
+      const endIdx = rawText.lastIndexOf(']');
       
-      // Chuyển đổi các dấu nội dung `...` thành chuỗi string thông thường "..."
-      // Đồng thời xử lý các dấu xuống dòng bên trong nội dung bài hát để không làm gãy cấu trúc JSON
-      cleanText = cleanText.replace(/content:\s*`([\s\S]*?)`/g, function(match, group1) {
-        let escapedContent = group1.replace(/"/g, '\\"').replace(/\n/g, '\\n');
-        return ' "content": "' + escapedContent + '"';
-      });
+      if (startIdx === -1 || endIdx === -1) {
+        throw new Error("Không tìm thấy mảng dữ liệu [...] trong file");
+      }
 
-      // Sửa các key không có dấu ngoặc (id, title, artist, key) thành chuẩn JSON hợp lệ
-      cleanText = cleanText.replace(/(\bId\b|\btitle\b|\bartist\b|\bkey\b)\s*:/g, '"$1":');
+      let arrayContent = rawText.substring(startIdx, endIdx + 1);
 
-      // Sửa lỗi dấu phẩy thừa ở object cuối cùng nếu có trước khi parse
-      cleanText = cleanText.replace(/,\s*\]/g, ']');
+      // Giải thuật bóc tách thủ công từng cặp ngoặc nhọn { ... } tránh dùng eval hoặc JSON.parse trực tiếp trên chuỗi lỗi
+      const extractedSongs = [];
+      let braceCount = 0;
+      let currentObjectIndex = -1;
 
-      const imported = JSON.parse(cleanText);
+      for (let i = 0; i < arrayContent.length; i++) {
+        if (arrayContent[i] === '{') {
+          if (braceCount === 0) {
+            currentObjectIndex = i;
+          }
+          braceCount++;
+        } else if (arrayContent[i] === '}') {
+          braceCount--;
+          if (braceCount === 0 && currentObjectIndex !== -1) {
+            const objStr = arrayContent.substring(currentObjectIndex, i + 1);
+            
+            // Phân tích dữ liệu bằng biểu thức Regex cục bộ của từng bài viết nhỏ
+            const idMatch = objStr.match(/(?:id|Id)\s*:\s*([0-9]+)/i);
+            const titleMatch = objStr.match(/title\s*:\s*["']([\s\S]*?)["']/i);
+            const artistMatch = objStr.match(/artist\s*:\s*["']([\s\S]*?)["']/i);
+            const keyMatch = objStr.match(/key\s*:\s*["']([\s\S]*?)["']/i);
+            const contentMatch = objStr.match(/content\s*:\s*`([\s\S]*?)`/i);
 
-      if (Array.isArray(imported)) {
-        songs = imported.map(s => ({
-          id: s.id || Date.now(),
-          title: s.title || "",
-          artist: s.artist || "",
-          key: s.key || "",
-          content: s.content || ""
-        }));
+            extractedSongs.push({
+              id: idMatch ? parseInt(idMatch[1]) : Date.now() + extractedSongs.length,
+              title: titleMatch ? titleMatch[1] : "Chưa rõ tiêu đề",
+              artist: artistMatch ? artistMatch[1] : "",
+              key: keyMatch ? keyMatch[1] : "C",
+              content: contentMatch ? contentMatch[1].trim() : ""
+            });
+          }
+        }
+      }
+
+      if (extractedSongs.length > 0) {
+        songs = extractedSongs;
         renderList();
-        alert("🎉 Nạp dữ liệu thành công! Đã khôi phục " + songs.length + " bài hát cũ vào danh sách.");
+        alert("🎉 Nạp dữ liệu thành công! Đã phục hồi " + songs.length + " bài hát cũ vào danh sách.");
       } else {
-        throw new Error("Dữ liệu không phải là một mảng");
+        throw new Error("Không tìm thấy bài hát hợp lệ.");
       }
 
     } catch (err) {
       console.error(err);
-      alert("❌ Lỗi cấu trúc file songs.js. Vui lòng kiểm tra tab Console (F12) để xem chi tiết lỗi.");
+      alert("❌ Lỗi: Cấu trúc file songs.js không tương thích hoặc bị lỗi cú pháp.");
     }
   };
   reader.readAsText(file);
@@ -432,7 +452,6 @@ function renderList() {
     `;
     list.appendChild(div);
 
-    // Lắng nghe sự kiện click bằng addEventListener để tránh lỗi chuỗi ký tự đặc biệt trong Object
     document.getElementById(`song-item-${index}`).addEventListener('click', function() {
         loadSong(song);
     });
@@ -444,7 +463,7 @@ function loadSong(song) {
   artistEl.value = song.artist;
   keyEl.value = song.key;
   contentEl.value = song.content;
-  window.scrollTo({ top: 300, behavior: 'smooth' }); // Cuộn mượt lên form sửa
+  window.scrollTo({ top: 300, behavior: 'smooth' });
 }
 
 function clearForm() {
