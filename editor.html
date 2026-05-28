@@ -10,14 +10,19 @@ body {
   max-width: 900px;
   margin: auto;
   padding: 16px;
+  background: #f8f9fa;
+  color: #333;
 }
-h1 { text-align: center; }
-h2 { margin-top: 28px; }
+h1 { text-align: center; color: #1976d2; }
+h2 { margin-top: 28px; border-bottom: 2px solid #1976d2; padding-bottom: 6px; color: #1976d2; font-size: 20px;}
 input, textarea, select, button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
   margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 textarea {
   min-height: 200px;
@@ -28,17 +33,24 @@ button {
   color: white;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
 }
+button:hover { background: #1565c0; }
 .secondary {
   background: #616161;
 }
+.secondary:hover { background: #424242; }
 .song-item {
   border-bottom: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   cursor: pointer;
+  background: white;
+  margin-bottom: 4px;
+  border-radius: 4px;
 }
 .song-item:hover {
-  background: #eee;
+  background: #e3f2fd;
 }
 .flex {
   display: flex;
@@ -48,47 +60,64 @@ button {
   flex: 1;
 }
 pre {
-  background: #f5f5f5;
+  background: #212121;
+  color: #a5d6a7;
   padding: 12px;
   white-space: pre-wrap;
   border-radius: 6px;
   max-height: 300px;
   overflow: auto;
+  font-family: monospace;
 }
 .note {
   font-size: 14px;
   color: #555;
+  background: #e3f2fd;
+  padding: 12px;
+  border-left: 4px solid #1976d2;
+  border-radius: 4px;
+}
+.import-box {
+  background: #e8f5e9;
+  border: 2px dashed #2e7d32;
+  padding: 15px;
+  border-radius: 6px;
 }
 </style>
 </head>
 <body>
 
-<h1>🎶 Song Editor</h1>
+<h1>🎶 Song Editor & MusicXML Importer</h1>
 
 <p class="note">
 ✏️ Nhập lời + hợp âm dạng <code>[C]</code><br>
 🔄 Import <code>songs.js</code> cũ để sửa tiếp<br>
-📦 Xuất <code>songs.js</code> dùng ngay cho app
+🎼 <b>MỚI:</b> Tải trực tiếp file .musicxml từ MuseScore để tự động chuyển đổi thành hợp âm chữ!<br>
+盒子 Xuất <code>songs.js</code> dùng ngay cho app
 </p>
 
 <hr>
 
-<h2>0️⃣ IMPORT songs.js CŨ</h2>
+<h2>🆕 TỰ ĐỘNG IMPORT TỪ FILE MUSICXML (MUSESCORE)</h2>
+<div class="import-box">
+  <label style="font-weight: bold; display: block; margin-bottom: 6px;">Chọn file .musicxml hoặc .xml:</label>
+  <input type="file" id="xmlFileInput" accept=".musicxml,.xml" style="background: white;" />
+</div>
 
-<textarea id="importInput" placeholder="Dán toàn bộ nội dung file songs.js vào đây"></textarea>
-<button class="secondary" onclick="importSongs()">🔄 Import songs.js</button>
+<h2>0️⃣ IMPORT DATA songs.js CŨ (NẾU CÓ)</h2>
+<textarea id="importInput" placeholder="Dán toàn bộ nội dung file songs.js vào đây nếu muốn chỉnh sửa tiếp danh sách cũ"></textarea>
+<button class="secondary" onclick="importSongs()">🔄 Import danh sách songs.js</button>
 
 <hr>
 
 <h2>1️⃣ NHẬP / SỬA BÀI HÁT</h2>
-
 <input id="title" placeholder="Tên bài hát" />
 <input id="artist" placeholder="Tác giả / Nguồn (tuỳ chọn)" />
 
 <select id="key">
   <option value="">Giọng gốc</option>
-  <option>C</option><option>D</option><option>E</option>
-  <option>F</option><option>G</option><option>A</option><option>B</option>
+  <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
+  <option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option>
 </select>
 
 <textarea id="content" placeholder="Ví dụ:
@@ -97,19 +126,19 @@ pre {
 [F]Lòng con thờ [G]lạy Ngài"></textarea>
 
 <div class="flex">
-  <button onclick="addOrUpdateSong()">➕ Thêm / Cập nhật</button>
-  <button class="secondary" onclick="clearForm()">🧹 Xoá form</button>
+  <button onclick="addOrUpdateSong()">➕ Thêm / Cập nhật vào danh sách</button>
+  <button class="secondary" onclick="clearForm()">🧹 Xoá sạch Form</button>
 </div>
 
 <hr>
 
-<h2>2️⃣ DANH SÁCH BÀI HÁT</h2>
+<h2>2️⃣ DANH SÁCH BÀI HÁT TRONG BỘ NHỚ TEMPORARY (<span id="songCount">0</span> bài)</h2>
 <div id="songList"></div>
 
 <hr>
 
-<h2>3️⃣ XUẤT FILE <code>songs.js</code></h2>
-<button onclick="exportSongs()">⬇️ Tải songs.js</button>
+<h2>3️⃣ XUẤT FILE <code>songs.js</code> MỚI ĐỂ ĐƯA LÊN GITHUB</h2>
+<button style="background: #2e7d32; font-size: 18px;" onclick="exportSongs()">⬇️ Tải file songs.js về máy</button>
 
 <pre id="preview"></pre>
 
@@ -120,13 +149,96 @@ pre {
 let songs = [];
 
 /* ===============================
+   XỬ LÝ PARSE MUSICXML
+================================ */
+document.getElementById('xmlFileInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  // Lấy tên file làm tên bài hát mặc định
+  const guessedTitle = file.name.replace(/\.[^/.]+$/, "");
+  document.getElementById("title").value = guessedTitle;
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    try {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(evt.target.result, "text/xml");
+      
+      let chordSheet = "";
+      const measures = xmlDoc.getElementsByTagName("measure");
+
+      if(measures.length === 0) {
+        alert("⚠️ File XML không đúng cấu trúc chuẩn MusicXML.");
+        return;
+      }
+
+      for (let i = 0; i < measures.length; i++) {
+        const children = measures[i].children;
+        let currentChord = "";
+
+        for (let j = 0; j < children.length; j++) {
+          const el = children[j];
+
+          // 1. Tìm thẻ hợp âm
+          if (el.tagName === "harmony") {
+            const root = el.getElementsByTagName("root-step")[0]?.textContent || "";
+            let alter = el.getElementsByTagName("root-alter")[0]?.textContent || "";
+            let kind = el.getElementsByTagName("kind")[0]?.textContent || "";
+            
+            // Xử lý dấu thăng giáng của hợp âm gốc
+            let alterSign = "";
+            if (alter === "1") alterSign = "#";
+            if (alter === "-1") alterSign = "b";
+
+            // Chuẩn hóa loại hợp âm sang ký hiệu phổ thông
+            if (kind === "minor") kind = "m";
+            else if (kind === "major" || kind === "dominant" || kind === "major-seventh") kind = "";
+            else if (kind === "minor-seventh") kind = "m7";
+            else if (kind === "seventh") kind = "7";
+
+            currentChord = `[${root}${alterSign}${kind}]`;
+          }
+
+          // 2. Tìm nốt nhạc và chữ lời nhạc đi kèm
+          if (el.tagName === "note") {
+            const lyricEl = el.getElementsByTagName("text")[0];
+            if (lyricEl) {
+              const word = lyricEl.textContent;
+              chordSheet += currentChord + word + " ";
+              currentChord = ""; // Reset chord sau khi đã gán vào chữ
+            } else if (currentChord !== "") {
+              // Trường hợp có hợp âm đổi giữa câu mà nốt đó không có lời hát
+              chordSheet += currentChord;
+              currentChord = "";
+            }
+          }
+        }
+        // Xuống dòng hợp lý sau mỗi 4 ô nhịp
+        if ((i + 1) % 4 === 0) {
+          chordSheet += "\n";
+        }
+      }
+
+      // Điền dữ liệu phân tích được vào ô nhập liệu chính
+      document.getElementById("content").value = chordSheet.replace(/ +/g, ' ').trim();
+      alert("🎉 Chuyển đổi MusicXML thành công! Vui lòng kiểm tra lại lời và hợp âm.");
+
+    } catch (err) {
+      alert("❌ Lỗi khi đọc file MusicXML: " + err.message);
+    }
+  };
+  reader.readAsText(file);
+});
+
+/* ===============================
    IMPORT songs.js
 ================================ */
 function importSongs() {
   const text = document.getElementById("importInput").value.trim();
 
   if (!text.includes("const songs")) {
-    alert("⚠️ Không đúng định dạng songs.js");
+    alert("⚠️ Không đúng định dạng file songs.js");
     return;
   }
 
@@ -135,7 +247,6 @@ function importSongs() {
       .replace(/^[\s\S]*?const songs\s*=\s*/, "")
       .replace(/;?\s*$/, "");
 
-    // ⚠️ eval chỉ dùng local, do chính bạn dán
     const imported = eval(arrayText);
 
     if (!Array.isArray(imported)) throw new Error();
@@ -150,10 +261,10 @@ function importSongs() {
 
     renderList();
     renderPreview();
-    alert("✅ Import thành công: " + songs.length + " bài");
+    alert("✅ Import thành công: " + songs.length + " bài từ songs.js cũ.");
 
   } catch {
-    alert("❌ Không thể import. Kiểm tra lại nội dung songs.js");
+    alert("❌ Không thể import. Kiểm tra lại nội dung text của file songs.js");
   }
 }
 
@@ -167,16 +278,17 @@ function addOrUpdateSong() {
   const content = contentEl.value.trim();
 
   if (!title || !key || !content) {
-    alert("⚠️ Vui lòng nhập Tên – Giọng – Nội dung");
+    alert("⚠️ Vui lòng nhập đầy đủ: Tên bài – Giọng gốc – Nội dung lời nhạc");
     return;
   }
 
-  const existing = songs.find(s => s.title === title);
+  const existing = songs.find(s => s.title.toLowerCase() === title.toLowerCase());
 
   if (existing) {
     existing.artist = artist;
     existing.key = key;
     existing.content = content;
+    alert("🔄 Đã cập nhật bài hát: " + title);
   } else {
     songs.push({
       id: Date.now(),
@@ -185,20 +297,23 @@ function addOrUpdateSong() {
       key,
       content
     });
+    alert("➕ Đã thêm bài hát mới thành công.");
   }
 
   renderList();
   renderPreview();
+  clearForm();
 }
 
 function renderList() {
   const list = document.getElementById("songList");
   list.innerHTML = "";
+  document.getElementById("songCount").textContent = songs.length;
 
   songs.forEach(song => {
     const div = document.createElement("div");
     div.className = "song-item";
-    div.textContent = song.title;
+    div.innerHTML = `<strong>${song.title}</strong> - <small>${song.artist || 'Không rõ'}</small> (Tone: ${song.key})`;
     div.onclick = () => loadSong(song);
     list.appendChild(div);
   });
@@ -216,12 +331,18 @@ function clearForm() {
   artistEl.value = "";
   keyEl.value = "";
   contentEl.value = "";
+  document.getElementById('xmlFileInput').value = "";
 }
 
 /* ===============================
    EXPORT songs.js
 ================================ */
 function exportSongs() {
+  if (songs.length === 0) {
+    alert("⚠️ Danh sách trống, không có gì để xuất file.");
+    return;
+  }
+
   const text =
 `const songs = [
 ${songs.map(s => `
@@ -231,7 +352,7 @@ ${songs.map(s => `
   artist: "${s.artist.replace(/"/g, '\\"')}",
   key: "${s.key}",
   content: \`
-${s.content}
+${s.content.trim()}
   \`
 }`).join(",\n")}
 ];`;
