@@ -553,5 +553,152 @@ nuôi [E]đời con khôn lớn [Am]mau.
 Tìm [G]Cha con [Em7]thao thức trên đường [Am]xa, con [A]thao thức đi tìm [Dm]Cha.
 Đất [G]trời biển rộng bao [Bm7b5]la, tim [Em7]con mãi mong tìm [Am]Cha.
   `
+},
+
+{
+  id: 1780129870245,
+  title: "[22] CHÚA LÀ THƯƠNG XÓT",
+  artist: "TRỊNH CHÚC",
+  key: "C",
+  content: `
+1. Hỡi linh hồn [C]tôi hãy ca tụng [Am]Chúa 
+Hỡi linh hồn [Dm]tôi ca [C]tụng thánh Danh [Am]Ngài
+đừng quên tất cả ân huệ ân huệ của [G]Chúa ân [C]huệ của Chúa
+Ngài tha [Am]thứ hết tội tôi hết tội lỗi [C]tôi 
+Ngài đã chữa hết cho tôi bệnh tật nguy [Am]nan 
+Chuộc [C]tôi khỏi mồ [Dm]sâu mồ [F]sâu nơi vực [C]tối 
+[C]Lấy yêu [F]thương [G]và thương xót làm mão [F]đội cho [C]tôi
+[F]Ôi năm tháng năm [Am]tháng tôi thỏa [Dm]lòng tuổi trẻ tôi vươn [C]cao
+[C]Vươn [Fm]cao sức mới như phượng [Em]hoàng 
+[Am]Chúa hành [C]động công chính xét [G]xử công [C]minh
+[A][Dm]Chúa có lòng thương [F]xót ban [G]phát cho [C]người ân [G]huệ đến muôn đời [Fm]sau [C]
+
+2. Chúa không giận [C]lâu không hay quở [Am]trách 
+Chúa đem tình [Dm]thương cho [C]người vấp lỗi [Am]phạm
+tùy theo những việc đã làm không hề trả [G]báo không [C]hề trả báo
+Vì trời [Am]cao cách bao nhiêu với mặt đất [C]kia 
+thì tình yêu Chúa cho ta cũng là bấy [Am]nhiêu
+Dành [C]cho ai cậy [Dm]trông lòng [F]tin yêu một [C]Chúa
+[C]Ấy như [F]Cha [G]tình thương con thì Chúa [F]là thể [C]ấy
+[F]Vì Chúa biết con [Am]cái Chúa thể [Dm]nào 
+Và Ngài đã yêu [C]thương [C]Yêu [Fm]thương như mới khi tạo [Em]dựng 
+[Am]Chúa biết [C]rằng thân ta chỉ [G]là bụi [C]đất [A][Dm]Chúa có lòng thương 
+[F]xót ban [G]phát cho [C]người ân [G]huệ đến muôn đời [Fm]sau [C]
+  `
+},
+
+{
+  id: 1780132656195,
+  title: "[23] CHÚA LÀ TÌNH YÊU",
+  artist: "Composer / arranger",
+  key: "F",
+  content: `
+ĐK:Chúa là Tình Yêu cao vời trên ngàn mây [C]xanh,
+ấm [F]lòng cho người lữ [Am]hành. [G]Chúa là Tình [F]Yêu. 
+
+[Dm]Trên đường đời lâu [Bb]dài [Am]cho mưa nắng sờn [Dm]vai. 
+[Gm]Nhưng Chúa là Tình [C]Yêu thì [C]con vui bước bên [F]Người.
+
+[Dm]Như đồng tử mắt [Bb]người [Am]thương bênh đỡ đời [Dm]con. 
+[Gm]Ôi Chúa là Tình [C]Yêu ngày [C]đêm ủ ấp dắt [F]dìu.
+[Dm]Như phượng hoàng bay [Bb]lượn[Am]giương đôi cánh ủ [Dm]con. 
+[Gm]Ôi Chúa là Tình [C]Yêu chở[C]che con những đêm[F] ngày.
+  `
+},
+
+{
+  id: 1780132904595,
+  title: "[24] CHÚA NGUỒN YÊU THƯƠNG",
+  artist: "TRỊNH CHÚC",
+  key: "Em",
+  content: `
+[Em]Chúa là nguồn [C]vui là hạnh [B]phúc đến muôn [Em]người 
+Ngài dẫn [D]đưa chúng ta [G]vào đường [D]ánh sáng yêu [Em]thương
+xa rời chốn tối [Am]tăm xa [D]rời chốn tối [G]tăm 
+Cánh tay [B]Ngài rộng mở đón con [Em]vào
+Ngài là nguồn [D]vui Ngài là ủi [C]an tình Ngài thở [B]than
+cho [Em]người tìm đến yêu [Am]thương 
+Cho [D]đời vơi bớt cơn [G]đau mỗi [B]khi rã [Em]rời 
+Chúa [D]ơi Ngài còn là nơi trú [Em]ẩn 
+một [Am]khi phong ba bão táp bủa [G]vây
+là [Bm]khi tim con khát khao mong [Am]chờ 
+Ôi bàn tay [B]Chúa yêu thương giữ [Em]gìn
+
+Linh hồn [E]ơi hãy hát [B]lên hãy hát [E]lên
+Lòng vui [B]sướng ca tụng Ngài [E]thôi 
+Vì Ngài nguồn sống đời [B]con quyền Ngài toàn năng vô [E]đối
+Ôi con lấy [F#m]chi? Con lấy [E]chi đáp đền [B]khi chính Chúa nguồn yêu [E]thương
+  `
+},
+
+{
+  id: 1780133102995,
+  title: "[25] CHÚA NUÔI ĐỜI TÔI",
+  artist: "TRỊNH CHÚC",
+  key: "Em",
+  content: `
+[Em]Chúa chăn nuôi [B]tôi, tôi sẽ không thiếu [Em]gì 
+[D]Ngài giúp tôi an [Em]nghỉ [D]nơi đồng cỏ xanh [Em]tươi
+đồng cỏ xanh [Am]tươi bên bờ suối [G]mát [B]Yên [Em]lành 
+
+[E]Ngài hồi linh hồn tôi dẫn đưa tôi [A]vào [Am]đường công [Em]bình
+Danh Ngài ở mãi bên [Am]tôi cho [D]dù phải chết khi [G]qua
+thung [B]lũng vực sâu u [Em]tối không [D]sợ tai hoạ [Em]gì
+Vì [D]Ngài vẫn ở cùng [Em]tôi Vì [D]Ngài vẫn ở cùng [Em]tôi 
+
+[E]Vì Ngài vẫn ở cùng tôi vì [Am]Ngài che chở cho [E]tôi
+Cây gậy và cây trượng [A]Ngài ủi an [B]tôi
+đãi tôi yến [A]tiệc trước mặt kẻ [E]thù nghịch [B]tôi
+[E]dầu Ngài xức tôi chén tôi đầy [A]lấp suốt [B]đời tràn yêu [E]thương
+Bên Người tôi theo [B]mãi muôn [B]đời con ở cùng [E]Cha [Em]
+  `
+},
+
+{
+  id: 1780133298961,
+  title: "[26] CHÚA SỐNG TRONG TÔI",
+  artist: "Khuyết Danh",
+  key: "F",
+  content: `
+[F]Cuộc sống tôi hôm [C]nay và mãi [F]mãi, 
+[Bb]tôi không [C]còn tìm sống cho chính [F]mình
+nhưng chính [Bb]là tìm [Gm]Chúa sống trong [C]tôi 
+nhưng chính là để Chúa sống trong [F]tôi. 
+
+[Bb]Kiếp [F]sống tôi đang sống trong cuộc [C]đời; 
+Nơi thân xác mong manh của con [F]người 
+nhưng chính [Bb]là tôi sống trong niềm [Am]tin, 
+tin nơi [C]Người là Con Một Thiên [F]Chúa.
+
+[Bb]Dẫu [F]sướng vui hay lúc tôi u [C]hoài;
+Tôi tin Chúa bên tôi cùng song [F]hành
+và có [Bb]Người đau khổ không còn [Am]nữa,
+nhưng chỉ [C]còn niềm vui và sức [F]sống.
+  `
+},
+
+{
+  id: 1780307681316,
+  title: "[27] CHÚA VẪN Ở CÙNG CON",
+  artist: "TRỊNH CHÚC",
+  key: "Am",
+  content: `
+[Am]Ôi lạy [C]Chúa Ngài ở [Dm]đâu! 
+Sao con tìm không [Em]thấy 
+[Am]Ôi! Ngài ở [C]đâu? Ở [F]đâu Ngài ở [E]đâu 
+[A]Ngài ở khắp mọi [Dm]nơi ngay trong lòng con [E]đấy
+nhưng con có mắt như [Am]không nhưng [G]con có tai không nghe [C]gì
+[E]Chúa [Dm]ơi lời [F]Ngài vang mãi trong [C]lòng 
+Lời [A]Ngài soi sáng tâm [Dm]hồn để lời nói [E]con
+xin khôn ngoan hành động theo đường lối [Am]Ngài
+[C]Vì ấy là lúc con nhận ra [Am]Chúa 
+vì [Dm]ấy là lúc Chúa đang cùng [C]con
+Chúa ở cùng [E]con Chúa trong lòng [Am]con
+
+[A]Chúa ơi Ngài là thành [D]đồng [A]là trụ [E]đá che đời con 
+[D]Vì không có [A]Ngài mọi sự đều vô [A]nghĩa 
+[F#m][A]Ôi hạnh phúc biết [E]bao khi con hát ca danh [A]Ngài
+và [E]Ngài vẫn ở cùng [A]con. [Am]
+  `
 }
 ];
