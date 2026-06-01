@@ -85,22 +85,25 @@ select, input {
 
 <header>🎶 Hợp Âm Thờ Phượng</header>
 
-<div class="controls">
-  <input id="search" placeholder="🔍 Tìm bài hát / lời bài hát">
-  <select id="transpose">
-    <option value="0">Giọng gốc</option>
-    <option value="1">C# / Db</option>
-    <option value="2">D</option>
-    <option value="3">D# / Eb</option>
-    <option value="4">E</option>
-    <option value="5">F</option>
-    <option value="6">F# / Gb</option>
-    <option value="7">G</option>
-    <option value="8">G# / Ab</option>
-    <option value="9">A</option>
-    <option value="10">A# / Bb</option>
-    <option value="11">B</option>
-  </select>
+<div class="controls-container" style="padding: 10px; position: relative;">
+  <div class="search-container" style="position: relative; margin-bottom: 10px;">
+      <input type="text" id="searchInput" placeholder="🔍 Tìm tên bài hát, lời nhạc..." autocomplete="off" style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+      <div id="searchSuggestions" class="suggestions-list"></div>
+  </div>
+
+  <div id="songTools" class="song-tools" style="display: none;">
+      <div class="tool-group">
+          <span>Tông:</span>
+          <button onclick="transpose(-1)">-</button>
+          <span id="currentKeyDisplay" class="badge-key">C</span>
+          <button onclick="transpose(1)">+</button>
+      </div>
+      <div class="tool-group">
+          <span>Cỡ chữ:</span>
+          <button onclick="changeFontSize(-2)">A-</button>
+          <button onclick="changeFontSize(2)">A+</button>
+      </div>
+  </div>
 </div>
 
 <div id="songView">
