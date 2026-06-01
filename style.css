@@ -68,3 +68,64 @@ pre {
   font-size: 24px !important;
   line-height: 1.8;
 }
+/* ===== CSS BỔ SUNG CHO TÍNH NĂNG GỢI Ý VÀ TOOLBAR ===== */
+.suggestions-list {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccd1d9;
+    border-radius: 0 0 6px 6px;
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+.suggestion-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f2f5;
+    font-size: 16px;
+}
+.suggestion-item:hover { 
+    background: #e6f2ff; 
+}
+.song-tools {
+    display: flex;
+    gap: 20px;
+    background: #e6f2ff;
+    padding: 10px;
+    border: 1px solid #b2d7ff;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+.tool-group button {
+    padding: 6px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #1976d2;
+    color: #1976d2;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.tool-group button:hover {
+    background: #1976d2;
+    color: white;
+}
+.badge-key {
+    background: #1976d2;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    min-width: 30px;
+    text-align: center;
+}
