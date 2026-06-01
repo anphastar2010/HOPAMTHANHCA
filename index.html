@@ -106,14 +106,11 @@ select, input {
   </div>
 </div>
 
-<div id="songView">
-  <div class="song-title" id="title"></div>
-  <div class="song-artist" id="artist"></div>
-  <div class="song-content" id="content"></div>
+<div id="songDisplay" class="song-display" style="padding: 14px;">
+    <h2 id="displayTitle" class="song-title" style="padding:0; margin-bottom:4px;"></h2>
+    <div id="displayArtist" class="song-artist" style="padding:0; margin-bottom:15px; color:#666;"></div>
+    <pre id="displayContent" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word; margin: 0; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #eee;"></pre>
 </div>
-
-<div class="song-list" id="list"></div>
-
 <script src="songs.js"></script>
 <script src="app.js"></script>
 
