@@ -1279,5 +1279,101 @@ theo Ngài mãi không [C]thôi. A [Cmajor-sixth]men
 [G]Chỉ có [D]lúc con [G]yên [E]lặng, [Am]chuyên tâm [C]để tiếp [G]nhận[D]
 [Am]Có Thánh [D]Linh dạy [G]dỗ con mới [Am]nếm [D]được ngọt [C]ngon.
   `
+},
+
+{
+  id: 1781837351139,
+  title: "[51] HÀNH TRANG TUỔI TRẺ",
+  artist: "TRỊNH CHÚC",
+  key: "G",
+  content: `
+Đk:Lạy [G]Chúa chúng con [Em]nguyện dâng Chúa cả [G]đời. 
+[D]Lạy [G]Chúa chúng con [G]xin đổi mới cuộc [C]đời. 
+Cùng với [Em]lớp sóng [D]người hành [G]hương.
+Về nhà [E]Chúa [Am]đi, về nhà [D]Chúa [G]đi.
+
+1.[G]Hành [C]trang con mang [C]theo niềm kiêu [Em]hãnh của tuổi [G]trẻ.
+[B]Hành [Em]trang con mang theo niềm tủi [Am7]nhục của kiếp [D]người [E]
+
+2.Hành trang con mang theo cuộc thác loạn của tuổi trẻ. Hành trang con mang theo niềm oán hận của lớp già
+3.Hành trang con mang theo đầy đau buồn của thế giới. Hành trang con mang theo trào căm hờn của lớp nghèo. 
+4.Hành trang con mang theo cuộc sống đầy niềm cay đắng. Hành trang con mang theo nỗi lo buồn của nhânloại. 
+5.Hành trang con mang theo mọi khát vọng tìm chân lý. Hành trang con mang theo mọi nỗ lực tìm công bằng.
+
+1>5Về [Am]đây xin dâng [Am]Cha trong lo [F#m]âu.
+[F]Đưa hai [Am]tay quyết chung [Dsuspended-fourth]xây thế giới [D]mới.
+
+Đk:Lạy [G]Chúa chúng con [Em]về từ bốn phương [G]trời.
+[D]Lạy [G]Chúa chúng con [G]về từ khắp xóm [C]làng.
+Cùng với [Em]lớp sóng [D]người hành [G]hương. 
+Về nhà [E]Chúa [Am]đi, về nhà [D]Chúa [G]đi.
+  `
+},
+
+{
+  id: 1781837680763,
+  title: "[52] HÁT CA TÔN VINH",
+  artist: "TRỊNH CHÚC",
+  key: "G",
+  content: `
+[Em]Xin [G]Chúa chúc [D]lành đem yêu thương tràn ngập anh [C]em chúng [Em]con
+Thần [G]Linh tuôn [D]tràn con cao rao một lòng tôn [C]vinh Chúa [Em]con
+Thần linh [G]Chúa đến trong mỗi [Em]người và tình yêu [D]Chúa sáng lên từng lời Chân [Em]Lý
+Bình an Thánh đến trong tâm linh và lòng trung [D]tín chúc tôn Danh ngài suốt [Em]đời
+
+Ngài đã yêu [Bm]con hoá thân làm [Am]người chuộc tội nhân [C]thế
+chết trên thập [G]hình tình Ngài vô [Bm]đối Al [D]lê lu [G]ja Al [B]lê lu [Em]ja
+Chúng con [D]luôn tôn vinh quyền trong Danh [Em]Chúa khắp nơi hát vang [D]lên Al lê lu [Em]ja
+Chúa ơi [G]Ngài là sức sống cho mọi người [D]Ngài là đuốc chiếu soi mọi đàng
+[Em]tâm hồn con hát ca xin [G]Chúa.....
+  `
+},
+
+{
+  id: 1781838008242,
+  title: "[53] HÁT LÊN VÌ LÒNG CÓ CHÚA",
+  artist: "Lê Ngọc Vinh",
+  key: "C",
+  content: `
+Hát lên [C]nào vì lòng này có [Dm]Giê xu.
+Hát lên [G]nào vì lòng này có [C]Giê [G]xu.
+Hát lên [C]nào vì lòng [C]này có [F]Giê xu.
+Ha lê [G]lu gia! Kính khen [C]Ngài.
+
+Kính khen [C]Ngài! A men! A [Em]men! Kính khen [G]Ngài! A men! A men!
+Kính khen [C]Ngài! A men! A men! Kính khen [C]Ngài! A men A men!
+Kính khen [G]Ngài! A men! A men! Ha lê lu gia! Kính khen [C]Ngài.
+  `
+},
+
+{
+  id: 1781838284289,
+  title: "[54] HÃY CẢM TẠ CHÚA HỠI NGƯỜI TRUNG TÍN",
+  artist: "TRỊNH CHÚC",
+  key: "Dm",
+  content: `
+1.Chúa [Dm]ơi tôi ngợi ca [Gm]Ngài vì [C]Ngài đã kéo tôi [Dm]lên
+Không [C]để kẻ thù vui [A]mừng vì cớ [Dm]tôi 
+Lạy [F]Chúa Đức Chúa [Gm]Trời [C]của [Dm]tôi 
+tôi kêu cứu [Dm]Ngài và [C]Ngài đã chữa cho [Dm]tôi. 
+Ngài [F]ơi Ngài đem tôi [A]lên đem tôi [Gm]lên
+linh [Dm]hồn xa rời âm [A]phủ phục hồi phục hồi mạng sống [Dm]tôi
+Vì [F]tôi nơi vực [Dm]sâu vì [C]tôi nơi u [Dm]sầu
+
+Này người trung [F]tín hãy cảm tạ Chúa [Gm]đi 
+Này người trung [C]tín hãy cảm tạ Chúa [Dm]đi
+Này người trung [F]tín hãy cảm [Dm]tạ Chúa [Gm]đi
+Này người trung [C]tín hãy cảm tạ Chúa [Dm]đi.
+
+2.Chúa [Dm]ơi cơn giận của [Gm]Ngài thường [C]thì rất chóng qua [Dm]mau
+Ân [C]huệ còn lại suốt [A]đời vì Chúa [Dm]thương 
+Lạy [F]Chúa Đức Chúa [Gm]Trời [C]của [Dm]tôi 
+khóc than kéo [Dm]dài ngập [C]chìm u tối trong [Dm]đêm 
+Mừng [F]vui rạng đông đang [A]lên đông đang [Gm]lên
+Tôi [Dm]được thịnh vượng nói [A]rằng
+Dù gì dù gì không chuyển [Dm]lay
+Nhờ [F]Chúa ơn rộng [Dm]sâu 
+Lập [C]tôi núi vững [Dm]vàng
+  `
 }
 ];
