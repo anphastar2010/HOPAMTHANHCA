@@ -2389,5 +2389,92 @@ Lòng con bay cao như [F]cánh chim [Dm]trời
 hát ca tụng [Gm]Chúa tuyệt [C]vời Thánh linh đời [Dm]con 
 [Dm]
   `
+},
+
+{
+  id: 1782208125143,
+  title: "[91] TÂM TÌNH DÂNG HIẾN",
+  artist: "Oanh Sông Lam",
+  key: "Am",
+  content: `
+Đk:Biết lấy [Am]gì cảm mến. Biết lấy [F]chi [G]báo [C]đền.
+Hồng ân [Am]Chúa cao [E]vời Chúa đã [Am]làm [E]cho [Am]con.
+
+1.Thương con từ ngàn [C]xưa một tình [F]yêu [G]chan [Am]chứa.
+Và chọn [Dm]con [G]đi [C]làm đuốc sáng chiếu [F]soi trần [E]gian.
+Cho con [Am]say tình [C]mến và này [F]con [G]xin [Am]đến.
+Một đời [Dm]trung [G]trinh [C]làm muối đất ướp [E]cho mặn [Am]đời.
+
+2.Trao cho con lời [C]Chúa dù đời [F]con [G]hoen [Am]úa.
+Nguyện đời [Dm]con [G]đem [C]Lời Chân Lý đến [F]cho mọi [E]nơi.
+Ra đi [Am]đầy nguyện [C]ước và này [F]con [G]gieo [Am]bước.
+Nguyện đời [Dm]con [G]đem [C]nguồn Yêu Mến đến [E]cho mọi [Am]người.
+
+3.Chân đi đạp đồi [C]non biển đời [F]bao [G]sóng [Am]gió.
+Ngài đỡ [Dm]nâng [G]con [C]dù nguy biến vẫn [F]ở cùng [E]con.
+Yêu thương [Am]làm hành [C]trang ngọn đèn [F]tim [G]thắp [Am]sáng.
+Môt đời [Dm]vui [G]như [C]đàn chim hót [E]suối reo đầu [Am]ngàn.
+
+4.Xin cho con bình [C]an và đầu [F]cao [G]mắt [Am]sáng
+nguyện đời [Dm]con [G]đi [C]làm chứng tá Chúa [F]trên trần [E]gian.
+Xin cho [Am]con nghèo [C]khó cuộc đời [F]bao [G]nguy [Am]khó.
+Đời hạnh [Dm]phúc [G]con [C]được chính [E]Chúa gia nghiệp trọn [Am]đời.
+  `
+},
+
+{
+  id: 1782208341291,
+  title: "[92] THỜ LẠY TÔN VINH",
+  artist: "TRỊNH CHÚC",
+  key: "F",
+  content: `
+Lạy [F]Chúa là Đức Chúa Trời toàn năng
+Công việc Chúa Ôi thật vĩ [Dm]đại dường [C]bao.
+Lạy [F]Vua của các thời [F]đại.
+Đường lối [Am]Chúa chân thật công [Dm]chính ôi lạy [C]Chúa.
+Ai không kính sợ Ngài? [C]Ai không kính sợ [F]Ngài!
+Vì Ngài là [Gm]Đấng duy nhất thánh [F]khiết vô [C]cùng.
+Vì Ngài là Đấng thánh [F]khiết vô [F]cùng.
+Tất cả dân [C]tộc sẽ đến thờ [F]Ngài.
+Vì các hành [C]động công bình của [F]Ngài
+  `
+},
+
+{
+  id: 1782208664466,
+  title: "[93] TÌNH YÊU CHÚA",
+  artist: "TRỊNH CHÚC",
+  key: "D",
+  content: `
+1. [D][A][Bm][A][D][A]
+[D]Tình yêu ôi của [F#m]Chúa ví như mặt [Bm]trời tỏa [A]sáng đến muôn [Bm]người
+như biển [A]rộng lòng sông [A]sâu tha [D]thiết
+Ngàn vì [D]sao tinh tú không ví [A]bằng
+tình thương [F#m]Chúa bao [Bm]la vô [G]bờ
+[A]Theo đêm [D]tối đời con ngã [D]gục
+nhưng Chúa [A]đã vực con nâng [Bm]dậy
+xoa [A]dịu vết lầm [D]than an [A]ủi những bảo [D]ban
+
+Tình [G]yêu Chúa [A]đến trong [D]con
+như [Bm]ngàn hoa [G]nở dưới nắng [A]hồng
+nồng thắm êm trong ủi [D]an
+Lời [G]Cha êm [A]ái (trong tâm hồn)
+Lòng [G]con vui [A]sướng hân [D]hoan 
+ca [Bm]tụng hát [G]cảm tạ Chúa [A]Trời Tình Chúa yêu thương vô [D]bờ.
+
+Tình yêu thương của [F#m]Chúa mãi không phai [Bm]mờ ngàn [A]năm mãi không [Bm]mờ
+như sương [A]trời phủ cây [A]xanh đâm [D]lá 
+Và ngàn [D]hoa thơm ngát ánh chiếu [A]dương
+tình yêu [F#m]Chúa dẫn [Bm]đưa muôn [G]người
+[A]Theo chân [D]lý về nơi bến [D]thật
+xa đêm [A]tối về nơi an [Bm]bình
+Chúa [A]là Chúa tình [D]yêu Chúa [A]là Chúa tình [D]yêu
+
+Nguyện [G]xin soi [A]sáng trong [D]con
+nghe [Bm]được tiếng [G]Ngài tha thiết [A]gọi
+lời Chúa êm như tình [D]Cha yêu [G]thương thân [A]ái  (trong tâm hồn) 
+Miệng [G]con xin [A]hát ca [D]khen
+chúc [Bm]tụng với [G]tình yêu Chúa [A]Trời và hát tôn vinh muôn [D]đời.
+  `
 }
 ];
