@@ -2476,5 +2476,360 @@ lời Chúa êm như tình [D]Cha yêu [G]thương thân [A]ái  (trong tâm h�
 Miệng [G]con xin [A]hát ca [D]khen
 chúc [Bm]tụng với [G]tình yêu Chúa [A]Trời và hát tôn vinh muôn [D]đời.
   `
+},
+
+{
+  id: 1782288195911,
+  title: "[94] TÌNH YÊU THIÊN CHÚA",
+  artist: "Thế Thông - Đình Diễn",
+  key: "Dm",
+  content: `
+Tình yêu Thiên [Dm]Chúa như trăng như sao
+đưa con lên [A]cao, ôi nào biết lấy chi báo [Dm]đền.
+Chúa dắt dìu [F]con đi qua đêm đen,
+cho con ca [Gm]khen tình yêu Chúa ôi như đại [A]dương.
+Tình yêu Thiên [Dm]Chúa chói sáng khắp chốn,
+gội sạch tội [Dm]đời, ôi tình Chúa sao quá cao [A]vời.
+Con quyết trọn [Dm]đời dâng hiến xác [Gm]thân
+loan báo Thiên [A]ân cho khắp nhân [Dm]trần. 
+
+1.Người đã thương [Dm]tôi từ thuở xa xôi chưa có bầu [A]trời. 
+[Dm]Nào ai có [F]biết tôi đã từ [Bb]đâu sinh đến trong [A]đời. 
+Chúa đã thương [Gm]tôi nên có đôi [F]môi
+tôi ca ngàn [A]khúc hát vang lên ngợi [Dm]khen.
+
+2.Nhìn ngước lên [Dm]cao ngàn ánh trăng sao tinh tú dạt [A]dào. 
+[Dm]Nào ai dám [F]nói đất thấp trời [Bb]cao Chúa ở nơi [A]nào? 
+Chúa ở bên [Gm]tôi, đâu có xa [F]xôi
+như đôi hình [A]với bóng theo nhau mọi [Dm]nơi.
+
+3.Ngày tháng hôm nay và mãi tương lai Chúa biết từng ngày.
+Đời tôi đang sống dẫu có đổi thay tay Chúa an bài.
+Mưa gió miên man hay nắng hân hoan, môi luôn tràn tiếng hát tâm tư bình an.
+
+4.Trời đất bao la dành hết cho ta đâu có tình cờ.
+Tình yêu Thiên Chúa đã tác tạo nên sông núi trên đời.
+Trong gió lên khơi, trong tiếng mưa rơi nghe như là tiếng Chúa trong tim mọi người.
+  `
+},
+
+{
+  id: 1782288509642,
+  title: "TÌNH CON DÂNG HIẾN",
+  artist: "TRỊNH CHÚC",
+  key: "F",
+  content: `
+1. Đời [F]con có gì [Gm]đâu,
+chỉ xin [C]dâng thân xác linh hồn,
+là đời [F]con Chúa ơi. 
+Lòng con dâng hiến Chúa tình [Bb]thơ,
+nghèo đơn [Gm]sơ thắm thiết mong [C]chờ,
+được [C]Cha chấp [Dm]nhận, chấp [C]nhận của lễ đời [F]con.
+
+Chúa ơi, vàng bạc kia chẳng là hành trang,
+suốt đời [Gm]con xin, hiến dâng bao tâm [C]tình,
+[F]mọn hèn đời con [Gm]lắm thay, hương [C]tình bay.
+[F]Chúa ơi, ngày buồn vui một lòng dâng Chúa,
+những ngày [Gm]buồn vui, chứa chan bao ân [C]tình, 
+[F]cùng Ngài. [C]cùng Ngài xin hiến [F]đời con....
+
+2. Nguyện [F]dâng Chúa từ [Gm]nhân,
+một bài [C]ca con hát dâng Ngài,lời thề [F]son thủy chung. 
+Dù gian nan với những hiểm [Bb]nguy,
+lòng không [Gm]phai không chút nao [C]sờn,
+thành [C]công thất [Dm]bại, xin [C]làm của lễ đời [F]con.
+
+Chúa ơi, ngợi khen Cha một bài ca mới,
+hát ngợi [Gm]khen Cha, Thánh linh ôi nhiệm [C]màu,
+[F]nguyện xin Ngài luôn [Gm]đoái thương đến [C]tình con.
+[F]Chúa ơi, Cảm tạ Chúa một lòng tôn kính, hãy cảm [Gm]tạ Chúa,
+hiến dâng với tấm [C]lòng, [F]hỷ hoan. [C]cùng Ngài xin hiến [F]đời con.
+  `
+},
+
+{
+  id: 1782288527182,
+  title: "[95] TÌNH CON DÂNG HIẾN",
+  artist: "TRỊNH CHÚC",
+  key: "F",
+  content: `
+1. Đời [F]con có gì [Gm]đâu,
+chỉ xin [C]dâng thân xác linh hồn,
+là đời [F]con Chúa ơi. 
+Lòng con dâng hiến Chúa tình [Bb]thơ,
+nghèo đơn [Gm]sơ thắm thiết mong [C]chờ,
+được [C]Cha chấp [Dm]nhận, chấp [C]nhận của lễ đời [F]con.
+
+Chúa ơi, vàng bạc kia chẳng là hành trang,
+suốt đời [Gm]con xin, hiến dâng bao tâm [C]tình,
+[F]mọn hèn đời con [Gm]lắm thay, hương [C]tình bay.
+[F]Chúa ơi, ngày buồn vui một lòng dâng Chúa,
+những ngày [Gm]buồn vui, chứa chan bao ân [C]tình, 
+[F]cùng Ngài. [C]cùng Ngài xin hiến [F]đời con....
+
+2. Nguyện [F]dâng Chúa từ [Gm]nhân,
+một bài [C]ca con hát dâng Ngài,lời thề [F]son thủy chung. 
+Dù gian nan với những hiểm [Bb]nguy,
+lòng không [Gm]phai không chút nao [C]sờn,
+thành [C]công thất [Dm]bại, xin [C]làm của lễ đời [F]con.
+
+Chúa ơi, ngợi khen Cha một bài ca mới,
+hát ngợi [Gm]khen Cha, Thánh linh ôi nhiệm [C]màu,
+[F]nguyện xin Ngài luôn [Gm]đoái thương đến [C]tình con.
+[F]Chúa ơi, Cảm tạ Chúa một lòng tôn kính, hãy cảm [Gm]tạ Chúa,
+hiến dâng với tấm [C]lòng, [F]hỷ hoan. [C]cùng Ngài xin hiến [F]đời con.
+  `
+},
+
+{
+  id: 1782288720853,
+  title: "[96] TÔI ẨN NÁU NƠI NGÀI",
+  artist: "TRỊNH CHÚC",
+  key: "D",
+  content: `
+Lạy [D]Chúa tôi ẩn náu nơi [Bm]Ngài
+xin chớ để tôi [G]bị hổ thẹn muôn [A]đời
+Ngài giải cứu tôi bằng sự công chính công chính của [D]Ngài
+Xin nghiêng [G]tai nghe lời nguyện [Bm]cầu
+ban ơn thiêng cứu chuộc cuộc [A]đời
+Ngài là thành lũy cứu [D]tôi
+Đem tôi [G]ra xa khỏi hận [Bm]thù
+bao đau thương không còn ngập [A]chìm
+Ngài là vách đá chở che đời [D]tôi 
+
+Tôi hi [F#m]vọng trông [Bm]cậy nơi [A]Ngài từ khi thiếu [D]niên 
+Và khi sinh [A]ra tôi [G]đã nương [A]tựa nương tựa nơi [D]Ngài 
+Tôi sẽ luôn ca [Bm]ngợi Ngài [G]như dấu thiêng bao [A]lạ lùng
+là đời [D]tôi 
+Nhưng chính cha là [Bm]nguồn lực
+nơi náu nương vững [A]đời đời
+tôi tràn ngập lời [D]ca [A]tôi tràn ngập lời [D]ca
+  `
+},
+
+{
+  id: 1782289040919,
+  title: "[97] TÔI KHÔNG CÒN CÔ ĐƠN-HL",
+  artist: "Hùng Lân",
+  key: "Dm",
+  content: `
+1.[Dm]Tôi không còn cô đơn buồn [F]khô héo trên dòng [Dm]đời.
+[Bb]Tôi không còn cô [Gm]đơn mặc [C]cho năm tháng trôi [F]xuôi.
+[Bb]Tôi không còn cô [Dm]đơn dù [F]rằng bờ vai vất [Bb]vả.
+Chuyện [F]lòng ngổn ngang mấy [Dm]ngả.
+Lênh [A]đênh tìm một mái [Dm]nhà.
+[Dm]Tôi đã gặp niềm vui từ [F]khi lắng nghe Lời [Dm]Người.
+[Bb]Tôi đã gặp niềm [Gm]vui bừng [C]lên trong đáy tim [F]tôi.
+[Bb]Tôi đã gặp niềm [Dm]vui từ [F]ngày Tình yêu sáng [Bb]tỏ.
+Mở [F]rộng hồn tôi bé [Dm]nhỏ. Dắt [A]tôi đến miền tôi [Dm]mơ.
+
+Đk:Chúa đã dạy [D]tôi: Yêu Chúa yêu [A]người.
+Chúa đã dạy [Em]tôi yêu [A]người như chính thân [D]tôi.
+Tình yêu chân [G]chính vì nghĩa quên [D]mình.
+Còn gì cao [Em]quí bằng tình yêu [A]biết hi [D]sinh.
+Chúa đã dạy [D]tôi, nhân ái công [A]bình.
+Manh áo hạt [Em]cơm vui [A]buồn chia xớt cho [D]nhau.
+Nhìn nhau không [G]nói mà ý khôn [D]vơi.
+Còn đâu buồn [Em]cô đơn nữa [A]người [D]ơi!
+
+2. [Dm]Tôi yêu người anh em cùng [F]tôi sống chung hằng [Dm]ngày.
+[Bb]Tôi yêu người chưa [Gm]quen từ [C]phương nao đến nơi [F]đây.
+[Bb]Không quên lời dạy [Dm]xưa: Mọi [F]người là con Chúa [Bb]cả.
+Thì [F]dù ngược xuôi tất [Dm]tả. Nhưng [A]sum họp một mái [Dm]nhà.
+[Dm]Tôi yêu người nông dân làm [F]bông lúa lên vàng [Dm]trời.
+[Bb]Tôi yêu người công [Gm]nhân làm [C]cho nếp sống thêm [F]tươi.
+[Bb]Noi gương Người khi [Dm]xưa làm [F]thợ mà vui vất [Bb]vả
+Một [F]người hòa chung tất [Dm]cả. Nghĩa [A]anh em cùng một [Dm]Cha.
+  `
+},
+
+{
+  id: 1782289404784,
+  title: "[98] TÔI KHÔNG CÒN CÔ ĐƠN",
+  artist: "TRỊNH CHÚC",
+  key: "C",
+  content: `
+[C][Am][G]
+[C]Xin cho con biết đếm từng ngày
+Xin cho [Am]con biết sống từng giờ
+sao cho [C]vừa lòng Cha kính yêu
+Đem tin [Dm]yêu thắp sáng vào [Am]đời
+giang đôi tay thân thương cho [C]người
+biết đón [Dm]nhận gian [F]nan khó [C]khăn
+biết vui [Dm]nhận thử [G]thách Chúa trao cho [C]mình
+Vì Danh Cha mến yêu vì Danh Cha hiển vinh muôn [C]đời
+cho môi [F]con ca bài hát mới, dâng lên [C]Cha những lời tôn vinh
+ngợi [F]khen chúc [G]tán Chúa trời nhân từ
+xin cho [C]con biết đếm từng [Am]ngày
+theo chân[Dm]Cha bước đi trong đời, [G]khi,
+lòng con vui hát bên [C]Ngài
+
+[Am]Sang giàu danh tước được ích [E]chi nào
+con quỳ bên [Dm]Chúa nguyện khấn [C]xin Ngài
+[F]Cho tâm con không còn khô [Dm]héo
+xin [G]Chúa hãy đến với [C]con 
+Giê xu ơi con mến yêu [Am]Ngài
+Giê xu [Dm]ơi con hát cho [G]Ngài
+Trong tâm con không còn cô [C]đơn
+  `
+},
+
+{
+  id: 1782289845854,
+  title: "[99] TRÌNH LÊN VỚI CHÚA",
+  artist: "TRỊNH CHÚC",
+  key: "D",
+  content: `
+1.Tôi càng thêm ca [D]hát chúc tụng Chúa tôi nhiều [A]hơn
+Tôi lớn tiếng ca [G]ngợi cảm tạ Chúa tôi vô [A]cùng
+Là [D]khi tôi gặp khổ [Em]đau là khi tôi gặp gian [A]nan
+[D]Tôi vẫn đang ca ngợi Ngài [Bm]Tôi hát lên chúc tụng Ngài 
+[Em]Trong lúc tôi đang [Bm]hoạn nạn
+Tôi vẫn xin ca [A]ngợi cảm tạ Chúa tôi
+Tôi vẫn xin ca [Bm]ngợi cảm tạ Chúa [D]tôi
+
+Hãy trình lên với [F#m]Chúa khó [Em]nguy trong đời [A]ta
+Hãy trình lên với [D]Chúa đắng cay bao khổ [A]sầu
+Cho dù Chúa đã [D]biết vẫn luôn nhân từ chẳng phai
+Và [Bm]chính lúc ấy tôi [Em]được bên [G]Chúa
+Và chính lúc [Em]ấy Chúa [D]ở trong [A]tôi 
+[D]Tôi sẽ không lo sợ gì [Bm]Tôi sẽ không lo sợ gì 
+[Em]khi bóng đen vây [Bm]trùm đời 
+Tôi hát khen Danh [A]Ngài Vì Chúa vẫn ở cùng [D]tôi
+
+2.Những gì tôi đang [D]có nếu là Chúa trao về [A]tôi
+Tôi lớn tiếng ca [G]ngợi cảm tạ Chúa tôi vô [A]cùng
+Vì [D]khi tôi nhận khổ [Em]đau từ tay Chúa danh cho [A]tôi
+[D]Tôi vẫn luôn tin rằng Ngài [Bm]đã cứu tôi trên thập tự 
+[Em]Mang đớn đau cho [Bm]cuộc đời
+Tôi vẫn xin ca [A]ngợi cảm tạ Chúa tôi
+Tôi vẫn xin ca [Bm]ngợi cảm tạ Chúa [D]tôi
+  `
+},
+
+{
+  id: 1782291991514,
+  title: "[100] Trong Danh Chúa Chúng Con Không Sợ Gì",
+  artist: "Mai Văn Hiền",
+  key: "G",
+  content: `
+1.Trong danh [G]Chúa không sợ [C]gì
+trong Danh Chúa không sợ [D]gì
+vì quyền [D]năng [D]ta là Chân [G]Lý 
+Trong tay [C]Chúa không nao sờn
+trong Danh [G]Chúa không nao sờn
+[D]vì quyền năng đây [D]là Chúa ban 
+
+[G]Hãy [C]ca vang lên vang lên
+chỉ [G]ca tôn vinh tôn vinh
+bằng dòng [G]châu hay chính máu [D]tim 
+Phải... [D]...khen Cha [D]suốt đời [G]ta.
+
+2.Khi thăm [G]viếng khi nguyện [C]cầu
+trong Danh Chúa không sợ [D]gì
+vì quyền [D]năng [D]ta là Chân [G]Lý 
+Khi ca [C]hát khi tôn thờ
+trong Danh [G]Chúa không nao sờn [D]
+vì quyền năng đây [D]là Chúa ban 
+
+[G]Phải [C]ca Al le' lu ia! 
+Vẫn [G]ca Al lé lu ia! 
+và ngợi... [G]châu hay chính máu [D]tim 
+Phải... [D]...khen Cha [D]suốt đời [G]ta.
+
+3.Khi vun xới khi gieo trồng
+trong Danh Chúa không sợ gì
+vì quyền năng ta là Chân Lý
+Khi đối chứng khi trưng bằng 
+trong Dánh Chúa không nao sờn
+vì quyền năng đây là Chúa ban
+4.Ông Đa vít đôi tay trần
+trong Danh Chúa không sợ gì
+vì quyền năng Ông là Danh Chúa
+Gô li át thân như đồng
+không Danh Chúa nên cam đành
+đầu lìa thân duy Hòn Đá Thiêng
+  `
+},
+
+{
+  id: 1782292713181,
+  title: "[101] TRÔNG CẬY CHÚA",
+  artist: "Nguyễn Duy",
+  key: "Am",
+  content: `
+1.[Am]Con vẫn trông cậy [C]Chúa
+lòng [A]con tin tưởng nơi [Dm]Ngài. 
+[G]Con hy vọng vào [E]Ngài
+đời [Dm]con nương bóng Chúa [C]thôi. [E]
+[Am]Con xin trao về [C]Chúa
+niềm [Dm]tin và ước mơ [E]này.
+Được [E]quên đi những âu [F]lo
+tìm [G]vui theo [E]bước chân [Am]Cha. 
+
+Con luôn trông cậy [C]Chúa 
+khác [F]nào em bé ngủ [G]yên
+trong tay mẹ [Am]hiềnbên lời yêu [C]mến.
+Tình [F]Chúa mãi mãi theo [Em7]con
+cho tâm [Am]hồn dù trong mưa [C]gió
+mãi mãi bình [G]yên, [Em7]mãi mãi bình [Am]yên.
+
+2.[Am]Giữa tháng năm đời [C]sống
+nhiều [A]khi mưa đổ bên [Dm]trời. 
+[G]Đam mê nặng lòng [E]người
+niềm [Dm]đau khơi nước mắt [C]rơi. [E]
+[Am]Những ánh sao còn [C]đó
+còn [Dm]tin yêu ngước lên [E]trời.
+Tình [E]thương Thiên Chúa muôn [F]nơi
+ngàn [G]năm soi [E]ấm tin [Am]vui. 
+
+3.Nếu Chúa không gọi nắng
+thì hoa đâu nở trong vườn.
+Con không tựa vào Ngài
+thì con như lá úa phai.
+Yếu đuối trong cuộc sống,
+đời con tay trắng hư không,
+đường đi sông núi mênh mông,
+làm sao qua hết long đong.
+
+4.Đã thấy trong đời sống,
+thời gian trôi dạt vô tình.
+Ai tin được cuộc đời 
+ngày mai vẫn mãi thế thôi.
+Xin trao muôn đổi thay
+vào tay Thiên Chúa an bài,
+Ngài đưa con bước hôm nay,
+còn thương con mãi tương lai.
+  `
+},
+
+{
+  id: 1782293410657,
+  title: "[102] Trụ Mây Trụ Lửa",
+  artist: "Khuyết Danh",
+  key: "Am",
+  content: `
+1.Chúa [Am]ôi con đang [C]đi quanh trong đồng [Am]hoang
+đêm sương [C]giăng ban ngày trời [A]nắng thiên da [Dm]vàng.
+Chúa [D]ôi con lang [G]thang trên sa mạc [Dm]hoang 
+ôi miên [G]man nghe quen ngày [E]tháng hoa rơi [Am]tàn
+
+Xin ban mai con theo "Trụ [E]Mây" 
+Xin ban đêm con quanh "Trụ [Am]Lửa"
+Giê Hô Va Giê Hô [E]Va 
+Xin cho [Am]con chăm xem "Trụ [E]Mây"
+yêu thương an vui bên "Trụ [Am]Lửa" 
+Giê Hô [E]Va Giê Hô [Am]Va
+
+2. Chúa [Am]ôi thân con [C]đây vong nô được [Am]tha
+chai chân [C]tay manh quần chầm [A]vá mi hoen [Dm]nhoà.
+Vất [D]vơ đơn côi [G]phiêu lưu xa mẹ [Dm]cha
+trong đêm [G]đông len trên đường [E]giá không căn [Am]nhà.
+
+3.Chúa [Am]ôi đây "mana" [C]nuôi thân hình [Am]con
+khi con [C]ăn linh hồn dần [A]lớn không hao [Dm]mòn
+Tiếng [D]Cha yêu [G]thương khoan dung trên đầu [Dm]non
+cho con [G]nghe uy quyền Ngài [E]lớn yên tâm [Am]hồn.
+  `
 }
 ];
