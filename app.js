@@ -33,18 +33,21 @@ function transposeText(text, step) {
   return text.replace(/\[([^\]]+)\]/g, (_, chord) => `[${transposeChord(chord, step)}]`);
 }
 
-// --- TỰ ĐỘNG TẠO ĐOẠN XEM TRƯỚC LỜI (TRÍCH 2 DÒNG ĐẦU KHÔNG CHỨA HỢP ÂM) ---
+// --- TỰ ĐỘNG TẠO ĐOẠN XEM TRƯỚC LỜI (TRÍCH 1 DÒNG ĐẦU TIÊN SIÊU NGẮN) ---
 function getLyricsSnippet(content) {
-  // Xóa bỏ toàn bộ hợp âm dạng [C], [Am] để lấy lời thuần túy
-  let cleanText = content.replace(/\[([^\]]+)\]/g, '');
+  let cleanText = content.replace(/\[([^\]]+)\]/g, ''); // Xóa bỏ ký hiệu hợp âm []
   
-  // Cắt nhỏ câu hát theo dấu xuống dòng, loại bỏ khoảng trắng thừa
   let lines = cleanText.split('\n')
     .map(line => line.trim())
-    .filter(line => line.length > 0 && !line.toLowerCase().startsWith('intro')); // Bỏ qua dòng dạo nhạc Intro
+    .filter(line => line.length > 0 && !line.toLowerCase().startsWith('intro'));
 
-  // Lấy 2 dòng đầu tiên gộp lại phân tách bằng dấu gạch chéo
-  return lines.slice(0, 2).join(' / ') + '...';
+  if (lines.length === 0) return "Bấm để xem lời bài hát...";
+  
+  let firstLine = lines[0];
+  if (firstLine.length > 60) {
+      return firstLine.substring(0, 60) + '...';
+  }
+  return firstLine + '...';
 }
 
 // --- RENDER DANH MỤC BÀI HÁT LÊN TRANG CHỦ ---
@@ -53,17 +56,17 @@ const songDisplay = document.getElementById('songDisplay');
 const songTools = document.getElementById('songTools');
 
 function renderDirectory() {
-  // Ẩn khu vực xem bài hát chi tiết, hiện danh mục thẻ bài hát
-  songDisplay.style.display = 'none';
-  songTools.style.display = 'none';
-  directoryContainer.style.display = 'flex';
+  // Sử dụng class .hidden để ẩn/hiện triệt để màn hình danh sách và chi tiết
+  songDisplay.classList.add('hidden');
+  songTools.classList.add('hidden');
+  directoryContainer.classList.remove('hidden');
 
   if (typeof songs === 'undefined' || songs.length === 0) {
-    directoryContainer.innerHTML = `<div style="text-align:center; color:#999; padding:4px;">Chưa có bài hát nào trong thư viện...</div>`;
+    directoryContainer.innerHTML = `<div style="text-align:center; color:#999; padding:20px;">Chưa có bài hát nào trong thư viện...</div>`;
     return;
   }
 
-  // Tạo cấu trúc thẻ Card cho từng bài hát giống app Hợp Âm Chuẩn
+  // Tạo cấu trúc thẻ Card cho từng bài hát xếp dọc
   directoryContainer.innerHTML = songs.map(s => `
     <div class="song-card" onclick="selectSong(${s.id})">
         <div class="card-header">
@@ -148,10 +151,10 @@ function changeFontSize(delta) {
 function renderSong(song) {
   currentActiveSong = song;
   
-  // Ẩn danh sách trang chủ, bật khu vực bài hát
-  directoryContainer.style.display = 'none';
-  songDisplay.style.display = 'block';
-  songTools.style.display = 'flex';
+  // Ẩn danh sách trang chủ bằng cách thêm .hidden, hiện chi tiết bằng cách xóa .hidden
+  directoryContainer.classList.add('hidden');
+  songDisplay.classList.remove('hidden');
+  songTools.classList.remove('hidden');
   
   document.getElementById('displayTitle').textContent = song.title;
   document.getElementById('displayArtist').textContent = song.artist || "Tác giả: Chưa rõ";
@@ -167,5 +170,5 @@ function renderSong(song) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --- KHỞI CHẠY MẶC ĐỊNH (MỚI: HIỂN THỊ DANH MỤC TRANG CHỦ) ---
+// --- KHỞI CHẠY MẶC ĐỊNH ---
 renderDirectory();
