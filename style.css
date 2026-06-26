@@ -218,3 +218,7 @@ pre {
     text-overflow: ellipsis !important; /* Tạo dấu ... ở cuối câu nếu dòng quá dài */
     color: #8e9aa8 !important;
 }
+/* Lớp dùng để ẩn màn hình chống xung đột !important */
+.hidden {
+    display: none !important;
+}
