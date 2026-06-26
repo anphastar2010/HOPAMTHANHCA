@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <meta charset="UTF-8">
+  <title>Hợp Âm Thờ Phượng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<title>Hợp Âm Thờ Phượng</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="style.css">
 
 <style>
+/* Giữ lại các style cốt lõi của hệ thống cũ */
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
@@ -56,27 +60,13 @@ select, input {
   margin-bottom: 6px;
 }
 
-/* ===== HỢP ÂM ===== */
+/* ===== HỢP ÂM NỔI BẬT ===== */
 .chord {
   color: #0d47a1;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
   font-size: 19px;
   letter-spacing: 0.5px;
-}
-/* ===== DANH SÁCH ===== */
-.song-list {
-  border-top: 1px solid #ddd;
-}
-
-.song-item {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
-}
-
-.song-item:hover {
-  background: #e3f2fd;
 }
 </style>
 </head>
@@ -91,11 +81,11 @@ select, input {
       <div id="searchSuggestions" class="suggestions-list"></div>
   </div>
 
-  <<div id="songTools" class="song-tools" style="display: none;">
-  <button onclick="showDirectory()" style="background: #656d78; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-right: auto;">← Danh sách</button>
+  <div id="songTools" class="song-tools" style="display: none;">
+      <button onclick="showDirectory()" style="background: #656d78; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-right: auto;">← Danh sách</button>
   
-  <div class="tool-group">
-      <span>Tông:</span>
+      <div class="tool-group">
+          <span>Tông:</span>
           <button onclick="transpose(-1)">-</button>
           <span id="currentKeyDisplay" class="badge-key">C</span>
           <button onclick="transpose(1)">+</button>
@@ -107,13 +97,16 @@ select, input {
       </div>
   </div>
 </div>
-<div id="directoryContainer" class="directory-container" style="padding: 10px;">
-    </div>
-<div id="songDisplay" class="song-display" style="padding: 14px;">
+
+<div id="directoryContainer" class="directory-container" style="display: flex; flex-direction: column; width: 100%; gap: 12px; padding: 10px; box-sizing: border-box;">
+</div>
+
+<div id="songDisplay" class="song-display" style="padding: 14px; display: none;">
     <h2 id="displayTitle" class="song-title" style="padding:0; margin-bottom:4px;"></h2>
     <div id="displayArtist" class="song-artist" style="padding:0; margin-bottom:15px; color:#666;"></div>
     <pre id="displayContent" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word; margin: 0; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #eee;"></pre>
 </div>
+
 <script src="songs.js"></script>
 <script src="app.js"></script>
 
