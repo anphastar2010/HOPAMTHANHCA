@@ -56,10 +56,10 @@ const songDisplay = document.getElementById('songDisplay');
 const songTools = document.getElementById('songTools');
 
 function renderDirectory() {
-  // Sử dụng class .hidden để ẩn/hiện triệt để màn hình danh sách và chi tiết
-  songDisplay.classList.add('hidden');
-  songTools.classList.add('hidden');
-  directoryContainer.classList.remove('hidden');
+  // 🔥 Bỏ qua file CSS, dùng quyền ưu tiên cao nhất của JS để ép ẩn/hiện màn hình
+  songDisplay.style.setProperty('display', 'none', 'important');
+  songTools.style.setProperty('display', 'none', 'important');
+  directoryContainer.style.setProperty('display', 'flex', 'important');
 
   if (typeof songs === 'undefined' || songs.length === 0) {
     directoryContainer.innerHTML = `<div style="text-align:center; color:#999; padding:20px;">Chưa có bài hát nào trong thư viện...</div>`;
@@ -151,10 +151,11 @@ function changeFontSize(delta) {
 function renderSong(song) {
   currentActiveSong = song;
   
-  // Ẩn danh sách trang chủ bằng cách thêm .hidden, hiện chi tiết bằng cách xóa .hidden
-  directoryContainer.classList.add('hidden');
-  songDisplay.classList.remove('hidden');
-  songTools.classList.remove('hidden');
+  // 🔥 Ép ẩn danh sách trang chủ và bật chi tiết lên mà không phụ thuộc vào file CSS bên ngoài
+  directoryContainer.style.setProperty('display', 'none', 'important');
+  songDisplay.style.setProperty('display', 'block', 'important');
+  songTools.style.setProperty('style', 'display', 'important'); // dự phòng
+  songTools.style.setProperty('display', 'flex', 'important');
   
   document.getElementById('displayTitle').textContent = song.title;
   document.getElementById('displayArtist').textContent = song.artist || "Tác giả: Chưa rõ";
