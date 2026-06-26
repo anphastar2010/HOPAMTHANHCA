@@ -187,3 +187,34 @@ pre {
     border-radius: 4px;
     border: 1px solid #bcd4f5;
 }
+/* ÉP DANH SÁCH HIỂN THỊ THEO 1 CỘT DỌC NHAU */
+.directory-container, #directoryContainer {
+    display: flex !important;
+    flex-direction: column !important; /* Ép các thẻ bài hát xếp thành hàng dọc */
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+}
+
+/* Định dạng lại từng thẻ bài hát cho vừa vặn màn hình */
+.song-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: white !important;
+    border: 1px solid #e6e9ed !important;
+    border-radius: 8px !important;
+    padding: 14px 16px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    box-sizing: border-box !important;
+}
+
+/* Đảm bảo chữ câu hát xem trước không bị đẩy hàng ngang */
+.card-snippet {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important; /* Tạo dấu ... ở cuối câu nếu dòng quá dài */
+    color: #8e9aa8 !important;
+}
