@@ -151,15 +151,28 @@ function changeFontSize(delta) {
 function renderSong(song) {
   currentActiveSong = song;
   
-  // 🔥 Ép ẩn danh sách trang chủ và bật chi tiết lên mà không phụ thuộc vào file CSS bên ngoài
+  // Ép ẩn danh sách trang chủ và bật chi tiết lên
   directoryContainer.style.setProperty('display', 'none', 'important');
   songDisplay.style.setProperty('display', 'block', 'important');
-  songTools.style.setProperty('style', 'display', 'important'); // dự phòng
   songTools.style.setProperty('display', 'flex', 'important');
   
+  // --- Khởi tạo trạng thái Audio & Sheet ---
+  const audioEl = document.getElementById('audioElement');
+  const playBtn = document.getElementById('playAudioBtn');
+  const sheetBtn = document.getElementById('viewSheetBtn');
+  
+  audioEl.style.display = 'none';
+  audioEl.src = '';
+  playBtn.innerHTML = '🎵 Phát Audio';
+  
+  // Làm mờ nút nếu chưa cấu hình link để người dùng nhận biết
+  playBtn.style.opacity = song.audio ? '1' : '0.4';
+  sheetBtn.style.opacity = song.sheet ? '1' : '0.4';
+  // ----------------------------------------
+
   document.getElementById('displayTitle').textContent = song.title;
   document.getElementById('displayArtist').textContent = song.artist || "Tác giả: Chưa rõ";
-
+  
   const originalKey = song.key || "C";
   document.getElementById('currentKeyDisplay').textContent = transposeChord(originalKey, transposeSteps);
 
@@ -173,3 +186,52 @@ function renderSong(song) {
 
 // --- KHỞI CHẠY MẶC ĐỊNH ---
 renderDirectory();
+// Tự động chuyển đổi link chia sẻ Google Drive sang link tải/stream trực tiếp
+function getDirectDriveLink(url) {
+  if (!url) return "";
+  const match = url.match(/\/d\/([^/]+)/) || url.match(/id=([^&]+)/);
+  if (match && match[1]) {
+    return `https://docs.google.com/uc?export=download&id=${match[1]}`;
+  }
+  return url;
+}
+
+// Bật/tắt trình phát nhạc audio
+function toggleAudio() {
+  if (!currentActiveSong) return;
+  if (!currentActiveSong.audio) {
+    alert("Bài hát này chưa được cập nhật file Audio. Bạn có thể mở file 'songs.js' để bổ sung link vào trường 'audio' của bài này bất cứ lúc nào!");
+    return;
+  }
+  
+  const audioEl = document.getElementById('audioElement');
+  const playBtn = document.getElementById('playAudioBtn');
+  
+  if (audioEl.style.display === 'none') {
+    audioEl.src = getDirectDriveLink(currentActiveSong.audio);
+    audioEl.style.display = 'block';
+    audioEl.play().catch(err => {
+      console.error("Lỗi phát nhạc:", err);
+      alert("Không thể phát file audio này trực tiếp. Vui lòng kiểm tra quyền chia sẻ công khai của link Google Drive!");
+    });
+    playBtn.innerHTML = '⏸ Dừng Audio';
+  } else {
+    if (audioEl.paused) {
+      audioEl.play();
+      playBtn.innerHTML = '⏸ Dừng Audio';
+    } else {
+      audioEl.pause();
+      playBtn.innerHTML = '🎵 Phát Audio';
+    }
+  }
+}
+
+// Mở tài liệu PDF bản nhạc ở tab mới
+function openSheet() {
+  if (!currentActiveSong) return;
+  if (!currentActiveSong.sheet) {
+    alert("Bài hát này chưa được cập nhật Sheet bản nhạc. Bạn có thể mở file 'songs.js' để bổ sung link vào trường 'sheet' của bài này!");
+    return;
+  }
+  window.open(currentActiveSong.sheet, '_blank');
+}
