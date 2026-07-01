@@ -5,6 +5,8 @@ const songs = [
   title: "Yên vui một đời",
   artist: "Nguyễn Mộng Huỳnh",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1. [C] Chúa sẽ ban ngày nắng tiếp sau ngày [Dm] mưa
 [Fm] Chúa sẽ cho trời [G] sáng xóa đêm buồn [C] lo
@@ -29,6 +31,8 @@ const songs = [
   title: "Đồi vắng",
   artist: "Lê Phước Thiện",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 Intro: [Dm][Bb]-[Gm][Edim]-[A7][Dm]
 
@@ -66,7 +70,9 @@ Muôn [A7] đời cho chính anh và tôi giờ [Dm] đây
   id: 1779961564011,
   title: "[1] AI SẼ NGỰ TRÊN NÚI THÁNH",
   artist: "Trịnh Chúc",
-  key: "A",
+  key: "Am",
+  audio: "Ver 1|https://drive.google.com/file/d/1xzQBqkT80GsJMTznDS3PjqDYXvNpcV8g/view?usp=drive_link;;Ver 2|https://drive.google.com/file/d/1h14N6S7lhXUcCUp4JPg4kvMYuOcpsoe-/view?usp=drive_link;;Ver 3|https://drive.google.com/file/d/1Pta6zWGcrsMV--huoMGMW7vk_ZewVCev/view?usp=drive_link",
+  sheet: "https://drive.google.com/file/d/10-gQn2mO70NWpP_Oaoh6LmBbOhK4hIyR/view?usp=drive_link",
   content: `
 Lạy [Am]Chúa ai sẽ trú trên đền tạm Ngài nào ai, Chúa ơi? 
 Và [F]ai sẽ ngự trên núi thánh [E]Ngài nào ai Chúa [Am]ơi? 
@@ -86,6 +92,8 @@ nào [Am]ai tuân giữ điều [Dm]này sẽ không không bao [E]giờ không 
   title: "[2] BÀI CA MỚI",
   artist: "Trịnh Chúc",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 Hãy hát [D]lên, hát [F#m]lên một bài ca [D]mới. 
 Hãy hát [Bm]lên, một [A]bài chúc Đấng Chí [D]Tôn. 
@@ -108,6 +116,8 @@ Ngài lập vững thế gian kia không hề rung [D]động.
   title: "[3] BÀI CA TRÔNG CẬY",
   artist: "Trịnh Trúc",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1. [Am]Chúng con [Am]dâng bài [C]ca ngợi ca chí [Am]thánh 
 Chúa muôn vua thần [A]linh trời đất tôn [Dm]thờ 
@@ -136,6 +146,8 @@ Chúa [Dm]ơi! lòng [C]con trông cậy [E]Chúa lòng con cảm tạ [E]Chúa 
   title: "[4] BÌNH AN LÀ CHIẾN THẮNG",
   artist: "Trịnh Chúc",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 1. [Em]Chúa ơi tâm [G]con không hề đưa cao,
 mắt[B]con không nhìn xa [Em]vời.Tai [C]con không tìm lời [D]ru à [Em]ơi 
@@ -159,6 +171,8 @@ Lòng thảnh [B]thơi tìm về bên Chúa như bé yêu trong tay mẹ [Em]hi�
   title: "[5] BỎ NGÀI CON BIẾT THEO AI",
   artist: "Phương Kim",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.Bỏ Ngài con biết theo [Dm]ai đời lộng [Gm]gió cánh chim ngàn [A]khơi! 
 Trùng [Dm]dương sóng nước mênh [Gm]mông thuyền buông [F]lái biết trôi về[A]đâu. 
@@ -182,6 +196,8 @@ Chết [Dm]treo [C]thập [Bb]hình nào [A]ai buồn [Dm]thương. [D]
   title: "[6] BƯỚC ĐI VỚI NGÀI",
   artist: "Trịnh Chúc",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.Lạy [Dm]Chúa xin xét cho [F]tôi, xin xét cho [A]tôi vì tôi sống liêm [Dm]minh. 
 Tôi đã tin [C]cậy nơi [A]Chúa[Dm]Và trông mong nơi [Gm]Ngài không hề chuyển [F]lay [A]
@@ -214,6 +230,8 @@ Chúa[G]ơi tôi[D]xin ngợi [A]ca Ngài nơi hội đường muôn dân [D].
   title: "[7] BƯỚC TRONG TIN YÊU",
   artist: "Ngọc Linh",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.[Am]Con không xin bạc vàng [Dm]làm hoen ố đôi [E]tay.
 [A]Con không cầu danh [Dm]vọng [Am]làm hư mất lương [E]tri.
@@ -242,6 +260,8 @@ Chúa[G]ơi tôi[D]xin ngợi [A]ca Ngài nơi hội đường muôn dân [D].
   title: "[8] CA KHÚC TRẦM HƯƠNG",
   artist: "Hùng Lân - Dao Kim",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1. [D]Intro... [G][Em][A][D][G][A][D]
 Đk: [D]Lời con như trầm hương bay lên [A]tới Thiên [D]đường
@@ -274,6 +294,8 @@ và phán [G]quyết Chúa [A]thẳng [D]ngay.
   title: "[9] CA NGỢI THÀNH TÍN CHÚA",
   artist: "TRỊNH CHÚC",
   key: "A",
+  audio: "",
+  sheet: "",
   content: `
 [A]Tôi sẽ ca ngợi tình yêu thương của Chúa mãi mãi.
 Miệng [Em][A]tôi sẽ loan truyền sự thành tín Chúa đến muôn đời muôn [A]đời. 
@@ -292,6 +314,8 @@ ngợi giữa [Am]hội các [E]thánh, và [A]ai ở trên [Dm]trời có thể
   title: "[11] CẢM NGUYỆN LỜI CHÚA",
   artist: "TRỊNH CHÚC",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Phước những ai nghèo [Am]khó trong tâm linh những nỗi buồn sầu [Am]
 Phước những người lòng [Dm]đau thương [F]vì chưng nước [Am]trời là của ai mang nỗi [C]đau
@@ -321,6 +345,8 @@ nghe Cha bước trong lẽ [C]thật Ngài là [E]thương xót với bao nhân
   title: "[12] CẢM TẠ CHÚA",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1. [G]Intro.............. [C][E][A][D]
 [G]Cả trái đất hãy mừng [D]reo cho Đức Chúa [G]Trời 
@@ -337,6 +363,8 @@ Vì thành tín Chúa đến muôn [D]đời vì thành tín [D]Chúa đến mu�
   title: "[10] CẢM TẠ DANH CHÚA",
   artist: "TRỊNH CHÚC",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 [Em]Lạy Đức Chúa [C][D]Trời chúng tôi cảm tạ [Em]Chúa 
 Chúng [B][Em][D]tôi cảm tạ [Em]Chúa 
@@ -358,6 +386,8 @@ Thì [Am]chính chính ta sẽ [Em]giữ nền móng [B]nó vững bền.
   title: "[13] CẢM TÁC THÁNH THI 42",
   artist: "TRỊNH TRÚC",
   key: "Cm",
+  audio: "",
+  sheet: "",
   content: `
 1.[Cm]Đức Chúa Trời [Fm]ơi, [Eb]linh hồn tôi mong đợi [Cm]Chúa 
 như con [Ab]nai thèm khát nước [Gm]trong, như con [Fm]nai thèm khát suối [Cm]nguồn
@@ -390,6 +420,8 @@ Hãy nên trung [G]tín trong hi vòng vào nhà Chúa [C]Trời
   title: "[14] CHỈ CÓ CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 [D][Bm]Đời có [D]Chúa lòng [A]con an vui mỗi [Bm]ngày
 nhờ có [D]Chúa chở [A]che con từng phút [D]giây 
@@ -420,6 +452,8 @@ Và [D]cho Thánh linh tuôn tràn đến dẫn đưa con từng [A]giây ấm �
   title: "[15] CHIÊN CON THỜ PHƯỢNG",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 Lạy [F]Chúa là Đức Chúa Trời Toàn Công việc Năng Chúa ôi thật vĩ đại dường [Dm]bao 
 Lạy [C]vua của các thời [F]đại Đường lối Chúa chân thật công chính 
@@ -435,6 +469,8 @@ sẽ đến thờ [Dm]Ngài Vì các hành [F]động công bình của [C]Ngài
   title: "[16] CHÚA DẪN CON ĐI",
   artist: "TRỊNH CHÚC",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 ĐK:[Em]Chúa dẫn con [G]đi qua [Em]khắp nẻo đường 
 Chúa dẫn con [G]đi về bến yêu [Em]thương. 
@@ -460,6 +496,8 @@ sống với [Bm]Ngài là niềm [Em]vui.
   title: "[17] CHÚA ĐÃ ĐẾN TRONG CON",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 [D]Chúa đã đến trong con rồi Chúa đã đến trong con rồi,
 nào [A]con có gì tiếp rước Chúa [D]đây 
@@ -482,6 +520,8 @@ những ưu phiền đã [A]qua Chúa vẫn ngự trong [D]con.
   title: "[19] CHÚA KẾT XE DUYÊN LÀNH",
   artist: "Khuyết Danh",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 1.Chúa kết [F]xe đôi bạn trăm [F]năm tóc [Gm]tơ. 
 Yêu mến [Gm]nhau muôn [C]đời luôn [C]luôn hạnh [F]phúc. 
@@ -505,6 +545,8 @@ Em bé [Gm]xinh ra [C]đời Chúa [C]sẽ chăm [F]nuôi.
   title: "[20] CHÚA LÀ CÂY NHO",
   artist: "Ân Đức",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1.Chúa là cây [C]nho con là cành [G]nho 
 Chúa đưa con [C]vào mối tình mối tình đầu [G]tiên. 
@@ -539,6 +581,8 @@ Chúa ủi an [F]bằng lời vui [G]chan hòa sức [C]sống.
   title: "[21] CHÚA LÀ NGUỒN SỨC SỐNG",
   artist: "Lê Ngọc Vinh",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Đời [Am]con nước [A]chảy đôi [Dm]bờ, nước [E]chảy đôi [Am]bờ. 
 Tình [G]Cha như [Em7]con nước mang phù [Am]sa, như [A]con nước mang phù [Dm]sa, 
@@ -560,6 +604,8 @@ Tìm [G]Cha con [Em7]thao thức trên đường [Am]xa, con [A]thao thức đi 
   title: "[22] CHÚA LÀ THƯƠNG XÓT",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1. Hỡi linh hồn [C]tôi hãy ca tụng [Am]Chúa 
 Hỡi linh hồn [Dm]tôi ca [C]tụng thánh Danh [Am]Ngài
@@ -592,6 +638,8 @@ Và Ngài đã yêu [C]thương [C]Yêu [Fm]thương như mới khi tạo [Em]d�
   title: "[23] CHÚA LÀ TÌNH YÊU",
   artist: "Composer / arranger",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 ĐK:Chúa là Tình Yêu cao vời trên ngàn mây [C]xanh,
 ấm [F]lòng cho người lữ [Am]hành. [G]Chúa là Tình [F]Yêu. 
@@ -611,6 +659,8 @@ Và Ngài đã yêu [C]thương [C]Yêu [Fm]thương như mới khi tạo [Em]d�
   title: "[24] CHÚA NGUỒN YÊU THƯƠNG",
   artist: "TRỊNH CHÚC",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 [Em]Chúa là nguồn [C]vui là hạnh [B]phúc đến muôn [Em]người 
 Ngài dẫn [D]đưa chúng ta [G]vào đường [D]ánh sáng yêu [Em]thương
@@ -636,6 +686,8 @@ Vì Ngài nguồn sống đời [B]con quyền Ngài toàn năng vô [E]đối
   title: "[25] CHÚA NUÔI ĐỜI TÔI",
   artist: "TRỊNH CHÚC",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 [Em]Chúa chăn nuôi [B]tôi, tôi sẽ không thiếu [Em]gì 
 [D]Ngài giúp tôi an [Em]nghỉ [D]nơi đồng cỏ xanh [Em]tươi
@@ -659,6 +711,8 @@ Bên Người tôi theo [B]mãi muôn [B]đời con ở cùng [E]Cha [Em]
   title: "[26] CHÚA SỐNG TRONG TÔI",
   artist: "Khuyết Danh",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 [F]Cuộc sống tôi hôm [C]nay và mãi [F]mãi, 
 [Bb]tôi không [C]còn tìm sống cho chính [F]mình
@@ -682,6 +736,8 @@ nhưng chỉ [C]còn niềm vui và sức [F]sống.
   title: "[27] CHÚA VẪN Ở CÙNG CON",
   artist: "TRỊNH CHÚC",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 [Am]Ôi lạy [C]Chúa Ngài ở [Dm]đâu! 
 Sao con tìm không [Em]thấy 
@@ -707,6 +763,8 @@ và [E]Ngài vẫn ở cùng [A]con. [Am]
   title: "[28] CHÚC MỪNG HÔN LỄ",
   artist: "Lê Ngọc Vinh",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.[D]Mừng thay hôn nhân đôi [G]lứa bởi Chúa đính [D]duyên. 
 Vườn Ê đen [D]kia nghe [G]tiếng Chúa Cha rao [A]truyền. 
@@ -734,6 +792,8 @@ Trăm [A]năm quyết chí tình [D]thương tử sinh thủy [D]chung [A]song [
   title: "[29] CÓ AI GIỐNG CHÚA",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 Lạy [G]Đức Giê Xu [D]tôi, xin hãy nghiêng tai [Em]qua
 nhận [D]lời tôi khốn cùng [Bm]cùng nhận lời tôi thiết [Em]tha
@@ -756,6 +816,8 @@ A [Bm]lê lu [C]Ja A [D]lê lu [G]Ja A [Bm]lê lu [C]Ja A [D]lê lu [G]Ja
   title: "[30] CÓ THẦN NÀO NHƯ CHÚA",
   artist: "TRỊNH CHÚC",
   key: "Bm",
+  audio: "",
+  sheet: "",
   content: `
 1.[Bm]Có thần nào như Chúa tôi [Bm]đâu? Có thần [D]nào như Chúa tôi [Bm]đâu!
 Ngài là vua Đấng Chí [Em]Tôn quân thù [A]Ngài khiếp vía thất [D]kinh
@@ -784,6 +846,8 @@ nương nhờ Thánh linh Chúa ban an [Bm]bình suốt đời con Chúa ơi.
   title: "[31] CON NGỢI CA CHÚA",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1.[G]Hỡi linh hồn [D]tôi ca tụng Chúa đến muôn ngàn [Em]đời, 
 đừng quên những ân [D]huệ Ngài [D]ban ơn trong cuộc [G]sống
@@ -809,6 +873,8 @@ Và Ngài thứ tha [D]nhiều ngày [D]tháng vẫn ban bình [G]an.
   title: "[32] CON LÀ ĐỀN THỜ CHÚA",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 [C]Đền thờ Chúa [C]đây tâm [Am]con mến yêu đêm [C]ngày,
 tâm [Dm]con mến yêu đêm [Am]ngày,
@@ -831,6 +897,8 @@ Thượng đế con [C]ơi nguyện mãi trong [G]con nguyện mãi trong [C]con
   title: "[33] CON LUÔN CẬY TRÔNG",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.Con luôn [Dm]luôn cậy trông nơi [F]Chúa nhân [Dm]từ,
 Đấng Cứu [F]rỗi nguồn mạch sự [A]sống vĩnh [D]cữu.
@@ -852,6 +920,8 @@ nhân thế vui an [A]bình xây cuộc đời chói ngời niềm [Dm]tin.
   title: "[34] CON NHƯ CHIẾC THUYỀN NAN",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 [D]Con như chiếc thuyền [D]nan lênh đênh trên biển vô [G]bờ
 lênh đênh trên biển vô [A]bờ Ngọn sóng thế gian bập [A]bênh
@@ -874,6 +944,8 @@ Chúa đang dõi theo Ôi [D]Đấng Toàn Năng vĩ đại là [A]chính Đức
   title: "[35] CON TIN CÓ CHÚA",
   artist: "TRỊNH CHÚC",
   key: "A",
+  audio: "",
+  sheet: "",
   content: `
 Con [A]tin có Chúa đang ngự ở [F#m]đây, giờ [Bm]này
 [E]Chúa sẽ mãi bên [A]con từng [F#m]giây 
@@ -896,6 +968,8 @@ khi con nhận lãnh là [E]lúc tâm [A]con [A][D]
   title: "[36] CON TRONG TAY CHÚA",
   artist: "TRỊNH CHÚC",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 [Am]Chúa [C]ơi Ngài đã xem [C]xét và biết [E]tôi 
 [A]Ngài biết khi tôi [Dm]ngồi lúc tôi đứng [C]dậy
@@ -920,6 +994,8 @@ và [A]tôi sẽ bay nơi [D]nào dẫu đông sang [A]tây thời Ngài dẫn [
   title: "[37] CŨNG CHẲNG LÀ CHI",
   artist: "TRỊNH CHÚC",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 1.[Em]Giàu sang phú quý vinh [Am]hoa tài [D]năng văn hoá khôn [G]ngoan
 Lòng [D]kiêu tự mãn với [D]đời người có biết [G]chăng? 
@@ -945,6 +1021,8 @@ Khi không có niềm tin nơi Chúa [Em]Trời. Bao công khó đời [D]ta ch�
   title: "[38] CÙNG ĐI VỚI CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.Cùng với [D]Chúa ta đi cho hết con đường cùng với Chúa ta đi cho hết cuộc [Bm]đời.
 Lời Chúa [G]phán cho [A]ta như ánh sao [A]trời đem tâm hồn về nơi an vui với [D]Cha,
@@ -967,6 +1045,8 @@ gạt hết [G]những bon [A]chen cuộc sống gian [A]trần, chẳng là gì
   title: "[39] DANH CHA CÒN MÃI",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1.[G]Xin cho chúng con biết yêu thương mọi [Em]người
 như chính Cha đã yêu chúng con trao thân [C]mình vì [D]con
@@ -984,6 +1064,8 @@ Lòng đầy tan [Bm][C]vỡ trong quy phục một lòng vì [D]Chúa,
   title: "[40] DÂNG LỜI TÔN VINH CHÚA",
   artist: "Terry Mac Almon",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1.[G]Con xin hát tôn vinh danh [C]Ngài. Chúa [D]ôi! Hát tôn vinh danh [Bm]Ngài
 Chúa [Em]ôi! Nguyện ngợi [Am7]khen tung hô Danh [C]Giê [D]xu [C]Vua [D]vinh [G]hiển. 
@@ -1002,6 +1084,8 @@ Chúa [Em]ôi! Trọn đời [Am7]con xin dâng lên [C]Giê [D]Xu, [D]Vua [D]oa
   title: "[41] DÌU NHAU",
   artist: "Khuyết Danh",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 1.Tìm [Em]nhau cho có đôi buồng tim không lẻ loi
 tìm trong màu mắt yêu thương thay [Am]lời. 
@@ -1040,6 +1124,8 @@ Vòng dây tôn kính Je' sus muôn [Em]miền.
   title: "[42] DÒNG NƯỚC TRONG",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 [F]Phúc cho [F]ai không theo kẻ [A]dữ mưu kế tội [Dm]nhân  
 cũng không [C]ngồi chỗ kẻ nhạo [Gm]báng,
@@ -1061,6 +1147,8 @@ Ngày phán xét Chúa đem công [C]bình người công [Gm]chính [C]Chúa ch
   title: "[43] DUY NHẤT GIÊ XU",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1.[G]Vũ trụ nào còn [Em]ai Danh Giê Xu là Thần duy [Am]nhất
 Tôn Giê [D]Xu là thần duy [G]nhất Chúng [Bm]con thờ tôn [G]Chúa
@@ -1094,6 +1182,8 @@ Chúng [Bm]con yêu suốt [C]đời Ngài là [D]đèn soi sáng trong [G]con
   title: "[44] DỰ TIỆC THÁNH",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 [G]Tiệc Thánh [G]Chúa ban trao cho các Sứ [C]Đồ
 truyền đời đời ghi nhớ công ơn cứu [D]chuộc
@@ -1120,6 +1210,8 @@ trong huyết Chúa dự Tiệc Thánh hôm [G]nay.
   title: "[45] ĐÂU CÓ TÌNH YÊU THƯƠNG",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 1.[F]Đk:Đâu có tình yêu thương ở [Dm]đấy có Đức Chúa [Am]Trời. 
 [Gm]Đâu có lòng từ bi là [C]đấy có ân sủng [F]Người. 
@@ -1143,6 +1235,8 @@ trong huyết Chúa dự Tiệc Thánh hôm [G]nay.
   title: "[46] ĐIỀU GÌ PHẢI LO",
   artist: "TRỊNH CHÚC",
   key: "A",
+  audio: "",
+  sheet: "",
   content: `
 ĐK:Bạn [A]hãy lo đi [D]tìm Nước [A]Trời, đừng [F#m]quá lo điều [E]hay hư [A]mất.
 Bạn [A]hãy lo đi tìm công [D]bình, còn [E]những gì Ngài ban cho [A]sau.
@@ -1163,6 +1257,8 @@ chúng không [A]hề lay chuyển ý [F#m]Trời, Chúa trên [Bm]trời gìn [
   title: "[47] ĐÓN NHẬN LỜI CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.[D]Lời [D]Chúa tựa hoa trái xinh tươi đầu [A]mùa.
 Lời [G]Chúa đầy nhiệm màu soi trong lối [Bm]đi vào cuộc [D]đời không lo lắng [A]chi
@@ -1199,6 +1295,8 @@ Lời [A]Chúa sáng [A]ngời trong tim [D]con
   title: "[48] ĐỨC CHÚA TRỜI NGÀY LÀ VUA",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 [C]Hãy hân hoan ca [C]tụng bài ca dâng [C]Chúa hiển [F]vinh muôn [G]đời 
 [C]Hãy tôn vinh danh [C]Ngài ngày đêm cao rao lời [F]Chúa cho muôn [G]người
@@ -1231,6 +1329,8 @@ Hỡi [F]trái đất [G]này còn chi [G]nữa mau tôn [C]thờ.
   title: "[49] GIÊ XU, LẼ SỐNG TÔI",
   artist: "Khuyết Danh",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1.Giê xu là con [C]đường lẽ thật và sự sống.
 Giê xu thật tuyệt [G]vời yêu Ngài quá đi [C]thôi!
@@ -1260,6 +1360,8 @@ theo Ngài mãi không [C]thôi. A [Cmajor-sixth]men
   title: "[50] GIÊ XU ƠI, CON TIN NGÀI",
   artist: "Mary Walker",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1. [G]Giê xu [D]con xin [G]tin Ngài, tin nơi [C]Chúa hết [D]lòng. 
 [C]Sống giữa [G]hư vong [Am]vô [C]vọng, [G]được Ngài [D]đến cứu [G]con. 
@@ -1286,6 +1388,8 @@ theo Ngài mãi không [C]thôi. A [Cmajor-sixth]men
   title: "[51] HÀNH TRANG TUỔI TRẺ",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 Đk:Lạy [G]Chúa chúng con [Em]nguyện dâng Chúa cả [G]đời. 
 [D]Lạy [G]Chúa chúng con [G]xin đổi mới cuộc [C]đời. 
@@ -1315,6 +1419,8 @@ Về nhà [E]Chúa [Am]đi, về nhà [D]Chúa [G]đi.
   title: "[52] HÁT CA TÔN VINH",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 [Em]Xin [G]Chúa chúc [D]lành đem yêu thương tràn ngập anh [C]em chúng [Em]con
 Thần [G]Linh tuôn [D]tràn con cao rao một lòng tôn [C]vinh Chúa [Em]con
@@ -1334,6 +1440,8 @@ Chúa ơi [G]Ngài là sức sống cho mọi người [D]Ngài là đuốc chi�
   title: "[53] HÁT LÊN VÌ LÒNG CÓ CHÚA",
   artist: "Lê Ngọc Vinh",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 Hát lên [C]nào vì lòng này có [Dm]Giê xu.
 Hát lên [G]nào vì lòng này có [C]Giê [G]xu.
@@ -1351,6 +1459,8 @@ Kính khen [G]Ngài! A men! A men! Ha lê lu gia! Kính khen [C]Ngài.
   title: "[54] HÃY CẢM TẠ CHÚA HỠI NGƯỜI TRUNG TÍN",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.Chúa [Dm]ơi tôi ngợi ca [Gm]Ngài vì [C]Ngài đã kéo tôi [Dm]lên
 Không [C]để kẻ thù vui [A]mừng vì cớ [Dm]tôi 
@@ -1382,6 +1492,8 @@ Lập [C]tôi núi vững [Dm]vàng
   title: "[55] HÃY CẦU NGUYỆN",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 Lạy Đức Chúa [C]Trời công chính của tôi xin đáp [Dm]lời Khi tôi kêu [G]
 cầu [Am]trong lúc hoạn [G]nạn Ngài giải [Am]cứu [F]tôi. 
@@ -1399,6 +1511,8 @@ Gẫm trong lòng [C]ta im [F]lặng Chúa đang nghe [G]lời
   title: "[56] HÃY ĐẾN VỚI CHÚA",
   artist: "Lê Ngọc Vinh",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.Hãy đến với [Dm]Ngài hỡi những [C]ai đời [F]đang dâng [A]sóng. 
 [Dm]Hãy đến với [Gm]Ngài vì Ngài [C]là cửa biển yên [A]hàn. 
@@ -1427,6 +1541,8 @@ Hãy đến với [Dm]Ngài hỡi những [C]ai lòng trí nặng [A]nề.
   title: "[57] HÃY HÁT REO",
   artist: "TRỊNH CHÚC",
   key: "A",
+  audio: "",
+  sheet: "",
   content: `
 1. [A]Hãy reo ca Danh Đức Chúa [D]Trời Ngài là sức [E]lực
 hãy vang câu hát [A]ca nào kèn sướng lên
@@ -1461,6 +1577,8 @@ tôn vinh hát ca Danh Ngài vì Ngài là Đấng Chí [A]Tôn
   title: "[58] HÃY QUÊN MÌNH",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1. [G]Khi con nghe tiếng [Bm]Cha Là [C]lúc tâm [D]con rạo rực hân [G]hoan 
 Xin cho con quên [Bm]mình đường [C]lối riêng [D]con để hầu tiếp [Cnone]Cha 
@@ -1492,6 +1610,8 @@ Không đi riêng [B]mình là lúc Cha [C]ở [D]trong [G]con
   title: "[59] HỎI LOÀI CẦM THÚ",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 [C]Anh hãy hỏi loài thú [G]đi chúng sẽ chỉ dạy 
 [F]Anh hỏi loài chim [Dm]trời chúng sẽ kể anh [C]nghe
@@ -1510,6 +1630,8 @@ Khôn ngoan tìm [Am]thấy nơi người [C]già
   title: "[60] HỘI THÁNH CA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.Hát dâng lên [D]Cha một bài ca mới
 Trong nơi Chí [Em]Thánh Chúa Cha trên trời
@@ -1556,6 +1678,8 @@ ta mau bước [A]tới xẻ chia niềm [D]đau
   title: "[61] KHI CON THEO CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 [D]Khi con theo [D]Chúa lòng con ước [A]mơ tái sanh đời mình
 tay Cha chăm [D]sóc, lời Cha đón [A]đưa trong tình yêu thương
@@ -1588,6 +1712,8 @@ xa lánh tối [A]tăm đến nơi con hằng [D]mong
   title: "[62] KHÔN NGOAN TRONG CHÚA",
   artist: "TRỊNH CHÚC",
   key: "A",
+  audio: "",
+  sheet: "",
   content: `
 1. Danh thơm tiếng [A]tốt hơn dầu quí [F#m]giá ngày chết hơn ngày [E]sanh
 Đến [A]nhà tang chế hơn đến cùng tiệc [F#m]vui 
@@ -1617,6 +1743,8 @@ việc Ngài làm ra [E]ai chống lại [A]được
   title: "[63] LẠY CHÚA CHÚNG CON KHOE",
   artist: "Khuyết Danh",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 Không có [C]ai Công Bình bằng [F]Đức Giê Hô Va A [C]men A [C]men 
 Không có ai Công Bình bằng Đức Giê [G]Hô Va A men A men 
@@ -1630,6 +1758,8 @@ Vinh Quang thuộc về [G]Ngài Vinh Quang thuộc [C]về [C]Ngài
   title: "[64] LẠY CHÚA XIN NHỚ ĐẾN TÔI",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1.Hãy cảm tạ [G]Chúa vì Ngài là [Em]Thánh
 hãy cảm tạ [D]Chúa [Em]vì Ngài là [G]Thiện
@@ -1665,6 +1795,8 @@ cho tôi hát lời ngợi [Em]khen [G]Al lê lu [Em]ja Al [G]lê lu [Em]ja Al [
   title: "[65] LẮNG NGHE LỜI CHÚA",
   artist: "Nguyễn Duy",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.[Am]Xin cho con biết lắng [Dm]nghe 
 Lời [C]Ngài dạy con trong [B]đêm [E]tối. 
@@ -1705,6 +1837,8 @@ trả [C]lời và vâng theo [B]ý [E]Chúa.
   title: "[66] LÊN ĐỀN THÁNH",
   artist: "Thành Tâm",
   key: "A",
+  audio: "",
+  sheet: "",
   content: `
 Đk:Từ muôn [A]phương ta về đây sánh vai lên [Bm]đường,
 đường đưa [D]ta đi lên [E]đền Chúa [A]ta 
@@ -1733,6 +1867,8 @@ Chúng ta [E]đi đi lên [C#]đền Chúa [F#m]ta [F]thân [E]yêu.
   title: "[67] LÒNG ƯỚC MONG NHƯ Ý CHA",
   artist: "Nguyễn Hữu Ái",
   key: "D#",
+  audio: "",
+  sheet: "",
   content: `
 1. [Eb]Lòng ước [Bb]mong. Lòng ước [Eb]mong. 
 Từ đáy [Ab]tim con xin dâng [Fm]lên, lòng ước [Eb]mong. 
@@ -1758,6 +1894,8 @@ lời yêu mến khúc [Eb]hát ân tình
   title: "[68] LỜI CA TẠ ƠN",
   artist: "Nguyễn Mộng Huỳnh",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Chọn [Am]con Ngài thương gọi tên,vì [G]yêu Ngài luôn ở bên. 
 Những lúc gian [F]nguy, dẫn bước con [E]đi,con nào hiểu [E]gì!
@@ -1780,6 +1918,8 @@ sóng nước mông [F]mênh, bát ngát ơn [E]thiêng, tôi nào dám [Am]quê
   title: "[69] LỜI KÊU CẦU",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 [Dm]Tôi cất tiếng kêu cầu cùng [F]Chúa tôi trên [A]cao
 Ngài đoái yêu thương [Dm]tôi Trước mặt [C]Ngài thở [F]than tôi tuôn [A]đổ
@@ -1799,6 +1939,8 @@ Hãy cứu [Bm]tôi khỏi bắt [G]bớ với linh hồn [A]tôi khỏi chốn 
   title: "[70] LỜI TỰ HÀO TRONG CHÚA",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 Chúa ơi [Dm]Chúa Ngài đã [F]yêu hỡi Ngài đã [Dm]thương 
 [D]Ngài đã cứu [Gm]con đưa [C]con về nơi thoáng [F]mát trong [A]lành
@@ -1820,6 +1962,8 @@ Chúa nhân [Em]từ đắng [A]cay lòng con [D]đây.
   title: "[71] LỜI VỌNG TÌNH YÊU",
   artist: "Khuyết Danh",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.[Am]Trên đồi [Am]cao trong gió [C]lao xao [F]gọi mời tình [G]yêu.
 [Am]Giêxu gục [E]ngã treo thân thập [F]giá dang cánh [G]tay ôm tội loài [C]người.
@@ -1842,6 +1986,8 @@ Vì Ngài chỉ [C]đến sống cho tình [G]yêu, [E]chết cho tình [Am]yêu
   title: "[72] MỪNG KHEN GIÊHÔVA",
   artist: "Khuyết Danh",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 (1,2,3).Hồn [G]tôi hân hoan vui sướng hát khen danh Ngài vì Ngài [D]thương tôi 
 
@@ -1875,6 +2021,8 @@ Chúc [Gm]vinh danh [G]Ngài muôn [D]đời miên [G]man.
   title: "[73] MỪNG NGÀY HÔN LỄ",
   artist: "TRỊNH CHÚC",
   key: "D#",
+  audio: "",
+  sheet: "",
   content: `
 1. [Eb]Không [C]gian [Bb]tươi [Eb]sáng, gió [Ab]ru câu bình [Eb]an. 
 [Bb]Chào mừng đôi lứa trong ngày lễ hôn [Eb]nhân. 
@@ -1913,6 +2061,8 @@ Chúc [Gm]vinh danh [G]Ngài muôn [D]đời miên [G]man.
   title: "[74] Nguyện Đường Con Theo Ý Chúa",
   artist: "Vũ Ngọc Quang",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1. 1.Xin Chúa dắt [C]đưa con qua mỗi chặng [G]đường
 Tay Chúa phủ [C]vây đêm ngày từng bước con [C]đi 
@@ -1941,6 +2091,8 @@ Cầu xin Cha xót [G]thương đưa đường con theo ý [C]Cha!
   title: "[75] NGUYỆN TRONG DANH CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 ĐK : Lạy Đức Chúa [D]Trời Ngài là Chúa Trời [Em]tôi
 lòng [F#m]tôi tha [A]thiết tìm kiếm [G]Ngài
@@ -1966,6 +2118,8 @@ ai nguyện hứa trông [Bm]Ngài tôn vinh [A]Ngài sẽ được chở [G]che
   title: "[76] NGƯỜI CÔNG CHÍNH",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 [G][Em][C][D][G][Em][C][D][G][Em][C][D]
 [C]Ha Le Lu [C]Gia [C][D][G]Ha Le Lu Gia 
@@ -1990,6 +2144,8 @@ Sự công chính của người sẽ còn mãi còn [G]mãi
   title: "[77] NHỜ CHA CON CÓ NỤ CƯỜI",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 [G][Em][C][D][G]Còn nhiều nụ cười thế [C]gian cười lắm đau [D]thương
 Nhưng Chúa [Am]ơi nụ cười [Em]nào sánh [G]bằng
@@ -2012,6 +2168,8 @@ nụ [Bm]cười trên [G]môi Con có nụ [D]cười nụ [D]cười nở trê
   title: "[78] NIỀM TIN VÀ HI VỌNG",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1. [D]Con hi vọng nơi Ngài một niềm [A]tin trung tín đời [D]con
 và [G]con xin trao về [Em]Ngài những vui [A]buồn vây quanh tháng [D]năm
@@ -2037,6 +2195,8 @@ khi có [A]Ngài chân con biết đường [D]đi
   title: "[79] Phút Giây Nguyện Cầu",
   artist: "Khuyết Danh",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.Giờ đây bên [D]Chúa, [A]tâm linh nhẹ [D]nhàng,
 Gần nơi chân [A]Chúa, phước ân tràn [D]lan.
@@ -2059,6 +2219,8 @@ Chức thiêng Ngài [D]trao, dắt đưa tội [A]nhân, đến nơi hồng [D]
   title: "[80] QUYỀN NĂNG CHÚA",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 [C]Hỡi Chúa lòng [F]tôi, con tôn thờ [G]Ngài danh Cha vẹn [C]toàn.
 [G]Ngài là [C]vua [G]muôn [C]vua, hãy đến cùng Ngài tôn vinh thần [G]Ngài 
@@ -2079,6 +2241,8 @@ Nào một ai như [F]vua Chúa [C]tôi, nào một [G]ai, đáng [F]danh [G]tô
   title: "[81] Rồi Ngày Sẽ Trôi Qua",
   artist: "Hoàng Trọng-Vĩnh Phúc",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 [F]Rồi ngày sẽ trôi [A]qua, bao [Dm]nhiêu ngày thơ ấu [Bb]mộng,
 xinh [C]như ngàn tia nắng [F]hồng, sẽ khuất bóng theo thời [C]gian.
@@ -2127,6 +2291,8 @@ Ta [C]nương mình trong Chúa [Gm]rồi, Bình [C]an hạnh phúc muôn [F]đ�
   title: "[82] SỐNG ĐỜI NGUYỆN CẦU",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 [Dm]Xin ban cho con sức [Fmajor-sixth]mạnh trong lối [Dm]Ngài
 tránh [A]xa điêu ngoa và gian [Dm]ác
@@ -2179,6 +2345,8 @@ Hạnh phúc lắm thay Chúa ơi xin xức dầu [Dm]con
   title: "[83] SỐNG TRONG NIỀM VUI",
   artist: "Nguyễn Duy",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Một [Am]đời lần trong đêm [C]tối, tình [F]yêu con nay như hao [Dm]mòn.
 Một [E]đời tìm trong thao [Am]thức, lòng [F]con ngập tràn bao nỗi [G]buồn.
@@ -2210,6 +2378,8 @@ Bên [F]Ngài [G]hồn con vui [C]sống. Ân [F]tình giờ đã thắm [Dm]h�
   title: "[84] SỐNG VỚI CHÚA",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 [G]Tôi sẽ hát về tình yêu thương của [C]Ngài 
 [Em][Am]Tôi sẽ [D]hát công [G]bình của Chúa 
@@ -2231,6 +2401,8 @@ Sống theo đường lối vẹn toàn [Bm]sẽ bên [Am]tôi
   title: "[85] TA LÀ CON CHÚA NÊN CÓ TÌNH YÊU THƯƠNG",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 [Dm]Ta là con [F]Chúa nên tình yêu [Gm]thương anh em chan [Dm]hòa
 Ta là con [F]Chúa nên tình yêu [Gm]thương anh em thiết [F]tha.
@@ -2253,6 +2425,8 @@ xoa dịu đớn [A]đau trong tay Ngài yêu [D]thương [Dm]
   title: "[86] TA RA ĐI",
   artist: "Nguyễn Hiền",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1. [Dm]Ta ra [F]đi trên con [A]đường phước [Dm]hạnh. 
 Ta ra [F]đi trên con [A]đường sự [Dm]sống. 
@@ -2270,6 +2444,8 @@ Ta ra [Gm]đi nguyền bền [C]chí vững tâm đến [Dm]cùng.
   title: "[87] TÂM CON NGỢI KHEN CHÚA",
   artist: "TRỊNH CHÚC",
   key: "Em",
+  audio: "",
+  sheet: "",
   content: `
 1.[Em]Nào ta hãy cùng [Am]nhau [D]dâng Chúa [B]Trời một bài [Em]ca
 Vì Ngài là Chúa Trời [Am]ta vĩ đại dường [D]nào Chúa là Vua Chí [G]Tôn
@@ -2295,6 +2471,8 @@ Thiết tha gọi [B]mời vì Chúa yêu con [Em]người
   title: "[88] TÂM LINH TRỞ VỀ",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1.[C]Nào người công [C]chính, nào người khôn [G]ngoan 
 [F]đến những kẻ gian [Dm]ác và [G]người tham [C]lam 
@@ -2322,6 +2500,8 @@ Tâm linh trở [C]về Đấng [G]đã tạo [C]dựng.
   title: "[89] TÂM TÌNH TRI ÂN",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 Xin tri [Dm]ân lòng Cha thương [Bb]xót
 con đời [C]đời dẫu tội [F]tình 
@@ -2355,6 +2535,8 @@ yêu bình [Gm]minh yêu màn [F]đêm in vì [A]sao trên trời [Dm]cao
   title: "[90] THẦN CHÚA TRONG CON",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.[Dm]Ôi Thần linh [Gm]Chúa chạm vào trí con giờ [C]đây rồi
  Ôi Thần linh [C]Chúa cảm [C]động thoát lên lời [F]ca này
@@ -2396,6 +2578,8 @@ hát ca tụng [Gm]Chúa tuyệt [C]vời Thánh linh đời [Dm]con
   title: "[91] TÂM TÌNH DÂNG HIẾN",
   artist: "Oanh Sông Lam",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 Đk:Biết lấy [Am]gì cảm mến. Biết lấy [F]chi [G]báo [C]đền.
 Hồng ân [Am]Chúa cao [E]vời Chúa đã [Am]làm [E]cho [Am]con.
@@ -2427,6 +2611,8 @@ Xin cho [Am]con nghèo [C]khó cuộc đời [F]bao [G]nguy [Am]khó.
   title: "[92] THỜ LẠY TÔN VINH",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 Lạy [F]Chúa là Đức Chúa Trời toàn năng
 Công việc Chúa Ôi thật vĩ [Dm]đại dường [C]bao.
@@ -2445,6 +2631,8 @@ Vì các hành [C]động công bình của [F]Ngài
   title: "[93] TÌNH YÊU CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1. [D][A][Bm][A][D][A]
 [D]Tình yêu ôi của [F#m]Chúa ví như mặt [Bm]trời tỏa [A]sáng đến muôn [Bm]người
@@ -2483,6 +2671,8 @@ chúc [Bm]tụng với [G]tình yêu Chúa [A]Trời và hát tôn vinh muôn [D
   title: "[94] TÌNH YÊU THIÊN CHÚA",
   artist: "Thế Thông - Đình Diễn",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 Tình yêu Thiên [Dm]Chúa như trăng như sao
 đưa con lên [A]cao, ôi nào biết lấy chi báo [Dm]đền.
@@ -2518,6 +2708,8 @@ Trong gió lên khơi, trong tiếng mưa rơi nghe như là tiếng Chúa trong
   title: "TÌNH CON DÂNG HIẾN",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 1. Đời [F]con có gì [Gm]đâu,
 chỉ xin [C]dâng thân xác linh hồn,
@@ -2552,6 +2744,8 @@ hiến dâng với tấm [C]lòng, [F]hỷ hoan. [C]cùng Ngài xin hiến [F]đ
   title: "[95] TÌNH CON DÂNG HIẾN",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 1. Đời [F]con có gì [Gm]đâu,
 chỉ xin [C]dâng thân xác linh hồn,
@@ -2586,6 +2780,8 @@ hiến dâng với tấm [C]lòng, [F]hỷ hoan. [C]cùng Ngài xin hiến [F]đ
   title: "[96] TÔI ẨN NÁU NƠI NGÀI",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 Lạy [D]Chúa tôi ẩn náu nơi [Bm]Ngài
 xin chớ để tôi [G]bị hổ thẹn muôn [A]đời
@@ -2612,6 +2808,8 @@ tôi tràn ngập lời [D]ca [A]tôi tràn ngập lời [D]ca
   title: "[97] TÔI KHÔNG CÒN CÔ ĐƠN-HL",
   artist: "Hùng Lân",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.[Dm]Tôi không còn cô đơn buồn [F]khô héo trên dòng [Dm]đời.
 [Bb]Tôi không còn cô [Gm]đơn mặc [C]cho năm tháng trôi [F]xuôi.
@@ -2648,6 +2846,8 @@ Một [F]người hòa chung tất [Dm]cả. Nghĩa [A]anh em cùng một [Dm]Ch
   title: "[98] TÔI KHÔNG CÒN CÔ ĐƠN",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 [C][Am][G]
 [C]Xin cho con biết đếm từng ngày
@@ -2679,6 +2879,8 @@ Trong tâm con không còn cô [C]đơn
   title: "[99] TRÌNH LÊN VỚI CHÚA",
   artist: "TRỊNH CHÚC",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.Tôi càng thêm ca [D]hát chúc tụng Chúa tôi nhiều [A]hơn
 Tôi lớn tiếng ca [G]ngợi cảm tạ Chúa tôi vô [A]cùng
@@ -2712,6 +2914,8 @@ Tôi vẫn xin ca [Bm]ngợi cảm tạ Chúa [D]tôi
   title: "[100] Trong Danh Chúa Chúng Con Không Sợ Gì",
   artist: "Mai Văn Hiền",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1.Trong danh [G]Chúa không sợ [C]gì
 trong Danh Chúa không sợ [D]gì
@@ -2757,6 +2961,8 @@ không Danh Chúa nên cam đành
   title: "[101] TRÔNG CẬY CHÚA",
   artist: "Nguyễn Duy",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.[Am]Con vẫn trông cậy [C]Chúa
 lòng [A]con tin tưởng nơi [Dm]Ngài. 
@@ -2808,6 +3014,8 @@ còn thương con mãi tương lai.
   title: "[102] Trụ Mây Trụ Lửa",
   artist: "Khuyết Danh",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Chúa [Am]ôi con đang [C]đi quanh trong đồng [Am]hoang
 đêm sương [C]giăng ban ngày trời [A]nắng thiên da [Dm]vàng.
@@ -2838,6 +3046,8 @@ cho con [G]nghe uy quyền Ngài [E]lớn yên tâm [Am]hồn.
   title: "[103] TỪ THUỞ HOANG SƠ",
   artist: "Miên Ly",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 Từ thuở hoang sơ [F]nào!
 [C]Mặt trời chưa ra [F]đời. 
@@ -2874,6 +3084,8 @@ Chúa [G]ơi! Tình Chúa cao [C]sâu.
   title: "[104] Ước Mơ Đời Tôi Là Một Giai Khúc",
   artist: "Vũ Đức Nghiêm",
   key: "D",
+  audio: "",
+  sheet: "",
   content: `
 1.[Dsuspended-fourth]Ước mơ [Daugmented]đời [G]tôi là một giai [Am]khúc
 [Em]Dâng lên ca [D]ngợi ơn [Am]Chúa yêu thương tuyệt [D]vời
@@ -2903,6 +3115,8 @@ Xin giúp tôi lìa [Am]xa [D]nẻo đường xưa tăm [Am]tối
   title: "[105] VÂNG THEO CHÚA",
   artist: "Forman-Dịch lời của Austin Miles",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 Tháng năm đi [G]trên đường trần, bước tôi theo [C]Chúa thật gần
 qua nhiều gian [D]truân, ngày đêm mưa [C]nắng.
@@ -2931,6 +3145,8 @@ hiểu rằng đường [G]đi không [G]như ước [C]mơ.
   title: "[106] VỊ NGHỆ SỸ THIÊN THƯỢNG",
   artist: "TRỊNH CHÚC",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1. [Am]Ôi thật tuyệt [Em]vời những công [C]trình của [E]Chúa 
 Không Thần nào ví [Am]bằng 
@@ -2969,6 +3185,8 @@ vần [E]xoay năm [F]tháng trong ý [Am]Ngài
   title: "[107] VUI ĐỜI CÓ CHÚA",
   artist: "TRỊNH CHÚC",
   key: "G",
+  audio: "",
+  sheet: "",
   content: `
 1. [G][Em][Am][D]
 [G]Lạy Chúa nếu không có Ngài thì làm [Bm]sao tạo vật được [G]nên
@@ -3000,6 +3218,8 @@ Lòng [Am]tin nơi Chúa thiên [D]thượng vững bước trong [Bm]Ngài đ�
   title: "[108] VƯƠNG QUỐC CÔNG BÌNH",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1.[C]Kìa một vị [C]Vua là Đức Chúa [Dm]Trời
 Người là [F]nơi núp gió che [C]mưa
@@ -3040,6 +3260,8 @@ Cho [C]đời sống vui bình an đêm [G]ngày Thánh linh muôn [C]đời
   title: "[109] XIN CHO TÔI",
   artist: "TRỊNH CHÚC",
   key: "F",
+  audio: "",
+  sheet: "",
   content: `
 [F]Xin cho tôi được mến yêu [Bb]Ngài.
 [C]Và [F]xin cho [C]tôi được bước theo [F]Ngài.
@@ -3078,6 +3300,8 @@ gieo [C]niềm tin nơi nước [F]trời.
   title: "[110] XIN CHỞ CHE CON",
   artist: "TRỊNH CHÚC",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Xin chở che [Dm]con trong cánh tay [Am]Ngài.
 Trời cao biển [E]lớn con sóng mê [Am]say. 
@@ -3118,6 +3342,8 @@ vững [E]lòng con bước chân [Am]đi.
   title: "[111] XIN ĐƯA CON VỀ",
   artist: "Ngọc Khánh",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.Đường thênh [Dm]thang không đưa [A]ta về chốn quê [Dm]nhà.
 Đường vui [Gm]say không đưa [Gminor-sixth]ta về nơi vĩnh [Dm]phúc.
@@ -3142,6 +3368,8 @@ Tàn cơn [Gm]say trong canh [Gminor-sixth]khuya là cơn chán [Dm]ngán.
   title: "[112] XIN GIẢI CỨU CON",
   artist: "TRỊNH CHÚC",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 [Am]Chúa ơi con yêu mến Ngài
 Ngài [C]là vách đá che đời [Dm]con
@@ -3172,6 +3400,8 @@ Hỡi Ngài lạy Cha Đấng xót [Am]thương
   title: "[113] XIN GIỮ CON",
   artist: "TRỊNH CHÚC",
   key: "C",
+  audio: "",
+  sheet: "",
   content: `
 1.Xin giữ [C]con để [Am]con phụng sự [G]Chúa. 
 [C]Con phụng sự [F]Chúa trong [Am]suốt đời [Dm]con. 
@@ -3195,6 +3425,8 @@ xin giữ [C]con khiêm [Am]cung về với [C]Ngài.
   title: "[114] XIN MỞ TRÍ CON",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 [Dm]Xin Cha mở mắt [Gm]con để [C]được thấy rõ chính [Dm]Ngài
 Càng gần [C]bên Chúa Giê [F]xu và [A]nhận được ơn Thánh Linh dư [Dm]đầy
@@ -3213,6 +3445,8 @@ u mê vây quanh bao [A]trùm và nhận tiếng Cha luôn phán [Dm]dạy
   title: "[115] XIN NGÀI THƯƠNG CON",
   artist: "Khuyết Danh",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 1.[Dm]Từ vực sâu tối [F]tăm 
 con kêu [Bb]cầu Ngài thương trông [A]đến.
@@ -3253,6 +3487,8 @@ Vì đời muôn cỏ cây không bao giờ làm ai oán than.
   title: "[116] XIN THA THỨ",
   artist: "TRỊNH CHÚC",
   key: "Dm",
+  audio: "",
+  sheet: "",
   content: `
 Dm]Phước cho ai nào có sự vi [A]phạm được tha [F]thứ
 Tội lỗi [Gm]mình được khoả [F]lấp [A]đi 
@@ -3275,6 +3511,8 @@ Hỡi những người trung [A]tín hãy hát [D]ca [A]vui [Dm]mừng
   title: "[117] XUÔI DÒNG",
   artist: "Khuyết Danh",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Đời [Am]con như nước xuôi dòng,
 như nước xuôi [D]dòng biết chảy về [E]đâu.
@@ -3305,6 +3543,8 @@ có về miền xuôi hay có về biển khơi?
   title: "[118] YÊN VUI MỘT ĐỜI",
   artist: "Nguyễn Mộng Huỳnh",
   key: "E",
+  audio: "",
+  sheet: "",
   content: `
 1.[E]Chúa sẽ ban ngày nắng tiếp sau ngày [F#m]mưa.
 [Am]Chúa sẽ cho trời [B]sáng xóa đêm buồn [E]lo.
@@ -3331,6 +3571,8 @@ có về miền xuôi hay có về biển khơi?
   title: "[119] YÊU KHÔNG ĐỔI THAY THƯƠNG KHÔNG HỀ VƠI",
   artist: "Nguyễn Hùng Cường",
   key: "Am",
+  audio: "",
+  sheet: "",
   content: `
 1.Tình yêu [Am]Ngài ôi [G]quá bao [C]la
 như đại [Dm]dương mênh [E]mông dạt [Am]dào.
@@ -3361,6 +3603,8 @@ Cha yêu [G]con giang [Em]tay chờ [Am]mong.
   title: "[120] TÌNH CHÚA CAO VỜI",
   artist: "Duy Thiên",
   key: "Cm",
+  audio: "",
+  sheet: "",
   content: `
 ĐK:Tình yêu [Cm]Chúa cao vời biết [Eb]bao
 nào con [Gm]biết đáp đền thế [Cm]nào.
