@@ -127,11 +127,11 @@ pre {
 <div class="sub-title">Dự án Hợp Âm Thờ Phượng (HOPAMTHANHCA)</div>
 
 <p class="note">
-🚀 <b>QUY TRÌNH SỬ DỤNG LIÊN TỤC:</b><br>
-1. <b>Nạp dữ liệu gốc:</b> Chọn file <code>songs.js</code> hiện tại của bạn vào ô màu vàng để nạp danh sách cũ.<br>
-2. <b>Import file nhạc liên tục:</b> Tải file <code>.musicxml</code> vào ô màu xanh lá để tự động bóc tách <b>Lời 1</b> và <b>Lời 2</b>.<br>
-3. <b>Lưu trữ tạm thời:</b> Sửa đổi thông tin nếu cần thiết rồi bấm nút <b>"Thêm / Cập nhật vào danh sách tổng"</b>.<br>
-4. <b>Xuất file tổng hợp:</b> Cuối phiên làm việc, chọn nút màu xanh lá để tải file <code>songs.js</code> mới về đè lên file cũ trên máy.
+🚀 <b>QUY TRÌNH BỔ SUNG LINK CHO BÀI HÁT CÓ SẴN:</b><br>
+1. <b>Nạp dữ liệu gốc:</b> Chọn file <code>songs.js</code> hiện tại của bạn vào ô màu vàng.<br>
+2. <b>Chọn bài cần sửa:</b> Click vào tên bài hát ở danh sách mục số 2 bên dưới để đưa dữ liệu lên form.<br>
+3. <b>Bổ sung link:</b> Dán link Drive vào ô Audio hoặc Sheet PDF ở cuối form chỉnh sửa.<br>
+4. <b>Cập nhật & Xuất bản:</b> Bấm nút "Thêm / Cập nhật..." sau đó chọn nút xanh lá ở dưới cùng để tải file <code>songs.js</code> mới về máy.
 </p>
 
 <hr>
@@ -139,14 +139,14 @@ pre {
 <h2>0️⃣ BƯỚC NẠP FILE (DỮ LIỆU ĐẦU VÀO)</h2>
 <div class="import-panels">
   <div class="import-box bg-js">
-    <label class="file-label">📂 Thư viện gốc (Chỉ nạp 1 lần):</label>
+    <label class="file-label">📂 Thư viện gốc songs.js (Để bổ sung link):</label>
     <div class="file-input-wrapper">
       <input type="file" id="jsFileInput" accept=".js" style="margin: 0;" />
     </div>
   </div>
   
   <div class="import-box bg-xml">
-    <label class="file-label">🎼 Tải file MusicXML lên liên tục:</label>
+    <label class="file-label">🎼 Hoặc tải file MusicXML mới liên tục:</label>
     <div class="file-input-wrapper">
       <input type="file" id="xmlFileInput" accept=".musicxml,.xml" style="margin: 0;" />
     </div>
@@ -170,8 +170,13 @@ pre {
 <textarea id="content" placeholder="Nội dung bài hát dạng hợp âm chữ bọc ngoặc vuông [C] lời [Am] nhạc..."></textarea>
 
 <div class="flex" style="margin-bottom: 15px;">
-  <input id="audioLink" placeholder="Đường dẫn file Audio Google Drive (Ví dụ: https://drive.google.com/file/d/...)" style="margin-bottom: 0;" />
+  <input id="audioLink" placeholder="Audio Drive (Ví dụ: Bản Ca Đoàn|link1 ;; Bản Beat|link2)" style="margin-bottom: 0;" />
   <input id="sheetLink" placeholder="Đường dẫn file Sheet PDF Google Drive" style="margin-bottom: 0;" />
+</div>
+
+<div class="flex">
+  <button onclick="addOrUpdateSong()" style="background: #1c7ed6; font-size: 16px; padding: 14px;">➕ Thêm / Cập nhật vào danh sách tổng</button>
+  <button class="secondary" onclick="clearForm()" style="max-width: 150px;">🧹 Xoá trống form</button>
 </div>
 
 <hr>
@@ -194,7 +199,7 @@ pre {
 let songs = [];
 
 /* ==========================================================================
-   BỘ GIẢI MÃ SONGS.JS SIÊU CẤP CHUẨN XÁC (HỖ TRỢ MỌI PHONG CÁCH COPPY CODE)
+   BỘ GIẢI MÃ SONGS.JS COPPY CODE CHUẨN XÁC NÂNG CẤP ĐỌC AUDIO & SHEET
    ========================================================================== */
 document.getElementById('jsFileInput').addEventListener('change', function(e) {
   const file = e.target.files[0];
@@ -210,7 +215,6 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
     }
 
     try {
-      // Tìm vị trí mở mảng [ và đóng mảng ] đầu tiên và cuối cùng
       const startIdx = rawText.indexOf('[');
       const endIdx = rawText.lastIndexOf(']');
       
@@ -220,7 +224,6 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
 
       let arrayContent = rawText.substring(startIdx, endIdx + 1);
 
-      // Giải thuật bóc tách thủ công từng cặp ngoặc nhọn { ... } tránh dùng eval hoặc JSON.parse trực tiếp trên chuỗi lỗi
       const extractedSongs = [];
       let braceCount = 0;
       let currentObjectIndex = -1;
@@ -236,24 +239,23 @@ document.getElementById('jsFileInput').addEventListener('change', function(e) {
           if (braceCount === 0 && currentObjectIndex !== -1) {
             const objStr = arrayContent.substring(currentObjectIndex, i + 1);
             
-            // Phân tích dữ liệu bằng biểu thức Regex cục bộ của từng bài viết nhỏ
-const idMatch = objStr.match(/(?:id|Id)\s*:\s*([0-9]+)/i);
-const titleMatch = objStr.match(/title\s*:\s*["']([\s\S]*?)["']/i);
-const artistMatch = objStr.match(/artist\s*:\s*["']([\s\S]*?)["']/i);
-const keyMatch = objStr.match(/key\s*:\s*["']([\s\S]*?)["']/i);
-const audioMatch = objStr.match(/audio\s*:\s*["']([\s\S]*?)["']/i); // THÊM
-const sheetMatch = objStr.match(/sheet\s*:\s*["']([\s\S]*?)["']/i); // THÊM
-const contentMatch = objStr.match(/content\s*:\s*`([\s\S]*?)`/i);
+            const idMatch = objStr.match(/(?:id|Id)\s*:\s*([0-9]+)/i);
+            const titleMatch = objStr.match(/title\s*:\s*["']([\s\S]*?)["']/i);
+            const artistMatch = objStr.match(/artist\s*:\s*["']([\s\S]*?)["']/i);
+            const keyMatch = objStr.match(/key\s*:\s*["']([\s\S]*?)["']/i);
+            const audioMatch = objStr.match(/audio\s*:\s*["']([\s\S]*?)["']/i);
+            const sheetMatch = objStr.match(/sheet\s*:\s*["']([\s\S]*?)["']/i);
+            const contentMatch = objStr.match(/content\s*:\s*`([\s\S]*?)`/i);
 
-extractedSongs.push({
-  id: idMatch ? parseInt(idMatch[1]) : Date.now() + extractedSongs.length,
-  title: titleMatch ? titleMatch[1] : "Chưa rõ tiêu đề",
-  artist: artistMatch ? artistMatch[1] : "",
-  key: keyMatch ? keyMatch[1] : "C",
-  audio: audioMatch ? audioMatch[1] : "", // THÊM
-  sheet: sheetMatch ? sheetMatch[1] : "", // THÊM
-  content: contentMatch ? contentMatch[1].trim() : ""
-});
+            extractedSongs.push({
+              id: idMatch ? parseInt(idMatch[1]) : Date.now() + extractedSongs.length,
+              title: titleMatch ? titleMatch[1] : "Chưa rõ tiêu đề",
+              artist: artistMatch ? artistMatch[1] : "",
+              key: keyMatch ? keyMatch[1] : "C",
+              audio: audioMatch ? audioMatch[1] : "",
+              sheet: sheetMatch ? sheetMatch[1] : "",
+              content: contentMatch ? contentMatch[1].trim() : ""
+            });
           }
         }
       }
@@ -391,42 +393,45 @@ document.getElementById('xmlFileInput').addEventListener('change', function(e) {
 });
 
 /* ==========================================================================
-   CRUD OPERATIONS (THÊM, SỬA, XÓA)
+   CRUD OPERATIONS (THÊM, SỬA LINK, XÓA)
    ========================================================================== */
 function addOrUpdateSong() {
   const title = titleEl.value.trim();
   const artist = artistEl.value.trim();
   const key = keyEl.value;
   const content = contentEl.value.trim();
+  const audio = document.getElementById("audioLink").value.trim();
+  const sheet = document.getElementById("sheetLink").value.trim();
 
   if (!title || !content) {
     alert("⚠️ Vui lòng nhập tối thiểu: Tên bài hát và Nội dung lời nhạc!");
     return;
   }
 
-const existingIndex = songs.findIndex(s => s.title.toLowerCase() === title.toLowerCase());
-const audio = document.getElementById("audioLink").value.trim();
-const sheet = document.getElementById("sheetLink").value.trim();
+  // So khớp kiểm tra xem tên bài viết đã có sẵn chưa
+  const existingIndex = songs.findIndex(s => s.title.toLowerCase() === title.toLowerCase());
 
-if (existingIndex > -1) {
-  songs[existingIndex].artist = artist;
-  songs[existingIndex].key = key;
-  songs[existingIndex].audio = audio; // THÊM
-  songs[existingIndex].sheet = sheet; // THÊM
-  songs[existingIndex].content = content;
-  alert("🔄 Đã cập nhật chỉnh sửa bài hát: " + title);
-} else {
-  songs.push({
-    id: Date.now(),
-    title,
-    artist,
-    key,
-    audio, // THÊM
-    sheet, // THÊM
-    content
-  });
-  alert("➕ Đã lưu bài hát mới vào danh sách!");
-}
+  if (existingIndex > -1) {
+    // Đè bổ sung dữ liệu mới lên bài hát cũ dựa trên form sửa đổi
+    songs[existingIndex].artist = artist;
+    songs[existingIndex].key = key;
+    songs[existingIndex].audio = audio;
+    songs[existingIndex].sheet = sheet;
+    songs[existingIndex].content = content;
+    alert("🔄 Đã cập nhật bổ sung liên kết cho bài: " + title);
+  } else {
+    // Nếu hoàn toàn chưa có thì tiến hành tạo mới
+    songs.push({
+      id: Date.now(),
+      title,
+      artist,
+      key,
+      audio,
+      sheet,
+      content
+    });
+    alert("➕ Đã lưu bài hát mới vào danh sách!");
+  }
 
   renderList();
   clearForm();
@@ -457,6 +462,7 @@ function renderList() {
     div.innerHTML = `
       <div class="song-info" id="song-item-${index}">
         <strong>${song.title}</strong> - <small>${song.artist || 'Chưa rõ tác giả'}</small> ${song.key ? `(Tone: ${song.key})` : ''}
+        ${song.audio ? '🎵' : ''} ${song.sheet ? '📄' : ''}
       </div>
       <button class="danger" onclick="deleteSong(${song.id}, event)">Xóa</button>
     `;
@@ -473,8 +479,8 @@ function loadSong(song) {
   artistEl.value = song.artist;
   keyEl.value = song.key;
   contentEl.value = song.content;
-  document.getElementById("audioLink").value = song.audio || ""; // THÊM
-  document.getElementById("sheetLink").value = song.sheet || ""; // THÊM
+  document.getElementById("audioLink").value = song.audio || "";
+  document.getElementById("sheetLink").value = song.sheet || "";
   window.scrollTo({ top: 300, behavior: 'smooth' });
 }
 
@@ -483,10 +489,11 @@ function clearForm() {
   artistEl.value = "";
   keyEl.value = "";
   contentEl.value = "";
-  document.getElementById("audioLink").value = ""; // THÊM
-  document.getElementById("sheetLink").value = ""; // THÊM
+  document.getElementById("audioLink").value = "";
+  document.getElementById("sheetLink").value = "";
   document.getElementById('xmlFileInput').value = "";
 }
+
 /* ==========================================================================
    EXPORT FILE SONGS.JS
    ========================================================================== */
