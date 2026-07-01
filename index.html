@@ -104,6 +104,17 @@ select, input {
 <div id="songDisplay" class="song-display" style="padding: 14px; display: none;">
     <h2 id="displayTitle" class="song-title" style="padding:0; margin-bottom:4px;"></h2>
     <div id="displayArtist" class="song-artist" style="padding:0; margin-bottom:15px; color:#666;"></div>
+    
+    <div class="media-controls" style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; align-items: center;">
+        <button id="playAudioBtn" onclick="toggleAudio()" style="padding: 10px 16px; background: #2b8a3e; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;">
+            🎵 Phát Audio
+        </button>
+        <button id="viewSheetBtn" onclick="openSheet()" style="padding: 10px 16px; background: #e67e22; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;">
+            📄 Xem Sheet PDF
+        </button>
+        <audio id="audioElement" style="display: none; flex: 1; min-width: 220px;" controls></audio>
+    </div>
+
     <pre id="displayContent" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word; margin: 0; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #eee;"></pre>
 </div>
 
