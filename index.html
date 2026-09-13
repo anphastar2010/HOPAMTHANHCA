@@ -1,125 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Hợp Âm Thờ Phượng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="description" content="Thư viện hợp âm và lời bài hát thờ phượng.">
+  <title>Hợp Âm Thờ Phượng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css">
-
-<style>
-/* Giữ lại các style cốt lõi của hệ thống cũ */
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #f9f9f9;
-}
-
-header {
-  background: #1976d2;
-  color: white;
-  padding: 12px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.controls {
-  display: flex;
-  gap: 8px;
-  padding: 10px;
-}
-
-select, input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.song-title {
-  font-size: 22px;
-  font-weight: bold;
-  padding: 12px 12px 4px;
-}
-
-.song-artist {
-  padding: 0 12px 12px;
-  font-size: 14px;
-  color: #666;
-}
-
-.song-content {
-  padding: 14px;
-  font-size: 18px;
-  line-height: 1.75;
-}
-
-.song-line {
-  margin-bottom: 6px;
-}
-
-/* ===== HỢP ÂM NỔI BẬT ===== */
-.chord {
-  color: #0d47a1;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  font-size: 19px;
-  letter-spacing: 0.5px;
-}
-</style>
 </head>
-
 <body>
-
-<header>🎶 Hợp Âm Thờ Phượng</header>
-
-<div class="controls-container" style="padding: 10px; position: relative;">
-  <div class="search-container" style="position: relative; margin-bottom: 10px;">
-      <input type="text" id="searchInput" placeholder="🔍 Tìm tên bài hát, lời nhạc..." autocomplete="off" style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
-      <div id="searchSuggestions" class="suggestions-list"></div>
-  </div>
-
-  <div id="songTools" class="song-tools" style="display: none;">
-      <button onclick="showDirectory()" style="background: #656d78; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-right: auto;">← Danh sách</button>
-  
-      <div class="tool-group">
-          <span>Tông:</span>
-          <button onclick="transpose(-1)">-</button>
-          <span id="currentKeyDisplay" class="badge-key">C</span>
-          <button onclick="transpose(1)">+</button>
+  <header><h1>🎶 Hợp Âm Thờ Phượng</h1></header>
+  <main>
+    <section class="controls-container" aria-label="Tìm kiếm và công cụ bài hát">
+      <div class="search-container">
+        <label class="sr-only" for="searchInput">Tìm bài hát</label>
+        <input type="search" id="searchInput" placeholder="Tìm tên bài hát, lời nhạc hoặc tác giả" autocomplete="off" aria-controls="searchSuggestions" aria-describedby="searchStatus">
+        <p id="searchStatus" class="sr-only" aria-live="polite"></p>
+        <div id="searchSuggestions" class="suggestions-list" role="region" aria-label="Kết quả tìm kiếm"></div>
       </div>
-      <div class="tool-group">
-          <span>Cỡ chữ:</span>
-          <button onclick="changeFontSize(-2)">A-</button>
-          <button onclick="changeFontSize(2)">A+</button>
+      <div id="songTools" class="song-tools" style="display:none">
+        <button type="button" class="back-button" onclick="showDirectory()">← Danh sách</button>
+        <div class="tool-group" aria-label="Đổi tông"><span>Tông:</span><button type="button" aria-label="Giảm một nửa cung" onclick="transpose(-1)">−</button><output id="currentKeyDisplay" class="badge-key">C</output><button type="button" aria-label="Tăng một nửa cung" onclick="transpose(1)">+</button></div>
+        <div class="tool-group" aria-label="Cỡ chữ"><span>Cỡ chữ:</span><button type="button" aria-label="Giảm cỡ chữ" onclick="changeFontSize(-2)">A−</button><button type="button" aria-label="Tăng cỡ chữ" onclick="changeFontSize(2)">A+</button></div>
       </div>
-  </div>
-</div>
-
-<div id="directoryContainer" class="directory-container" style="display: flex; flex-direction: column; width: 100%; gap: 12px; padding: 10px; box-sizing: border-box;">
-</div>
-
-<div id="songDisplay" class="song-display" style="padding: 14px; display: none;">
-    <h2 id="displayTitle" class="song-title" style="padding:0; margin-bottom:4px;"></h2>
-    <div id="displayArtist" class="song-artist" style="padding:0; margin-bottom:15px; color:#666;"></div>
-    
-  <div class="media-controls" style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; align-items: center;">
-    
-    <div id="audioContainer" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
-    
-    <button id="viewSheetBtn" onclick="openSheet()" style="padding: 10px 16px; background: #e67e22; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        📄 Xem Sheet PDF
-    </button>
-    <audio id="audioElement" style="display: none; flex: 1; min-width: 220px;" controls></audio>
-</div>
-
-    <pre id="displayContent" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word; margin: 0; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #eee;"></pre>
-</div>
-
-<script src="songs.js"></script>
-<script src="app.js"></script>
-
+    </section>
+    <section id="directoryContainer" class="directory-container" aria-label="Danh sách bài hát"></section>
+    <article id="songDisplay" class="song-display" style="display:none">
+      <h2 id="displayTitle" class="song-title"></h2>
+      <p id="displayArtist" class="song-artist"></p>
+      <div class="media-controls">
+        <div id="audioContainer" class="audio-container"></div>
+        <button type="button" id="viewSheetBtn" class="sheet-button" onclick="openSheet()">📄 Xem Sheet PDF</button>
+        <audio id="audioElement" style="display:none" controls></audio>
+      </div>
+      <pre id="displayContent" tabindex="0"></pre>
+    </article>
+  </main>
+  <script src="songs.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
