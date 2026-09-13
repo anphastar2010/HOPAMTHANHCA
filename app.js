@@ -1,4 +1,19 @@
-let currentActiveSong = null;
+function renderSongContent(container, text) {
+  const fragment = document.createDocumentFragment();
+  text.split(/(\[[^\]]+\])/g).forEach(part => {
+    if (/^\[[^\]]+\]$/.test(part)) {
+      const chord = document.createElement("span");
+      chord.className = "chord";
+      chord.textContent = part.slice(1, -1);
+      fragment.append(chord);
+    } else {
+      fragment.append(document.createTextNode(part));
+    }
+  });
+  container.replaceChildren(fragment);
+}
+
+function getLyricsSnippet(content) {let currentActiveSong = null;
 let currentFontSize = 18;
 let transposeSteps = 0;
 let currentPlayingButton = null;
