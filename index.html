@@ -7,7 +7,7 @@
   <title>Hợp Âm Thờ Phượng</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,11 +30,7 @@
     <article id="songDisplay" class="song-display" style="display:none">
       <h2 id="displayTitle" class="song-title"></h2>
       <p id="displayArtist" class="song-artist"></p>
-      <div class="media-controls">
-        <div id="audioContainer" class="audio-container"></div>
-        <button type="button" id="viewSheetBtn" class="sheet-button" onclick="openSheet()">📄 Xem Sheet PDF</button>
-        <audio id="audioElement" style="display:none" controls></audio>
-      </div>
+      <div class="media-controls"><div id="audioContainer" class="audio-container"></div><button type="button" id="viewSheetBtn" class="sheet-button" onclick="openSheet()">📄 Xem Sheet PDF</button><audio id="audioElement" style="display:none" controls></audio></div>
       <pre id="displayContent" tabindex="0"></pre>
     </article>
   </main>
