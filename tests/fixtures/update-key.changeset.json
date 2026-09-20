@@ -1,0 +1,13 @@
+{
+  "author": "Test fixture",
+  "baseCommit": "8454212329875e2d11a3d062d4549f8feadf0293",
+  "changes": [
+    {
+      "op": "update",
+      "song": {
+        "id": 1767000271760,
+        "key": "D"
+      }
+    }
+  ]
+}

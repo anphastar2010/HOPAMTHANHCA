@@ -1,0 +1,22 @@
+{
+  "name": "hopamthanhca",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate:songs": "node tools/validate-songs.mjs",
+    "review:changeset": "node tools/review-changeset.mjs",
+    "qa:text": "node tools/report-text-qa.mjs",
+    "qa:calibration": "node tools/report-text-qa.mjs --calibration --json reports/text-qa/calibration.json --html reports/text-qa/calibration.html",
+    "update:data-revision": "node tools/update-data-revision.mjs \"$(git rev-list -1 HEAD -- songs.js)\"",
+    "check:data-revision": "node tools/check-data-revision.mjs \"$(git rev-list -1 HEAD -- songs.js)\"",
+    "test": "vitest run",
+    "check": "npm run validate:songs && npm run check:data-revision && npm run qa:text && npm test"
+  },
+  "devDependencies": {
+    "@xmldom/xmldom": "^0.9.12",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "jsondiffpatch": "^0.7.6"
+  }
+}

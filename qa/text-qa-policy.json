@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "datasetRevision": "8454212329875e2d11a3d062d4549f8feadf0293",
+  "thresholds": {
+    "longLineCharacters": 100
+  },
+  "rules": {
+    "bracket-unmatched-close": {
+      "severity": "error",
+      "ci": "structural-regression",
+      "explanation": "Có dấu ] không đi cùng dấu [ mở chord. Legacy đã biết được giữ ở mức warning; finding mới làm CI thất bại."
+    },
+    "bracket-unmatched-open": {
+      "severity": "error",
+      "ci": "structural-regression",
+      "explanation": "Có dấu [ mở chord nhưng không có dấu ] đóng."
+    },
+    "chord-empty-token": {
+      "severity": "error",
+      "ci": "structural-regression",
+      "explanation": "Chord token rỗng [] là lỗi cấu trúc chắc chắn."
+    },
+    "chord-malformed-token": {
+      "severity": "error",
+      "ci": "structural-regression",
+      "explanation": "Chord token có cấu trúc ngoặc lồng hoặc hỏng."
+    },
+    "chord-token-review": {
+      "severity": "review",
+      "ci": "never",
+      "explanation": "Nội dung trong ngoặc vuông không khớp chord phổ biến; cần con người xác nhận trước khi kết luận."
+    },
+    "trailing-whitespace": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Dòng lời không trống có khoảng trắng ở cuối."
+    },
+    "leading-whitespace": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Dòng lời không trống bắt đầu bằng khoảng trắng; cần kiểm tra đây có phải thụt dòng có chủ đích hay không."
+    },
+    "repeated-internal-whitespace": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Có nhiều khoảng trắng liên tiếp trong cùng một đoạn chữ, không phải khoảng cách do chord token tạo ra."
+    },
+    "invisible-control-character": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Có ký tự điều khiển hoặc ký tự vô hình cần được con người kiểm tra."
+    },
+    "non-nfc-text": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Dòng tiếng Việt không ở Unicode NFC; chưa tự động chuẩn hóa."
+    },
+    "punctuation-space-before": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Có khoảng trắng ngay trước dấu phẩy, chấm phẩy, chấm than hoặc dấu hỏi trong đoạn chữ."
+    },
+    "punctuation-missing-space-after": {
+      "severity": "warning",
+      "ci": "never",
+      "explanation": "Không có khoảng trắng sau dấu phẩy, chấm phẩy, chấm than hoặc dấu hỏi trong cùng đoạn chữ."
+    },
+    "verse-number-style-review": {
+      "severity": "info",
+      "ci": "never",
+      "explanation": "Số thứ tự câu không có khoảng trắng sau dấu chấm; đây là thông tin để quyết định quy ước, không phải auto-fix."
+    },
+    "chorus-label-style-review": {
+      "severity": "info",
+      "ci": "never",
+      "explanation": "Ghi nhận cách trình bày nhãn điệp khúc để con người so sánh các biến thể."
+    },
+    "long-line-review": {
+      "severity": "review",
+      "ci": "never",
+      "explanation": "Dòng lời dài hơn ngưỡng khảo sát sau khi bỏ qua chord token; có thể cần xuống dòng hoặc có thể là chủ đích."
+    },
+    "repeated-punctuation-review": {
+      "severity": "review",
+      "ci": "never",
+      "explanation": "Dấu câu lặp có thể là ký hiệu biểu cảm hoặc định dạng cũ; cần con người xem."
+    },
+    "repeated-word-review": {
+      "severity": "review",
+      "ci": "never",
+      "explanation": "Hai từ liền nhau giống nhau; lời hát có thể cố ý lặp nên chỉ yêu cầu human review."
+    },
+    "title-capitalization-review": {
+      "severity": "info",
+      "ci": "never",
+      "explanation": "Tiêu đề viết hoa toàn bộ được ghi nhận để khảo sát quy ước, không phải lỗi."
+    }
+  },
+  "structuralBaseline": [
+    "bracket-unmatched-close|1781861858714|24|e914b957",
+    "bracket-unmatched-close|1782379312906|2|56fe3194"
+  ]
+}

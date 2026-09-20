@@ -21,20 +21,20 @@
         <div id="searchSuggestions" class="suggestions-list" role="region" aria-label="Kết quả tìm kiếm"></div>
       </div>
       <div id="songTools" class="song-tools" style="display:none">
-        <button type="button" class="back-button" onclick="showDirectory()">← Danh sách</button>
-        <div class="tool-group" aria-label="Đổi tông"><span>Tông:</span><button type="button" aria-label="Giảm một nửa cung" onclick="transpose(-1)">−</button><output id="currentKeyDisplay" class="badge-key">C</output><button type="button" aria-label="Tăng một nửa cung" onclick="transpose(1)">+</button></div>
-        <div class="tool-group" aria-label="Cỡ chữ"><span>Cỡ chữ:</span><button type="button" aria-label="Giảm cỡ chữ" onclick="changeFontSize(-2)">A−</button><button type="button" aria-label="Tăng cỡ chữ" onclick="changeFontSize(2)">A+</button></div>
+        <button type="button" id="backDirectoryBtn" class="back-button">← Danh sách</button>
+        <div class="tool-group" aria-label="Đổi tông"><span>Tông:</span><button type="button" id="transposeDownBtn" aria-label="Giảm một nửa cung">−</button><output id="currentKeyDisplay" class="badge-key">C</output><button type="button" id="transposeUpBtn" aria-label="Tăng một nửa cung">+</button></div>
+        <div class="tool-group" aria-label="Cỡ chữ"><span>Cỡ chữ:</span><button type="button" id="fontDownBtn" aria-label="Giảm cỡ chữ">A−</button><button type="button" id="fontUpBtn" aria-label="Tăng cỡ chữ">A+</button></div>
       </div>
     </section>
     <section id="directoryContainer" class="directory-container" aria-label="Danh sách bài hát"></section>
     <article id="songDisplay" class="song-display" style="display:none">
       <h2 id="displayTitle" class="song-title"></h2>
       <p id="displayArtist" class="song-artist"></p>
-      <div class="media-controls"><div id="audioContainer" class="audio-container"></div><button type="button" id="viewSheetBtn" class="sheet-button" onclick="openSheet()">📄 Xem Sheet PDF</button><audio id="audioElement" style="display:none" controls></audio></div>
+      <div class="media-controls"><div id="audioContainer" class="audio-container"></div><button type="button" id="viewSheetBtn" class="sheet-button">📄 Xem Sheet PDF</button><audio id="audioElement" style="display:none" controls></audio></div>
       <pre id="displayContent" tabindex="0"></pre>
     </article>
   </main>
   <script src="songs.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

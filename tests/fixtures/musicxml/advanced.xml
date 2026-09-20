@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<score-partwise version="4.0">
+  <work><work-title>Nâng cao</work-title></work>
+  <identification><creator type="composer">Nhạc sĩ</creator></identification>
+  <part-list><score-part id="P1"><part-name>Voice</part-name></score-part></part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes><key><fifths>2</fifths><mode>minor</mode></key></attributes>
+      <harmony><root><root-step>F</root-step><root-alter>1</root-alter></root><kind text="maj7">major-seventh</kind></harmony>
+      <note><pitch><step>C</step><octave>4</octave></pitch><duration>1</duration></note>
+      <harmony><root><root-step>B</root-step><root-alter>-1</root-alter></root><kind>minor</kind></harmony>
+      <note><pitch><step>D</step><octave>4</octave></pitch><duration>1</duration><lyric number="1"><text>Một</text></lyric><lyric number="2"><text>Hai</text></lyric></note>
+    </measure>
+    <measure number="2">
+      <harmony><root><root-step>G</root-step></root><kind>dominant</kind></harmony>
+      <note><pitch><step>E</step><octave>4</octave></pitch><duration>1</duration><lyric number="1"><text>Sau</text></lyric></note>
+    </measure>
+  </part>
+</score-partwise>

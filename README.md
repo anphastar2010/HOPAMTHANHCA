@@ -19,6 +19,38 @@
 
 Studio không ghi trực tiếp vào GitHub; xuất file là bước chủ động để tránh mất dữ liệu.
 
+## Kiểm tra trước khi sửa dữ liệu
+
+Các công cụ phát triển chạy bằng Node.js và không được đưa vào website GitHub
+Pages. Cài dependency một lần bằng `npm install`, sau đó chạy:
+
+```bash
+npm run validate:songs
+npm test
+npm run check
+```
+
+Có thể kiểm tra một changeset cộng tác mà không ghi vào thư viện chính:
+
+```bash
+npm run review:changeset -- changeset-123.json
+npm run review:changeset -- changeset-123.json --out candidate-songs.js
+```
+
+Lệnh review luôn tạo diff dữ liệu và đánh dấu thao tác xóa, đổi tên, thay đổi
+nội dung lớn hoặc làm mất metadata. Tùy chọn `--out` chỉ được ghi sang file
+candidate riêng; công cụ từ chối ghi đè trực tiếp `songs.js`.
+Nếu `baseCommit` đã cũ, công cụ vẫn in báo cáo nhưng từ chối tạo candidate.
+Chỉ sau khi review rủi ro ghi đè, có thể chủ động thêm `--allow-stale-base`.
+
+`validate:songs` chỉ đọc và báo cáo; lệnh này không tự sửa `songs.js`. Lỗi cấu
+trúc chắc chắn làm lệnh thất bại, còn vấn đề biên tập hiện được báo dưới dạng
+cảnh báo hoặc thông tin để người quản lý rà thủ công.
+
+Trạng thái kỹ thuật, quyết định và bước tiếp theo được duy trì trong
+`docs/PROJECT_LOG.md` để các phiên làm việc sau có thể tiếp tục mà không khảo
+sát lại toàn bộ repository.
+
 ## Nhập từ MuseScore MusicXML
 
 MuseScore Studio xuất MusicXML 4.0 phù hợp với Studio.
@@ -58,7 +90,10 @@ Phiên bản đầu nên chỉ hỗ trợ ảnh rõ nét có lời/hợp âm in 
 
 ## Checklist trước khi commit
 
+- Phục vụ repository qua HTTP (ví dụ `python3 -m http.server 4173`); không dùng
+  `file://` để kiểm tra ES modules.
 - Mở `index.html`, tìm và chọn một bài.
 - Kiểm tra đổi tông, cỡ chữ, audio/Sheet khi có.
 - Mở `studio.html`, nạp `songs.js`, sửa một bài thử và export.
 - Kiểm tra cú pháp `songs.js` và dữ liệu tiếng Việt.
+- Mở `tests/browser-smoke.html` qua cùng HTTP server; trang phải báo `PASS`.

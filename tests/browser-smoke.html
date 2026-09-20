@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<title>HOPAMTHANHCA browser smoke</title>
+<body data-result="pending">
+<pre id="result">RUNNING</pre>
+<script type="module">
+const output = document.getElementById("result");
+const checks = [];
+const assert = (condition, message) => {
+  if (!condition) throw new Error(message);
+  checks.push(message);
+};
+const waitFor = async (read, message, timeout = 5000) => {
+  const started = Date.now();
+  while (Date.now() - started < timeout) {
+    const value = read();
+    if (value) return value;
+    await new Promise(resolve => setTimeout(resolve, 50));
+  }
+  throw new Error(message);
+};
+const openFrame = source => new Promise((resolve, reject) => {
+  const frame = document.createElement("iframe");
+  frame.src = source;
+  frame.onload = () => resolve(frame.contentWindow);
+  frame.onerror = () => reject(new Error(`Không tải được ${source}`));
+  document.body.append(frame);
+});
+const input = (element, value) => {
+  element.value = value;
+  element.dispatchEvent(new Event("input", { bubbles: true }));
+};
+
+try {
+  const app = await openFrame("../index.html");
+  const appDocument = app.document;
+  await waitFor(() => appDocument.querySelectorAll(".song-card").length === 123, "Trang chính không render đủ 123 bài.");
+  assert(appDocument.querySelectorAll(".song-card").length === 123, "Trang chính load 123 bài");
+  const firstTitle = app.eval("songs[0].title");
+  input(appDocument.getElementById("searchInput"), firstTitle);
+  assert(appDocument.querySelectorAll(".suggestion-item").length > 0, "Tìm kiếm trả kết quả");
+  appDocument.querySelector(".song-card").click();
+  const keyBefore = appDocument.getElementById("currentKeyDisplay").textContent;
+  appDocument.getElementById("transposeUpBtn").click();
+  assert(appDocument.getElementById("currentKeyDisplay").textContent !== keyBefore, "Đổi tông hoạt động");
+  const fontBefore = parseInt(appDocument.getElementById("displayContent").style.fontSize, 10);
+  appDocument.getElementById("fontUpBtn").click();
+  assert(parseInt(appDocument.getElementById("displayContent").style.fontSize, 10) > fontBefore, "Đổi cỡ chữ hoạt động");
+  assert(appDocument.querySelectorAll(".audio-button").length > 0, "Audio controls render không lỗi module");
+  assert(Boolean(appDocument.getElementById("viewSheetBtn")), "Sheet control render không lỗi module");
+  appDocument.getElementById("backDirectoryBtn").click();
+  assert(appDocument.getElementById("directoryContainer").style.display === "flex", "Quay lại danh sách hoạt động");
+
+  const studio = await openFrame("../studio.html");
+  const studioDocument = studio.document;
+  await waitFor(() => studioDocument.querySelectorAll(".song").length === 123, "Studio không load đủ 123 bài.");
+  assert(studioDocument.querySelectorAll(".song").length === 123, "Studio load 123 bài");
+  const downloads = [];
+  studio.URL.createObjectURL = blob => { downloads.push(blob); return "blob:browser-smoke"; };
+  studio.HTMLAnchorElement.prototype.click = () => {};
+  input(studioDocument.getElementById("editorName"), "Browser smoke");
+
+  studioDocument.querySelector(".song").click();
+  const originalTitle = studioDocument.getElementById("title").value;
+  input(studioDocument.getElementById("title"), `${originalTitle} test`);
+  studioDocument.getElementById("save").click();
+  studioDocument.getElementById("undo").click();
+  assert(studioDocument.getElementById("title").value === originalTitle, "Edit rồi Undo phục hồi bài đang chọn");
+  studioDocument.getElementById("exportChanges").click();
+  let changeset = JSON.parse(await downloads.at(-1).text());
+  assert(changeset.changes.length === 0, "Edit rồi Undo không để lại changeset");
+
+  studioDocument.getElementById("remove").click();
+  studioDocument.getElementById("undo").click();
+  studioDocument.getElementById("exportChanges").click();
+  changeset = JSON.parse(await downloads.at(-1).text());
+  assert(changeset.changes.length === 0, "Delete rồi Undo không để lại changeset");
+
+  studioDocument.getElementById("new").click();
+  input(studioDocument.getElementById("title"), "Bài smoke tạm");
+  input(studioDocument.getElementById("sourceUrl"), "https://source.test/browser-smoke");
+  input(studioDocument.getElementById("hacPaste"), "[C]Nội dung tạm");
+  studioDocument.getElementById("importPaste").click();
+  studioDocument.getElementById("save").click();
+  studioDocument.getElementById("exportChanges").click();
+  changeset = JSON.parse(await downloads.at(-1).text());
+  const created = changeset.changes.at(-1)?.song;
+  assert(changeset.baseCommit === studio.HOPAM_DATA_REVISION, "Changeset có baseCommit hiện tại");
+  assert(created?.sourceUrl === "https://source.test/browser-smoke" && Boolean(created.importedAt), "Paste + sourceUrl tạo provenance");
+
+  const { parseMusicXml } = await import("../src/musicxml.js");
+  const xml = await fetch("fixtures/musicxml/advanced.xml").then(response => {
+    if (!response.ok) throw new Error(`MusicXML fixture HTTP ${response.status}`);
+    return response.text();
+  });
+  assert(parseMusicXml(xml, "advanced.xml").content.includes("[F#maj7][Bbm]Một"), "MusicXML import chạy trong browser");
+
+  studioDocument.getElementById("out").click();
+  const exportedLibrary = await downloads.at(-1).text();
+  assert(exportedLibrary.startsWith("const songs = ["), "Export songs.js tạo dữ liệu tải xuống, không ghi repository");
+
+  document.body.dataset.result = "pass";
+  output.textContent = `PASS (${checks.length})\n` + checks.map(item => `- ${item}`).join("\n");
+} catch (error) {
+  document.body.dataset.result = "fail";
+  output.textContent = `FAIL\n${error.stack || error.message}`;
+}
+</script>
+</body>
+</html>
