@@ -11,6 +11,7 @@ import {
   serializeJsonReport,
   tokenizeChordLine
 } from "../src/text-qa.js";
+import { loadSongs } from "../tools/load-songs.mjs";
 
 const policy = JSON.parse(fs.readFileSync("qa/text-qa-policy.json", "utf8"));
 const revision = policy.datasetRevision;
@@ -166,16 +167,25 @@ describe("reporting and integration", () => {
     expect(reportExitCode(report)).toBe(0);
   });
 
-  it("validates the stable calibration and 15-batch manifest", () => {
+  it("validates the stable calibration and 15-batch manifest", async () => {
     const manifest = JSON.parse(fs.readFileSync("qa/batches.json", "utf8"));
     expect(manifest.datasetRevision).toBe(revision);
     expect(manifest.calibration.songIds).toHaveLength(8);
     expect(manifest.batches).toHaveLength(15);
-    expect(manifest.batches.slice(0, 14).every(batch => batch.songIds.length === 8)).toBe(true);
-    expect(manifest.batches[14].songIds).toHaveLength(11);
     const ids = manifest.batches.flatMap(batch => batch.songIds);
-    expect(ids).toHaveLength(123);
-    expect(new Set(ids).size).toBe(123);
+    expect(ids).toHaveLength(121);
+    expect(new Set(ids).size).toBe(121);
+    const songs = await loadSongs("songs.js");
+    expect(new Set(ids)).toEqual(new Set(songs.map(song => song.id)));
+    expect(manifest.calibration.positions).toEqual(manifest.calibration.songIds.map(id => songs.findIndex(song => song.id === id) + 1));
+    let nextPosition = 1;
+    for (const batch of manifest.batches) {
+      expect(batch.positions.start).toBe(nextPosition);
+      expect(batch.positions.end).toBe(batch.positions.start + batch.songIds.length - 1);
+      expect(songs.slice(batch.positions.start - 1, batch.positions.end).map(song => song.id)).toEqual(batch.songIds);
+      nextPosition = batch.positions.end + 1;
+    }
+    expect(nextPosition).toBe(122);
   });
 
   it("rejects a policy bound to another dataset revision", () => {

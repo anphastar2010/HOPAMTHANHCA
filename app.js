@@ -1,6 +1,8 @@
 import { parseAudioLinks, transposeChord, transposeText } from "./src/chords.js";
+import { resolvePdfUrl } from "./src/pdf-links.js";
 
 let currentActiveSong = null;
+let currentSheetUrl = null;
 let currentFontSize = 18;
 let transposeSteps = 0;
 let currentPlayingButton = null;
@@ -74,7 +76,7 @@ async function playAudioVersion(url, element, label) {
   try { await audio.play(); currentPlayingButton = element; setAudioButton(element, label, true); }
   catch (error) { console.error("Audio playback failed", error); alert("Không thể phát audio. Hãy kiểm tra liên kết và quyền chia sẻ."); }
 }
-function openSheet() { if (currentActiveSong && currentActiveSong.sheet) window.open(currentActiveSong.sheet, "_blank", "noopener"); }
+function openSheet() { if (currentSheetUrl) window.open(currentSheetUrl, "_blank", "noopener"); }
 function renderSong(song) {
   currentActiveSong = song; directoryContainer.style.display = "none"; songDisplay.style.display = "block"; songTools.style.display = "flex";
   document.getElementById("displayTitle").textContent = song.title;
@@ -85,7 +87,8 @@ function renderSong(song) {
   const container = document.getElementById("audioContainer"); container.replaceChildren(); const versions = parseAudioLinks(song.audio);
   if (!versions.length) { const unavailable = makeButton("audio-button", "🎵 Chưa có audio"); unavailable.disabled = true; container.append(unavailable); }
   versions.forEach((version, index) => { const element = makeButton("audio-button", "▶ " + version.label, () => playAudioVersion(version.url, element, version.label)); element.dataset.label = version.label; element.id = "audioBtn_" + index; container.append(element); });
-  document.getElementById("viewSheetBtn").disabled = !song.sheet; window.scrollTo({ top:0, behavior:"smooth" });
+  currentSheetUrl = resolvePdfUrl(song);
+  document.getElementById("viewSheetBtn").disabled = !currentSheetUrl; window.scrollTo({ top:0, behavior:"smooth" });
 }
 document.getElementById("audioElement").addEventListener("ended", () => { if (currentPlayingButton) setAudioButton(currentPlayingButton, currentPlayingButton.dataset.label, false); currentPlayingButton = null; });
 document.getElementById("backDirectoryBtn").addEventListener("click", showDirectory);

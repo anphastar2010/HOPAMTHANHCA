@@ -1,16 +1,7 @@
 const songs = [
   {
-    "id": 1767000271760,
-    "title": "Yên vui một đời",
-    "artist": "Nguyễn Mộng Huỳnh",
-    "key": "C",
-    "audio": "",
-    "sheet": "",
-    "content": "\n1. [C] Chúa sẽ ban ngày nắng tiếp sau ngày [Dm] mưa\n[Fm] Chúa sẽ cho trời [G] sáng xóa đêm buồn [C] lo\n[Am] Nếu mắt môi mặn [C] đắng Chúa lau lệ [Dm] khô\n[Fm] Hỡi những ai nặng [G] gánh đến bên Ngài [C] chưa.\n\nĐK:\n[F] Chúa là nguồn nước [C] trong cho ta nghỉ [Em] ngơi\n[Dm] Xóa lao [G] nhọc của tháng năm ngược [C] xuôi\n[F] Hỡi bao người đời [C] sống luôn nổi [Em] trôi\n[Dm] Đến bên [G] Ngài rồi sẽ yên vui một [C] đời.\n\n2. [C] Chúa sẽ cho cày sới đất hoang chờ [Dm] mưa\n[Fm] Chúa sẽ ban dòng [G] suối tưới sa mạc [C] trơ\n[Am] Chúa sẽ luôn đổi [C] mới trái tim cằn [Dm] khô\n[Fm] Hỡi những ai lạc [G] lối đã quay về [C] chưa.\n  "
-  },
-  {
     "id": 1767001582485,
-    "title": "Đồi vắng",
+    "title": "[337-TVCHH] Đồi Vắng",
     "artist": "Lê Phước Thiện",
     "key": "D",
     "audio": "",
@@ -855,15 +846,6 @@ const songs = [
     "content": "\nTình yêu Thiên [Dm]Chúa như trăng như sao\nđưa con lên [A]cao, ôi nào biết lấy chi báo [Dm]đền.\nChúa dắt dìu [F]con đi qua đêm đen,\ncho con ca [Gm]khen tình yêu Chúa ôi như đại [A]dương.\nTình yêu Thiên [Dm]Chúa chói sáng khắp chốn,\ngội sạch tội [Dm]đời, ôi tình Chúa sao quá cao [A]vời.\nCon quyết trọn [Dm]đời dâng hiến xác [Gm]thân\nloan báo Thiên [A]ân cho khắp nhân [Dm]trần. \n\n1.Người đã thương [Dm]tôi từ thuở xa xôi chưa có bầu [A]trời. \n[Dm]Nào ai có [F]biết tôi đã từ [Bb]đâu sinh đến trong [A]đời. \nChúa đã thương [Gm]tôi nên có đôi [F]môi\ntôi ca ngàn [A]khúc hát vang lên ngợi [Dm]khen.\n\n2.Nhìn ngước lên [Dm]cao ngàn ánh trăng sao tinh tú dạt [A]dào. \n[Dm]Nào ai dám [F]nói đất thấp trời [Bb]cao Chúa ở nơi [A]nào? \nChúa ở bên [Gm]tôi, đâu có xa [F]xôi\nnhư đôi hình [A]với bóng theo nhau mọi [Dm]nơi.\n\n3.Ngày tháng hôm nay và mãi tương lai Chúa biết từng ngày.\nĐời tôi đang sống dẫu có đổi thay tay Chúa an bài.\nMưa gió miên man hay nắng hân hoan, môi luôn tràn tiếng hát tâm tư bình an.\n\n4.Trời đất bao la dành hết cho ta đâu có tình cờ.\nTình yêu Thiên Chúa đã tác tạo nên sông núi trên đời.\nTrong gió lên khơi, trong tiếng mưa rơi nghe như là tiếng Chúa trong tim mọi người.\n  "
   },
   {
-    "id": 1782288509642,
-    "title": "TÌNH CON DÂNG HIẾN",
-    "artist": "TRỊNH CHÚC",
-    "key": "F",
-    "audio": "",
-    "sheet": "",
-    "content": "\n1. Đời [F]con có gì [Gm]đâu,\nchỉ xin [C]dâng thân xác linh hồn,\nlà đời [F]con Chúa ơi. \nLòng con dâng hiến Chúa tình [Bb]thơ,\nnghèo đơn [Gm]sơ thắm thiết mong [C]chờ,\nđược [C]Cha chấp [Dm]nhận, chấp [C]nhận của lễ đời [F]con.\n\nChúa ơi, vàng bạc kia chẳng là hành trang,\nsuốt đời [Gm]con xin, hiến dâng bao tâm [C]tình,\n[F]mọn hèn đời con [Gm]lắm thay, hương [C]tình bay.\n[F]Chúa ơi, ngày buồn vui một lòng dâng Chúa,\nnhững ngày [Gm]buồn vui, chứa chan bao ân [C]tình, \n[F]cùng Ngài. [C]cùng Ngài xin hiến [F]đời con....\n\n2. Nguyện [F]dâng Chúa từ [Gm]nhân,\nmột bài [C]ca con hát dâng Ngài,lời thề [F]son thủy chung. \nDù gian nan với những hiểm [Bb]nguy,\nlòng không [Gm]phai không chút nao [C]sờn,\nthành [C]công thất [Dm]bại, xin [C]làm của lễ đời [F]con.\n\nChúa ơi, ngợi khen Cha một bài ca mới,\nhát ngợi [Gm]khen Cha, Thánh linh ôi nhiệm [C]màu,\n[F]nguyện xin Ngài luôn [Gm]đoái thương đến [C]tình con.\n[F]Chúa ơi, Cảm tạ Chúa một lòng tôn kính, hãy cảm [Gm]tạ Chúa,\nhiến dâng với tấm [C]lòng, [F]hỷ hoan. [C]cùng Ngài xin hiến [F]đời con.\n  "
-  },
-  {
     "id": 1782288527182,
     "title": "[95] TÌNH CON DÂNG HIẾN",
     "artist": "TRỊNH CHÚC",
@@ -1099,7 +1081,7 @@ const songs = [
   },
   {
     "id": 1789300042893,
-    "title": "[268 TVCHH] Ngài Là Ai",
+    "title": "[268-TVCHH] Ngài Là Ai",
     "artist": "Nguyễn Hữu Ái",
     "key": "F",
     "audio": "",

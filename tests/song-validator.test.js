@@ -45,6 +45,18 @@ describe("validateSong", () => {
       "invalid-sheet-url"
     ]));
   });
+
+  it("reports malformed PDF collection codes", () => {
+    expect(validateSong(song({ title: "[268 TVCHH] Sai định dạng" }))).toContainEqual(expect.objectContaining({
+      severity: "warning", code: "invalid-tvchh-pdf-code"
+    }));
+  });
+
+  it.each(["[0] Không hợp lệ", "[121] Không hợp lệ"])("warns about main PDF code outside 1–120: %s", title => {
+    expect(validateSong(song({ title }))).toContainEqual(expect.objectContaining({
+      severity: "warning", code: "main-pdf-number-out-of-range"
+    }));
+  });
 });
 
 describe("validateLibrary", () => {
@@ -65,5 +77,16 @@ describe("validateLibrary", () => {
       { severity: "warning" },
       { severity: "warning" }
     ])).toEqual({ error: 1, warning: 2, info: 0 });
+  });
+
+  it("finds duplicate PDF codes and treats absent main numbers as information", () => {
+    const findings = validateLibrary([
+      song({ id: 1, title: "[1] Một" }),
+      song({ id: 2, title: "[1] Một bản khác" })
+    ]);
+    expect(findings).toEqual(expect.arrayContaining([
+      expect.objectContaining({ severity: "error", code: "duplicate-pdf-code" }),
+      expect.objectContaining({ severity: "info", code: "missing-main-pdf-number" })
+    ]));
   });
 });

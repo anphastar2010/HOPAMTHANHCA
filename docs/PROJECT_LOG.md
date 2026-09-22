@@ -271,3 +271,79 @@ Pre-commit verification:
 The checkpoint commit must not change `songs.js`, update the dataset revision,
 or be pushed before independent ChatGPT review. Its boundary is **BEFORE SONG
 DATA CLEANUP**.
+
+## PDF resolver and approved data cleanup (uncommitted)
+
+- The project owner approved removal of the two unnumbered duplicate records:
+  ID `1767000271760` (`Yên vui một đời`) and ID `1782288509642`
+  (`TÌNH CON DÂNG HIẾN`). Their numbered retained counterparts are IDs
+  `1782379843052` (`[118] YÊN VUI MỘT ĐỜI`) and `1782288527182`
+  (`[95] TÌNH CON DÂNG HIẾN`).
+- ID `1767001582485` is now titled `[337-TVCHH] Đồi Vắng`; ID
+  `1789300042893` is now titled `[268-TVCHH] Ngài Là Ai`. No artist, key,
+  audio, sheet, or content field was changed for retained songs.
+- `songs.js` now contains 121 songs. The main collection has 119 valid
+  numbers in `1–120`; number 18 is intentionally absent because **Chúa Hằng
+  Chăn Giữ Tôi** has not yet been entered. No placeholder was created. A later
+  valid `[18]` title will resolve automatically to `thanhca/18.pdf`.
+- `src/pdf-links.js` provides a pure strict resolver. Valid `[n]` titles map
+  to `https://pdf.alpha2026.dpdns.org/thanhca/n.pdf`; valid
+  `[n-TVCHH]` titles map to `https://pdf.alpha2026.dpdns.org/tvchh/n.pdf`.
+  Generated R2 URLs take priority over a legacy HTTP(S) `sheet` fallback and
+  the resolver does not mutate a song object.
+- `app.js` uses the resolved URL for the Sheet button while preserving new-tab
+  `noopener` behavior. Studio remains unchanged: its `sheet` field is still a
+  fallback for exceptional uncoded songs and administrators no longer need to
+  enter the routine R2 URLs.
+- `src/song-validator.js` now reports malformed/out-of-range PDF codes,
+  duplicate valid PDF codes, and missing main numbers as non-blocking info.
+  Generated URLs are checked as HTTPS `.pdf` URLs. The intentional missing
+  number 18 is one informational finding, not a build error.
+- `qa/batches.json` and its manifest test were updated to remove the two
+  deleted IDs, preserve all 121 retained IDs once, and keep the calibration
+  list valid. `tests/fixtures/update-key.changeset.json` now targets a retained
+  song ID.
+
+Verification for this uncommitted change:
+
+- `npm run review:changeset -- /tmp/hopamthanhca-pdf-links.changeset.json`:
+  passed review of the approved four operations, 123 → 121, 0 structural
+  errors.
+- `npm run check`: passed. Validator: 121 songs, 0 errors, 2 legacy warnings,
+  64 info (including intentional missing 18); Text QA: 121 songs, 910
+  findings, 0 CI-blocking; Vitest: 9 files / 61 tests passed.
+- `npm run check:data-revision`: passed against the current committed
+  `songs.js` revision `8454212329875e2d11a3d062d4549f8feadf0293`. Because no
+  commit was requested, `data-revision.js` remains at that last committed
+  source revision; update it only when the approved data commit exists.
+- Browser smoke via local HTTP server and headless Chrome: `PASS (16)`,
+  including 121-song main/Studio loads and opening the resolved TVCHH PDF URL.
+- Retained-data comparison against `HEAD:songs.js`: 121 retained IDs, no
+  unexpected field mutation, no removed ID present, and identical content-map
+  SHA-256 before/after:
+  `380ca33ae33dec05d260152183b56dbbae192772ef44c59c7459f6f3af49debd`.
+- Read-only `curl -I` checks returned HTTP 200 and `content-type:
+  application/pdf` for `thanhca/1.pdf`, `thanhca/120.pdf`, `tvchh/268.pdf`,
+  and `tvchh/337.pdf`.
+
+Remaining step: review the uncommitted diff, then create an approved data
+commit and run the data-revision update workflow at that commit. Do not add a
+placeholder for number 18.
+
+## PDF post-check (uncommitted)
+
+- `qa/batches.json` now has precise contiguous positions for every batch over
+  the 121-song library: batch 01 is 1–7, batch 12 is 88–94, and batch 15 is
+  111–121. Calibration positions were recalculated from their stable IDs.
+- Manifest tests now prove all 121 IDs occur once, every batch's `songIds`
+  exactly match its `songs.js` slice, ranges are contiguous, and the last
+  range ends at 121.
+- Main numeric code inspection now recognizes `[0]` as out of range for a
+  validator warning, while the strict resolver returns `null` for both `[0]`
+  and `[121]`. Tests cover both cases.
+- Post-check passed: `npm run check` (9 files / 64 tests), direct batch
+  manifest verification (121 IDs, 121 unique, final end 121), browser smoke
+  `PASS (16)`, and `git diff --check`.
+- The retained-data comparison remains clean: 121 retained IDs, no unexpected
+  field mutation, no removed ID present, and identical content-map SHA-256
+  `380ca33ae33dec05d260152183b56dbbae192772ef44c59c7459f6f3af49debd`.

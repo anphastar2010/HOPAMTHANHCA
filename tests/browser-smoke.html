@@ -35,8 +35,8 @@ const input = (element, value) => {
 try {
   const app = await openFrame("../index.html");
   const appDocument = app.document;
-  await waitFor(() => appDocument.querySelectorAll(".song-card").length === 123, "Trang chính không render đủ 123 bài.");
-  assert(appDocument.querySelectorAll(".song-card").length === 123, "Trang chính load 123 bài");
+  await waitFor(() => appDocument.querySelectorAll(".song-card").length === 121, "Trang chính không render đủ 121 bài.");
+  assert(appDocument.querySelectorAll(".song-card").length === 121, "Trang chính load 121 bài");
   const firstTitle = app.eval("songs[0].title");
   input(appDocument.getElementById("searchInput"), firstTitle);
   assert(appDocument.querySelectorAll(".suggestion-item").length > 0, "Tìm kiếm trả kết quả");
@@ -49,13 +49,17 @@ try {
   assert(parseInt(appDocument.getElementById("displayContent").style.fontSize, 10) > fontBefore, "Đổi cỡ chữ hoạt động");
   assert(appDocument.querySelectorAll(".audio-button").length > 0, "Audio controls render không lỗi module");
   assert(Boolean(appDocument.getElementById("viewSheetBtn")), "Sheet control render không lỗi module");
+  const openedSheets = [];
+  app.open = (...args) => { openedSheets.push(args); return null; };
+  appDocument.getElementById("viewSheetBtn").click();
+  assert(openedSheets.at(-1)?.[0] === "https://pdf.alpha2026.dpdns.org/tvchh/337.pdf", "UI mở URL PDF đã resolve");
   appDocument.getElementById("backDirectoryBtn").click();
   assert(appDocument.getElementById("directoryContainer").style.display === "flex", "Quay lại danh sách hoạt động");
 
   const studio = await openFrame("../studio.html");
   const studioDocument = studio.document;
-  await waitFor(() => studioDocument.querySelectorAll(".song").length === 123, "Studio không load đủ 123 bài.");
-  assert(studioDocument.querySelectorAll(".song").length === 123, "Studio load 123 bài");
+  await waitFor(() => studioDocument.querySelectorAll(".song").length === 121, "Studio không load đủ 121 bài.");
+  assert(studioDocument.querySelectorAll(".song").length === 121, "Studio load 121 bài");
   const downloads = [];
   studio.URL.createObjectURL = blob => { downloads.push(blob); return "blob:browser-smoke"; };
   studio.HTMLAnchorElement.prototype.click = () => {};

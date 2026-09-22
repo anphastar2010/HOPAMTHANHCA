@@ -1,4 +1,5 @@
 import { parseAudioLinks } from "./chords.js";
+import { inspectPdfCode, isHttpUrl, isSecurePdfUrl, pdfUrlFromCode } from "./pdf-links.js";
 
 const REQUIRED_FIELDS = ["id", "title", "artist", "key", "audio", "sheet", "content"];
 const STANDARD_KEY = /^[A-G](?:#|b)?m?$/;
@@ -11,16 +12,6 @@ function finding(severity, code, song, message) {
     title: song?.title || "(không có tiêu đề)",
     message
   };
-}
-
-function isUrl(value) {
-  if (!value) return true;
-  try {
-    const url = new URL(value);
-    return url.protocol === "http:" || url.protocol === "https:";
-  } catch {
-    return false;
-  }
 }
 
 function normalizedTitle(value) {
@@ -67,13 +58,21 @@ export function validateSong(song) {
     findings.push(finding("info", "verse-spacing", song, "Có số thứ tự câu hát không có khoảng trắng sau dấu chấm."));
   }
 
-  if (song.sheet && !isUrl(String(song.sheet).trim())) {
+  if (song.sheet && !isHttpUrl(String(song.sheet).trim())) {
     findings.push(finding("warning", "invalid-sheet-url", song, "Liên kết Sheet PDF không phải URL HTTP(S) hợp lệ."));
   }
   for (const audio of parseAudioLinks(song.audio)) {
-    if (!isUrl(audio.url)) {
+    if (!isHttpUrl(audio.url)) {
       findings.push(finding("warning", "invalid-audio-url", song, `Liên kết audio không hợp lệ: ${audio.label}.`));
     }
+  }
+
+  const pdf = inspectPdfCode(song.title);
+  if (pdf.code) {
+    findings.push(finding("warning", pdf.code, song, "Mã PDF ở đầu tiêu đề không theo quy ước được hỗ trợ."));
+  }
+  if (pdf.valid && !isSecurePdfUrl(pdfUrlFromCode(pdf.valid))) {
+    findings.push(finding("error", "invalid-generated-pdf-url", song, "URL PDF tự sinh phải là HTTPS và kết thúc bằng .pdf."));
   }
 
   return findings;
@@ -87,6 +86,8 @@ export function validateLibrary(songs) {
   const findings = songs.flatMap(validateSong);
   const ids = new Map();
   const titles = new Map();
+  const pdfCodes = new Map();
+  const mainNumbers = new Set();
 
   for (const song of songs) {
     if (!song || typeof song !== "object") continue;
@@ -102,6 +103,23 @@ export function validateLibrary(songs) {
       findings.push(finding("warning", "duplicate-title", song, `Tên bài trùng với ID ${titles.get(title)}.`));
     } else if (title) {
       titles.set(title, song.id);
+    }
+
+    const pdf = inspectPdfCode(song.title);
+    if (pdf.valid) {
+      const code = `${pdf.valid.collection}:${pdf.valid.number}`;
+      if (pdfCodes.has(code)) {
+        findings.push(finding("error", "duplicate-pdf-code", song, `Mã PDF trùng với ID ${pdfCodes.get(code)}: ${code}.`));
+      } else {
+        pdfCodes.set(code, song.id);
+      }
+      if (pdf.valid.collection === "thanhca") mainNumbers.add(pdf.valid.number);
+    }
+  }
+
+  for (let number = 1; number <= 120; number += 1) {
+    if (!mainNumbers.has(number)) {
+      findings.push(finding("info", "missing-main-pdf-number", null, `Bộ chính chưa có bài số ${number}; PDF có thể được liên kết tự động khi bài được bổ sung.`));
     }
   }
 
