@@ -347,3 +347,16 @@ placeholder for number 18.
 - The retained-data comparison remains clean: 121 retained IDs, no unexpected
   field mutation, no removed ID present, and identical content-map SHA-256
   `380ca33ae33dec05d260152183b56dbbae192772ef44c59c7459f6f3af49debd`.
+
+## PDF data revision metadata (uncommitted)
+
+- Implementation commit: `4e8f3b2368fb1c2b138598faab1ce76457c81aad`
+  (`feat: add automatic R2 PDF links`). It is the newest commit affecting
+  `songs.js` and retains exactly 121 songs.
+- `data-revision.js` now records that full SHA via `npm run update:data-revision`.
+- `qa/batches.json` and `qa/text-qa-policy.json` were synchronized to that
+  revision after the data commit; their batches, calibration, rules,
+  thresholds, and structural baseline were not changed.
+- Metadata verification passed: `npm run check` (121 songs; 9 files / 64
+  tests), exact 121-ID contiguous batch coverage, browser smoke `PASS (16)`,
+  and `git diff --check`. No push was performed.
