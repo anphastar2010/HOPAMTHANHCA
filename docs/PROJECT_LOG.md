@@ -360,3 +360,100 @@ placeholder for number 18.
 - Metadata verification passed: `npm run check` (121 songs; 9 files / 64
   tests), exact 121-ID contiguous batch coverage, browser smoke `PASS (16)`,
   and `git diff --check`. No push was performed.
+
+## Song Canonical Format v1 — read-only survey (2026-09-22)
+
+- **User-confirmed baseline decision (2026-09-22): CURRENT CANONICAL
+  BASELINE: 121 songs.** This is a user decision, not an inference from the
+  Validator. The library previously had 123 songs; two duplicate songs were
+  intentionally removed during bulk PDF synchronization. No investigation or
+  restoration is needed, and all future canonical-format/dry-run scope uses
+  the 121-song baseline.
+
+- Phase: **SONG CANONICAL FORMAT v1 — READ-ONLY SURVEY**. Goal: survey the
+  current library and propose a future TVCHH-ready canonical format. No
+  production song data, `songs.js`, changeset, candidate library, commit, or
+  dependency was changed.
+- Scope confirmation: current `songs.js` revision
+  `4e8f3b2368fb1c2b138598faab1ce76457c81aad` contains the confirmed canonical
+  baseline of 121 records; the earlier 123-song count predates intentional
+  duplicate removal.
+- Read files: `README.md`, `songs.js`, `package.json`, Validator/Text QA
+  modules/tooling and this log. Created
+  `docs/SONG_CANONICAL_FORMAT_V1.md`; updated this log. Those are the only
+  phase files changed.
+- Survey: 2,019 nonblank content lines, 484 blank lines, 5,784 recognized
+  chord tokens; variants in credit strings, title casing, verse/chorus labels,
+  whitespace and sparse metadata were documented. The report separates
+  technical certainty from editorial inconsistency and human decisions.
+- Verification: `npm run validate:songs` passed (121 songs; 0 errors, 2
+  legacy bracket warnings, 64 info); `npm run qa:text` passed (910 findings;
+  0 CI blocking); `npm test` passed (9 files, 64 tests); `git diff --check`
+  and `git diff --exit-code -- songs.js` passed. Vale was not installed and
+  `jsondiffpatch` was not run because no data candidate was made.
+- Proposal: `Extract → DRAFT → Normalize → Validator → Cross-check → Human
+  Review → APPROVED → songs.js → CI`, with provenance, workflow status, and
+  source snapshots. The report defines SAFE AUTO-FIX, REVIEW REQUIRED and
+  NEVER AUTO-FIX boundaries.
+- Pending: establish authoritative credit/source rules for TVCHH; do not
+  auto-resolve legacy brackets or Text QA findings.
+
+## Phase 2A — Canonical normalization dry-run (2026-09-23)
+
+- Baseline: **121 songs**, per the user-confirmed canonical baseline decision.
+  This was a dry-run only: `songs.js` and all production song records were
+  read, never overwritten or normalized in place; no commit was made.
+- Added `src/canonical-normalization.js`, a pure in-memory SAFE AUTO-FIX
+  normalizer and invariant analyzer; `tools/dry-run-canonical-normalization.mjs`
+  writes generated JSON/Markdown review reports only under ignored
+  `reports/canonical-normalization/`; `tests/canonical-normalization.test.js`
+  covers approved transformations, non-mutation, invariants, representative
+  diff rendering, and CLI safety. `package.json` adds `npm run dry-run:canonical`.
+- Candidate result: 121 source songs → 121 candidate songs; all 121 have a
+  safe whitespace-only candidate change. It would remove trailing whitespace
+  from 547 nonblank lines and make 127 whitespace-only lines empty. It finds
+  0 CRLF→LF changes, 0 removable BOM/control characters, and 0 Unicode NFC
+  changes. Content UTF-8 bytes would be 132,176 → 131,381.
+- All invariants passed: song count, ordered IDs, titles, artists, keys,
+  content line count, nonblank-line count, chord-token fingerprints, and
+  chord-excluded visible lyric text. The tool neither changes punctuation,
+  repeated words, capitalization, labels, section structure, music data, nor
+  the two legacy bracket warnings.
+- Generated review artifacts (ignored, not Git source):
+  `reports/canonical-normalization/phase-2a.json` and
+  `reports/canonical-normalization/phase-2a.md`. They list every affected song,
+  operation counts, invariant results, representative diffs, and review-only
+  reminders. The 910 existing Text QA findings remain review-only.
+- Verification passed: `npm test` (10 files, 68 tests);
+  `npm run dry-run:canonical` (PASS, 121 → 121);
+  `npm run validate:songs` (121 songs, 0 errors, 2 legacy warnings, 64 info);
+  `git diff --check`; and `git diff --exit-code -- songs.js`.
+- Pending decision: human review of the generated dry-run report before any
+  reviewed changeset or application of SAFE AUTO-FIX to production data.
+
+## Phase 2A closeout — preserve legacy data (2026-09-23)
+
+- **User decision:** do not apply the 674 SAFE AUTO-FIX dry-run candidates to
+  `songs.js`. The confirmed 121-song legacy baseline is preserved exactly to
+  avoid a large, unnecessary whitespace-only data diff. This is a policy
+  decision, not an inference from Validator output.
+- **LEGACY NORMALIZATION POLICY:** Canonical normalization applies by default
+  to new `DRAFT`/import data, especially future TVCHH data. It does not bulk
+  rewrite legacy data. A future legacy change, including a technical SAFE
+  AUTO-FIX, requires a reviewed changeset, human approval, Validator, Text QA,
+  diff review and CI. Lyrics, chords, chord placement and musical data are
+  never auto-fixed.
+- The two bracket warnings (`[72]` and `[116]`) remain REVIEW-ONLY. The 910
+  Text QA findings remain QA signals, not an auto-fix list. No TVCHH extractor,
+  import, PDF download, Internet chord lookup, or song-data edit was started.
+- Checkpoint scope reviewed: canonical documentation, project log, pure
+  normalization/dry-run tooling, tests, package configuration and necessary
+  generated-report ignore configuration only. Generated reports remain ignored
+  under `reports/canonical-normalization/`; no temporary data, secrets or
+  credentials are included in the intended commit.
+- Before checkpoint commit, run `npm run check`, `git diff --check`, and
+  `git diff --exit-code -- songs.js`; commit only if all pass. Stop after the
+  checkpoint. Next phase: **PHASE 3A — TVCHH SOURCE & PDF EXTRACTION SURVEY**.
+- Checkpoint commit created locally after all required checks passed; it is not
+  pushed. The commit contains documentation, tooling, tests, package/ignore
+  configuration only, with `songs.js` byte-identical.

@@ -6,6 +6,7 @@
     "validate:songs": "node tools/validate-songs.mjs",
     "review:changeset": "node tools/review-changeset.mjs",
     "qa:text": "node tools/report-text-qa.mjs",
+    "dry-run:canonical": "node tools/dry-run-canonical-normalization.mjs",
     "qa:calibration": "node tools/report-text-qa.mjs --calibration --json reports/text-qa/calibration.json --html reports/text-qa/calibration.html",
     "update:data-revision": "node tools/update-data-revision.mjs \"$(git rev-list -1 HEAD -- songs.js)\"",
     "check:data-revision": "node tools/check-data-revision.mjs \"$(git rev-list -1 HEAD -- songs.js)\"",
