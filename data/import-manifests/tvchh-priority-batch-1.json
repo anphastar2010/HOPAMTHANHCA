@@ -1,0 +1,1172 @@
+{
+  "schemaVersion": "tvchh-priority-inventory/v1",
+  "batchId": "tvchh-priority-batch-1",
+  "purpose": "READ_ONLY_INVENTORY_ONLY",
+  "contentPolicy": "No lyrics, chords, canonical songs, approval state, or production export data.",
+  "source": {
+    "provider": "Google Drive",
+    "folderUrl": "https://drive.google.com/drive/folders/13Bi4XWcJXogJWm4lBMYhKnFE4vfuB2SN?hl=vi",
+    "inventoryDate": "2026-09-23",
+    "access": "read-only",
+    "cloudflareSync": "NOT_REQUESTED"
+  },
+  "inventory": {
+    "pdfCount": 388,
+    "numericPdfCount": 387,
+    "numericRange": "1-387",
+    "missingNumbersInRange": [],
+    "duplicateNumbers": [],
+    "aggregatePdf": {
+      "fileId": "1vuDNY2BpVm-M0fc8MT7HgWsLqELaJRA0",
+      "filename": "Ton-vinh-Chua-hang-huu.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 20208711,
+      "driveUrl": "https://drive.google.com/file/d/1vuDNY2BpVm-M0fc8MT7HgWsLqELaJRA0/view?usp=drivesdk",
+      "status": "NOT_USED_FOR_EXTRACTION_IN_PHASE_3A_1"
+    }
+  },
+  "priority": {
+    "requestedNumbers": [
+      216,
+      113,
+      140,
+      177,
+      179,
+      7,
+      225,
+      306,
+      250,
+      208,
+      251,
+      19,
+      332,
+      304,
+      9,
+      17,
+      279,
+      55,
+      24,
+      136,
+      295,
+      228,
+      229,
+      312,
+      337,
+      155,
+      235,
+      353,
+      261,
+      125,
+      224,
+      204,
+      107,
+      301,
+      263,
+      25,
+      292,
+      3,
+      376,
+      188,
+      83,
+      219,
+      293,
+      220,
+      50,
+      4,
+      186,
+      149,
+      207,
+      268,
+      202,
+      303,
+      43,
+      189,
+      150,
+      95,
+      375,
+      163,
+      294,
+      288,
+      231,
+      373,
+      241,
+      252,
+      183,
+      138,
+      298,
+      256,
+      289,
+      142,
+      2,
+      214,
+      308,
+      262,
+      203,
+      102,
+      167,
+      365,
+      1,
+      6,
+      386,
+      198,
+      356,
+      217
+    ],
+    "requestedCount": 84,
+    "uniqueCount": 84,
+    "statusSummary": {
+      "FOUND": 84,
+      "MISSING": 0,
+      "DUPLICATE": 0,
+      "AMBIGUOUS": 0
+    },
+    "entries": [
+      {
+        "number": 216,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1Ua43QJDR5HHL5CAyXpvKqK215nVIeb9i",
+          "filename": "216.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174724,
+          "driveUrl": "https://drive.google.com/file/d/1Ua43QJDR5HHL5CAyXpvKqK215nVIeb9i/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:21.000Z"
+        }
+      },
+      {
+        "number": 113,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1pjRvE5r45uTxB9ndxvURmvBp5pCLxgoc",
+          "filename": "113.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 172130,
+          "driveUrl": "https://drive.google.com/file/d/1pjRvE5r45uTxB9ndxvURmvBp5pCLxgoc/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:20.000Z"
+        }
+      },
+      {
+        "number": 140,
+        "status": "FOUND",
+        "file": {
+          "fileId": "11nQ0_mIS7qFXdgeEOMHE7DCQbOaBe0LI",
+          "filename": "140.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174396,
+          "driveUrl": "https://drive.google.com/file/d/11nQ0_mIS7qFXdgeEOMHE7DCQbOaBe0LI/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:35.000Z"
+        }
+      },
+      {
+        "number": 177,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1G4487cMuqSt5HvIvDXl5W4_Hpq2J3Lcm",
+          "filename": "177.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1145892,
+          "driveUrl": "https://drive.google.com/file/d/1G4487cMuqSt5HvIvDXl5W4_Hpq2J3Lcm/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:56.000Z"
+        }
+      },
+      {
+        "number": 179,
+        "status": "FOUND",
+        "file": {
+          "fileId": "13nQ7jMqq_fqG1Zyx6f2BK5qyvdQEIA7F",
+          "filename": "179.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1151680,
+          "driveUrl": "https://drive.google.com/file/d/13nQ7jMqq_fqG1Zyx6f2BK5qyvdQEIA7F/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:59.000Z"
+        }
+      },
+      {
+        "number": 7,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1eEEL4suAjVZx_ff3kFJHxMB99kzol2SV",
+          "filename": "7.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 166982,
+          "driveUrl": "https://drive.google.com/file/d/1eEEL4suAjVZx_ff3kFJHxMB99kzol2SV/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:20.000Z"
+        }
+      },
+      {
+        "number": 225,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1OCkU9DUyBDn7khuJVX_lg3hIN3EwWF_b",
+          "filename": "225.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 168456,
+          "driveUrl": "https://drive.google.com/file/d/1OCkU9DUyBDn7khuJVX_lg3hIN3EwWF_b/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:25.000Z"
+        }
+      },
+      {
+        "number": 306,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1ghx6L1C0vHrpL9cC1bHl8cUKWsM2MTqK",
+          "filename": "306.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 176317,
+          "driveUrl": "https://drive.google.com/file/d/1ghx6L1C0vHrpL9cC1bHl8cUKWsM2MTqK/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:20.000Z"
+        }
+      },
+      {
+        "number": 250,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1-HB03m9V_KVspT5xUfFEhEA24pPBzTp-",
+          "filename": "250.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 173602,
+          "driveUrl": "https://drive.google.com/file/d/1-HB03m9V_KVspT5xUfFEhEA24pPBzTp-/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:43.000Z"
+        }
+      },
+      {
+        "number": 208,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1ftPiPSGCq34pRUP2BRbuzFGSo7L0siYn",
+          "filename": "208.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171393,
+          "driveUrl": "https://drive.google.com/file/d/1ftPiPSGCq34pRUP2BRbuzFGSo7L0siYn/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:16.000Z"
+        }
+      },
+      {
+        "number": 251,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1dZNn0J_H5l6owsiWii3qtX6uBNUYZ07T",
+          "filename": "251.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 172510,
+          "driveUrl": "https://drive.google.com/file/d/1dZNn0J_H5l6owsiWii3qtX6uBNUYZ07T/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:43.000Z"
+        }
+      },
+      {
+        "number": 19,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1noNngxfEK3XJFWgtwQqpMu_uMZR7O74P",
+          "filename": "19.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 170415,
+          "driveUrl": "https://drive.google.com/file/d/1noNngxfEK3XJFWgtwQqpMu_uMZR7O74P/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:27.000Z"
+        }
+      },
+      {
+        "number": 332,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1ld6n-Djr9AI2gSlBI83Mje8iY-ecK2Fi",
+          "filename": "332.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174870,
+          "driveUrl": "https://drive.google.com/file/d/1ld6n-Djr9AI2gSlBI83Mje8iY-ecK2Fi/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:37.000Z"
+        }
+      },
+      {
+        "number": 304,
+        "status": "FOUND",
+        "file": {
+          "fileId": "13Z80mWus2hbhLv2qljaeg59EZOQqcTQu",
+          "filename": "304.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1358767,
+          "driveUrl": "https://drive.google.com/file/d/13Z80mWus2hbhLv2qljaeg59EZOQqcTQu/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:20.000Z"
+        }
+      },
+      {
+        "number": 9,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1XtItTUpRTDA-pAiNP1u4_hCOxOaocWow",
+          "filename": "9.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171756,
+          "driveUrl": "https://drive.google.com/file/d/1XtItTUpRTDA-pAiNP1u4_hCOxOaocWow/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:22.000Z"
+        }
+      },
+      {
+        "number": 17,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1cTjOrZBBb3Gbcjfu4IwsySjbSNjafslj",
+          "filename": "17.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 176213,
+          "driveUrl": "https://drive.google.com/file/d/1cTjOrZBBb3Gbcjfu4IwsySjbSNjafslj/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:27.000Z"
+        }
+      },
+      {
+        "number": 279,
+        "status": "FOUND",
+        "file": {
+          "fileId": "17c4NQ4VSRzLK-Nvzyj567rX2gmRWdSAI",
+          "filename": "279.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174641,
+          "driveUrl": "https://drive.google.com/file/d/17c4NQ4VSRzLK-Nvzyj567rX2gmRWdSAI/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:00.000Z"
+        }
+      },
+      {
+        "number": 55,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1-vzeiG2nRWuPThP_pCJxqOZViFCZUDS6",
+          "filename": "55.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 951153,
+          "driveUrl": "https://drive.google.com/file/d/1-vzeiG2nRWuPThP_pCJxqOZViFCZUDS6/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:48.000Z"
+        }
+      },
+      {
+        "number": 24,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1VwPL5f4RF5M3V1gWHND5sYFHhUvegS9c",
+          "filename": "24.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 175295,
+          "driveUrl": "https://drive.google.com/file/d/1VwPL5f4RF5M3V1gWHND5sYFHhUvegS9c/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:30.000Z"
+        }
+      },
+      {
+        "number": 136,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1YjgEvFM6oZ_tzxkgdELS4FB43N47UC5H",
+          "filename": "136.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 175180,
+          "driveUrl": "https://drive.google.com/file/d/1YjgEvFM6oZ_tzxkgdELS4FB43N47UC5H/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:33.000Z"
+        }
+      },
+      {
+        "number": 295,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1_IkT-VlyyBO9WrEjEbJKT6ZR8RpsOvSn",
+          "filename": "295.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1330501,
+          "driveUrl": "https://drive.google.com/file/d/1_IkT-VlyyBO9WrEjEbJKT6ZR8RpsOvSn/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:12.000Z"
+        }
+      },
+      {
+        "number": 228,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1nls6DRGZ1p6GvbLFixRE4jo1P9qhZYWS",
+          "filename": "228.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1212616,
+          "driveUrl": "https://drive.google.com/file/d/1nls6DRGZ1p6GvbLFixRE4jo1P9qhZYWS/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:28.000Z"
+        }
+      },
+      {
+        "number": 229,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1PMMFjvgZvmwc3cOpGRluDeUg7WjDk66a",
+          "filename": "229.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 167126,
+          "driveUrl": "https://drive.google.com/file/d/1PMMFjvgZvmwc3cOpGRluDeUg7WjDk66a/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:28.000Z"
+        }
+      },
+      {
+        "number": 312,
+        "status": "FOUND",
+        "file": {
+          "fileId": "10edxNwZr2q5d5ByWMYzbQBaPE6g0nAaw",
+          "filename": "312.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 178980,
+          "driveUrl": "https://drive.google.com/file/d/10edxNwZr2q5d5ByWMYzbQBaPE6g0nAaw/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:25.000Z"
+        }
+      },
+      {
+        "number": 337,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1sXzdETH-gtLA3PYVin_V5-nAuf5Ok1CS",
+          "filename": "337.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1173562,
+          "driveUrl": "https://drive.google.com/file/d/1sXzdETH-gtLA3PYVin_V5-nAuf5Ok1CS/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:40.000Z"
+        }
+      },
+      {
+        "number": 155,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1QgEqOKxi6SWPbgATuCeI8kNyi5J_Umm3",
+          "filename": "155.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1097806,
+          "driveUrl": "https://drive.google.com/file/d/1QgEqOKxi6SWPbgATuCeI8kNyi5J_Umm3/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:45.000Z"
+        }
+      },
+      {
+        "number": 235,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1pdd0e4X94kV4M05A39H453DYDC5IKbqn",
+          "filename": "235.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 170046,
+          "driveUrl": "https://drive.google.com/file/d/1pdd0e4X94kV4M05A39H453DYDC5IKbqn/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:33.000Z"
+        }
+      },
+      {
+        "number": 353,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1QP7HONJdklRNiV-qZ80bfvmuPEKsTDHi",
+          "filename": "353.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1457401,
+          "driveUrl": "https://drive.google.com/file/d/1QP7HONJdklRNiV-qZ80bfvmuPEKsTDHi/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:52.000Z"
+        }
+      },
+      {
+        "number": 261,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1McFl0UeeblMsYwEqCsR64YfL5N-Vo2tD",
+          "filename": "261.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174695,
+          "driveUrl": "https://drive.google.com/file/d/1McFl0UeeblMsYwEqCsR64YfL5N-Vo2tD/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:48.000Z"
+        }
+      },
+      {
+        "number": 125,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1o7hZAFtNK2xKOQat9Plmm3d9_i4czYPI",
+          "filename": "125.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171970,
+          "driveUrl": "https://drive.google.com/file/d/1o7hZAFtNK2xKOQat9Plmm3d9_i4czYPI/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:27.000Z"
+        }
+      },
+      {
+        "number": 224,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1MDuT9ocIhclnT4O7RlSNRdtbwHUtDs0C",
+          "filename": "224.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 173611,
+          "driveUrl": "https://drive.google.com/file/d/1MDuT9ocIhclnT4O7RlSNRdtbwHUtDs0C/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:25.000Z"
+        }
+      },
+      {
+        "number": 204,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1U4UU6GtbTkmtCBpwcRnIzZvE3wbBO9NI",
+          "filename": "204.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1183339,
+          "driveUrl": "https://drive.google.com/file/d/1U4UU6GtbTkmtCBpwcRnIzZvE3wbBO9NI/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:14.000Z"
+        }
+      },
+      {
+        "number": 107,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1HrqfWR3RdSO6v5SlGXn9bCUzux9C61-J",
+          "filename": "107.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 164951,
+          "driveUrl": "https://drive.google.com/file/d/1HrqfWR3RdSO6v5SlGXn9bCUzux9C61-J/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:15.000Z"
+        }
+      },
+      {
+        "number": 301,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1bqr_FZhQTlDSwWQwMxCVOuTeDHRfaGPj",
+          "filename": "301.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1348691,
+          "driveUrl": "https://drive.google.com/file/d/1bqr_FZhQTlDSwWQwMxCVOuTeDHRfaGPj/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:18.000Z"
+        }
+      },
+      {
+        "number": 263,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1jhFPqmmywHp9oKnIk79gcqpU2qWCPSum",
+          "filename": "263.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 178732,
+          "driveUrl": "https://drive.google.com/file/d/1jhFPqmmywHp9oKnIk79gcqpU2qWCPSum/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:51.000Z"
+        }
+      },
+      {
+        "number": 25,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1k5dC-fFuMCtOtvRfucBtWoZVn1cddCa-",
+          "filename": "25.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 176895,
+          "driveUrl": "https://drive.google.com/file/d/1k5dC-fFuMCtOtvRfucBtWoZVn1cddCa-/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:32.000Z"
+        }
+      },
+      {
+        "number": 292,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1MzQQDJEHoakiRjpoNarm0RrbC07Q59Yf",
+          "filename": "292.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 3442311,
+          "driveUrl": "https://drive.google.com/file/d/1MzQQDJEHoakiRjpoNarm0RrbC07Q59Yf/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:10.000Z"
+        }
+      },
+      {
+        "number": 3,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1PN3UXbepUn0r0tatj1FXkXpL5Olhbw4d",
+          "filename": "3.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171483,
+          "driveUrl": "https://drive.google.com/file/d/1PN3UXbepUn0r0tatj1FXkXpL5Olhbw4d/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:18.000Z"
+        }
+      },
+      {
+        "number": 376,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1oPvNKxbwLDKYGZ8EZlQ_1XmDfoW81Dz6",
+          "filename": "376.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 606731,
+          "driveUrl": "https://drive.google.com/file/d/1oPvNKxbwLDKYGZ8EZlQ_1XmDfoW81Dz6/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:36:06.000Z"
+        }
+      },
+      {
+        "number": 188,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1326EGcNdBWaBDBrORaCn6FpmHBzyrACe",
+          "filename": "188.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 169966,
+          "driveUrl": "https://drive.google.com/file/d/1326EGcNdBWaBDBrORaCn6FpmHBzyrACe/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:03.000Z"
+        }
+      },
+      {
+        "number": 83,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1o3gUjZMoBaYdYa66CUa7Ni7vUAMgCaOS",
+          "filename": "83.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 172182,
+          "driveUrl": "https://drive.google.com/file/d/1o3gUjZMoBaYdYa66CUa7Ni7vUAMgCaOS/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:02.000Z"
+        }
+      },
+      {
+        "number": 219,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1ropoPOawmF1k3DahPUDcQ9fx9m7lWCa5",
+          "filename": "219.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171847,
+          "driveUrl": "https://drive.google.com/file/d/1ropoPOawmF1k3DahPUDcQ9fx9m7lWCa5/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:22.000Z"
+        }
+      },
+      {
+        "number": 293,
+        "status": "FOUND",
+        "file": {
+          "fileId": "13teei1q5Br0VKk3LAyyHkB-Yn65h4Azp",
+          "filename": "293.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 3430499,
+          "driveUrl": "https://drive.google.com/file/d/13teei1q5Br0VKk3LAyyHkB-Yn65h4Azp/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:11.000Z"
+        }
+      },
+      {
+        "number": 220,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1wvcK5KKZZzCrP2H-B9A1JDnvFZCkFDFv",
+          "filename": "220.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1194715,
+          "driveUrl": "https://drive.google.com/file/d/1wvcK5KKZZzCrP2H-B9A1JDnvFZCkFDFv/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:23.000Z"
+        }
+      },
+      {
+        "number": 50,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1VJmj7Ej58BZaHqtZBYPZwfdvfFkvtWEH",
+          "filename": "50.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 945863,
+          "driveUrl": "https://drive.google.com/file/d/1VJmj7Ej58BZaHqtZBYPZwfdvfFkvtWEH/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:45.000Z"
+        }
+      },
+      {
+        "number": 4,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1e7en9P1WkTHeVqzrJkgv33qtQvQGbjKK",
+          "filename": "4.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 871581,
+          "driveUrl": "https://drive.google.com/file/d/1e7en9P1WkTHeVqzrJkgv33qtQvQGbjKK/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:18.000Z"
+        }
+      },
+      {
+        "number": 186,
+        "status": "FOUND",
+        "file": {
+          "fileId": "11ig1izkRglemhr9KcoWFsxUV8lqzKoAS",
+          "filename": "186.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 175074,
+          "driveUrl": "https://drive.google.com/file/d/11ig1izkRglemhr9KcoWFsxUV8lqzKoAS/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:03.000Z"
+        }
+      },
+      {
+        "number": 149,
+        "status": "FOUND",
+        "file": {
+          "fileId": "13UGo2G3F_pg_zwLMR82zA4b21ph-mjFi",
+          "filename": "149.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 169835,
+          "driveUrl": "https://drive.google.com/file/d/13UGo2G3F_pg_zwLMR82zA4b21ph-mjFi/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:40.000Z"
+        }
+      },
+      {
+        "number": 207,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1PefGtRME32RpF0V7hWldYsyG_lQlTmxU",
+          "filename": "207.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 179435,
+          "driveUrl": "https://drive.google.com/file/d/1PefGtRME32RpF0V7hWldYsyG_lQlTmxU/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:16.000Z"
+        }
+      },
+      {
+        "number": 268,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1wp_DuDTn9R8HdYCG_oF7e93LDfUPv0OY",
+          "filename": "268.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 175024,
+          "driveUrl": "https://drive.google.com/file/d/1wp_DuDTn9R8HdYCG_oF7e93LDfUPv0OY/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:54.000Z"
+        }
+      },
+      {
+        "number": 202,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1deTbV7pIGHhg1Zd_wMgs3Hy5wl1bAeE8",
+          "filename": "202.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174740,
+          "driveUrl": "https://drive.google.com/file/d/1deTbV7pIGHhg1Zd_wMgs3Hy5wl1bAeE8/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:13.000Z"
+        }
+      },
+      {
+        "number": 303,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1e_OSsAikzQXZ1mvaUBMMeESzu3E-yTBk",
+          "filename": "303.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 178878,
+          "driveUrl": "https://drive.google.com/file/d/1e_OSsAikzQXZ1mvaUBMMeESzu3E-yTBk/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:17.000Z"
+        }
+      },
+      {
+        "number": 43,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1hLvmBHlXFwF2kcaWKDsz8qHILicHsw5J",
+          "filename": "43.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 173058,
+          "driveUrl": "https://drive.google.com/file/d/1hLvmBHlXFwF2kcaWKDsz8qHILicHsw5J/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:40.000Z"
+        }
+      },
+      {
+        "number": 189,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1MDptmiCo2YYcVuVACrJuYmzEOSJoz_1d",
+          "filename": "189.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1167270,
+          "driveUrl": "https://drive.google.com/file/d/1MDptmiCo2YYcVuVACrJuYmzEOSJoz_1d/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:04.000Z"
+        }
+      },
+      {
+        "number": 150,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1v23iJr20KACMxU6Bh0SZrljSwSzWbdnQ",
+          "filename": "150.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 172144,
+          "driveUrl": "https://drive.google.com/file/d/1v23iJr20KACMxU6Bh0SZrljSwSzWbdnQ/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:42.000Z"
+        }
+      },
+      {
+        "number": 95,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1JAic8G9VnXznEvmWTAasNWto6VAYM74T",
+          "filename": "95.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 177928,
+          "driveUrl": "https://drive.google.com/file/d/1JAic8G9VnXznEvmWTAasNWto6VAYM74T/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:09.000Z"
+        }
+      },
+      {
+        "number": 375,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1Pus2fJKW7brPeo_4B-f-Xa9AA4NsvwSo",
+          "filename": "375.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174737,
+          "driveUrl": "https://drive.google.com/file/d/1Pus2fJKW7brPeo_4B-f-Xa9AA4NsvwSo/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:36:03.000Z"
+        }
+      },
+      {
+        "number": 163,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1DUzugHbEoMU2RCvzBNiurKVvnktwOMN3",
+          "filename": "163.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171890,
+          "driveUrl": "https://drive.google.com/file/d/1DUzugHbEoMU2RCvzBNiurKVvnktwOMN3/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:49.000Z"
+        }
+      },
+      {
+        "number": 294,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1bWeRdUddenfvT8wW9eZJ9nIUAgDxwXQW",
+          "filename": "294.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 179398,
+          "driveUrl": "https://drive.google.com/file/d/1bWeRdUddenfvT8wW9eZJ9nIUAgDxwXQW/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:11.000Z"
+        }
+      },
+      {
+        "number": 288,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1nA4Ldwpzt4HAi5izD1SGfAMizf_VZ4cx",
+          "filename": "288.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 176465,
+          "driveUrl": "https://drive.google.com/file/d/1nA4Ldwpzt4HAi5izD1SGfAMizf_VZ4cx/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:06.000Z"
+        }
+      },
+      {
+        "number": 231,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1M1JJvIQ0G6SH-l85JWln4gGNBCAbd1Op",
+          "filename": "231.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 170176,
+          "driveUrl": "https://drive.google.com/file/d/1M1JJvIQ0G6SH-l85JWln4gGNBCAbd1Op/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:30.000Z"
+        }
+      },
+      {
+        "number": 373,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1OGUgxd4hs3eJX4X36h6wIACrOy43_jci",
+          "filename": "373.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 180632,
+          "driveUrl": "https://drive.google.com/file/d/1OGUgxd4hs3eJX4X36h6wIACrOy43_jci/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:36:03.000Z"
+        }
+      },
+      {
+        "number": 241,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1l9WPgtctWSJJFp1QZXuuWSo2eSkmvqOe",
+          "filename": "241.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174818,
+          "driveUrl": "https://drive.google.com/file/d/1l9WPgtctWSJJFp1QZXuuWSo2eSkmvqOe/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:36.000Z"
+        }
+      },
+      {
+        "number": 252,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1qO4C0A6M5Y_1VvAkWvS4qfzgjkPGm-XX",
+          "filename": "252.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1258220,
+          "driveUrl": "https://drive.google.com/file/d/1qO4C0A6M5Y_1VvAkWvS4qfzgjkPGm-XX/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:44.000Z"
+        }
+      },
+      {
+        "number": 183,
+        "status": "FOUND",
+        "file": {
+          "fileId": "13o4qnYNBFGkF_kZjKwKv0x721dk-3nU_",
+          "filename": "183.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1143623,
+          "driveUrl": "https://drive.google.com/file/d/13o4qnYNBFGkF_kZjKwKv0x721dk-3nU_/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:01.000Z"
+        }
+      },
+      {
+        "number": 138,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1UkOvuwUyhXP80fBV0fNhJCuXMmYnHd7J",
+          "filename": "138.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171564,
+          "driveUrl": "https://drive.google.com/file/d/1UkOvuwUyhXP80fBV0fNhJCuXMmYnHd7J/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:35.000Z"
+        }
+      },
+      {
+        "number": 298,
+        "status": "FOUND",
+        "file": {
+          "fileId": "12aSHN85m221q2nyRJ9P6epbljX1AjjVm",
+          "filename": "298.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1344981,
+          "driveUrl": "https://drive.google.com/file/d/12aSHN85m221q2nyRJ9P6epbljX1AjjVm/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:14.000Z"
+        }
+      },
+      {
+        "number": 256,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1m_dR9ajO4gzAnm0TSt1Kd22epukhLI5k",
+          "filename": "256.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171406,
+          "driveUrl": "https://drive.google.com/file/d/1m_dR9ajO4gzAnm0TSt1Kd22epukhLI5k/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:46.000Z"
+        }
+      },
+      {
+        "number": 289,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1rFuNTVfb2w0nPqFr9eqwlwLfFI_7gyN5",
+          "filename": "289.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1350380,
+          "driveUrl": "https://drive.google.com/file/d/1rFuNTVfb2w0nPqFr9eqwlwLfFI_7gyN5/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:07.000Z"
+        }
+      },
+      {
+        "number": 142,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1iVL06Y2HjDk-ei13nwqlRGtzOvBuVKPl",
+          "filename": "142.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 615855,
+          "driveUrl": "https://drive.google.com/file/d/1iVL06Y2HjDk-ei13nwqlRGtzOvBuVKPl/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:37.000Z"
+        }
+      },
+      {
+        "number": 2,
+        "status": "FOUND",
+        "file": {
+          "fileId": "19gvvZiR6oswT7kXoiHE9EnAxtyR9B6QO",
+          "filename": "2.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 173434,
+          "driveUrl": "https://drive.google.com/file/d/19gvvZiR6oswT7kXoiHE9EnAxtyR9B6QO/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:18.000Z"
+        }
+      },
+      {
+        "number": 214,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1-LKXLHYk6AsXn1C7dmapLyqD-qYCYHeP",
+          "filename": "214.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 173509,
+          "driveUrl": "https://drive.google.com/file/d/1-LKXLHYk6AsXn1C7dmapLyqD-qYCYHeP/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:21.000Z"
+        }
+      },
+      {
+        "number": 308,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1Tu5L6QWe4RUipyIee37jTE-VV7_fx5O3",
+          "filename": "308.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1348527,
+          "driveUrl": "https://drive.google.com/file/d/1Tu5L6QWe4RUipyIee37jTE-VV7_fx5O3/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:22.000Z"
+        }
+      },
+      {
+        "number": 262,
+        "status": "FOUND",
+        "file": {
+          "fileId": "12WKDT_uoTkb04JKOR4TeOE2N_5eB15TR",
+          "filename": "262.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 1282419,
+          "driveUrl": "https://drive.google.com/file/d/12WKDT_uoTkb04JKOR4TeOE2N_5eB15TR/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:52.000Z"
+        }
+      },
+      {
+        "number": 203,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1IyAFfzN_3MXl_yR6g4uvZ-06cF4iwrgo",
+          "filename": "203.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 170641,
+          "driveUrl": "https://drive.google.com/file/d/1IyAFfzN_3MXl_yR6g4uvZ-06cF4iwrgo/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:13.000Z"
+        }
+      },
+      {
+        "number": 102,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1_7SUgj_Han8bv2giGMxo3HQEXUwOeCWJ",
+          "filename": "102.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 167645,
+          "driveUrl": "https://drive.google.com/file/d/1_7SUgj_Han8bv2giGMxo3HQEXUwOeCWJ/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:13.000Z"
+        }
+      },
+      {
+        "number": 167,
+        "status": "FOUND",
+        "file": {
+          "fileId": "17YnPM0UVFLestm3hfEZxvyrQDd9WvD9R",
+          "filename": "167.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 171251,
+          "driveUrl": "https://drive.google.com/file/d/17YnPM0UVFLestm3hfEZxvyrQDd9WvD9R/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:33:51.000Z"
+        }
+      },
+      {
+        "number": 365,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1icvY-joVtSmJh3UQxfJ31iWbWUEhXiiU",
+          "filename": "365.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 173642,
+          "driveUrl": "https://drive.google.com/file/d/1icvY-joVtSmJh3UQxfJ31iWbWUEhXiiU/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:59.000Z"
+        }
+      },
+      {
+        "number": 1,
+        "status": "FOUND",
+        "file": {
+          "fileId": "12nqneUT7xJl3M3BgAvzxxnVuGlA5RVWv",
+          "filename": "1.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 169274,
+          "driveUrl": "https://drive.google.com/file/d/12nqneUT7xJl3M3BgAvzxxnVuGlA5RVWv/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:18.000Z"
+        }
+      },
+      {
+        "number": 6,
+        "status": "FOUND",
+        "file": {
+          "fileId": "16rQaMN2uWO6fNhjbyt9lQSTX41BluzlI",
+          "filename": "6.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 170552,
+          "driveUrl": "https://drive.google.com/file/d/16rQaMN2uWO6fNhjbyt9lQSTX41BluzlI/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:32:20.000Z"
+        }
+      },
+      {
+        "number": 386,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1y0kMFZ0I2nPOj_7EUa8cAWYj8KyKobpf",
+          "filename": "386.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 174696,
+          "driveUrl": "https://drive.google.com/file/d/1y0kMFZ0I2nPOj_7EUa8cAWYj8KyKobpf/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:36:11.000Z"
+        }
+      },
+      {
+        "number": 198,
+        "status": "FOUND",
+        "file": {
+          "fileId": "14pCszVQYhC_u10QZKwpS-9hNkVhEcul7",
+          "filename": "198.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 181031,
+          "driveUrl": "https://drive.google.com/file/d/14pCszVQYhC_u10QZKwpS-9hNkVhEcul7/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:11.000Z"
+        }
+      },
+      {
+        "number": 356,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1vC4i3BwYyxvqnhwdzqrv8pDyy6agpBLz",
+          "filename": "356.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 172265,
+          "driveUrl": "https://drive.google.com/file/d/1vC4i3BwYyxvqnhwdzqrv8pDyy6agpBLz/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:35:53.000Z"
+        }
+      },
+      {
+        "number": 217,
+        "status": "FOUND",
+        "file": {
+          "fileId": "1dFfhL7B8KsbcQpvdRmwkTQYox3IRGTe1",
+          "filename": "217.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 177936,
+          "driveUrl": "https://drive.google.com/file/d/1dFfhL7B8KsbcQpvdRmwkTQYox3IRGTe1/view?usp=drivesdk",
+          "modifiedTime": "2026-05-26T07:34:21.000Z"
+        }
+      }
+    ]
+  },
+  "proposedPilotNumbers": [
+    {
+      "number": 1,
+      "status": "FOUND",
+      "rationale": "range edge",
+      "extractionStatus": "NOT_STARTED"
+    },
+    {
+      "number": 102,
+      "status": "FOUND",
+      "rationale": "range coverage",
+      "extractionStatus": "NOT_STARTED"
+    },
+    {
+      "number": 216,
+      "status": "FOUND",
+      "rationale": "range coverage",
+      "extractionStatus": "NOT_STARTED"
+    },
+    {
+      "number": 268,
+      "status": "FOUND",
+      "rationale": "legacy comparison candidate if later extracted",
+      "extractionStatus": "NOT_STARTED"
+    },
+    {
+      "number": 337,
+      "status": "FOUND",
+      "rationale": "legacy comparison candidate if later extracted",
+      "extractionStatus": "NOT_STARTED"
+    },
+    {
+      "number": 386,
+      "status": "FOUND",
+      "rationale": "range edge",
+      "extractionStatus": "NOT_STARTED"
+    }
+  ]
+}

@@ -457,3 +457,188 @@ placeholder for number 18.
 - Checkpoint commit created locally after all required checks passed; it is not
   pushed. The commit contains documentation, tooling, tests, package/ignore
   configuration only, with `songs.js` byte-identical.
+
+## Phase 3A — TVCHH source & PDF extraction survey (2026-09-23)
+
+- Scope: read-only/survey only, against the confirmed 121-song production
+  baseline. No production song data, `songs.js`, legacy record, importer,
+  OCR output, PDF, or TVCHH DRAFT was created or changed. No commit was made.
+- PDF source inventory: no `.pdf`/`.PDF` file exists in the workspace or Git
+  index. Existing references to the resolver URLs for TVCHH 268/337 are URLs,
+  not local source assets. They were not downloaded, and the Internet was not
+  used as a substitute/cross-check source.
+- Result: extraction is **BLOCKED, not inferred**. Filename, size, SHA-256,
+  page count, metadata, PDF type, direct text extraction, Vietnamese/layout
+  preservation, OCR need, samples, field confidence, chord token recognition
+  and chord-to-lyric positioning are all NOT ASSESSED because no actual PDF
+  was available. No sample was selected and no comparison to legacy 268/337
+  could be made.
+- New report: `docs/TVCHH_SOURCE_EXTRACTION_SURVEY.md` documents the negative
+  inventory, evidence boundary, conditional Canonical v1 mapping, Internet
+  policy, Phase 3B pipeline, and source prerequisite. No generated artifact
+  was created because there was no input PDF.
+- Next prerequisite: the user must supply or place one authorized TVCHH PDF in
+  the workspace. Resume this survey from file inventory, checksum/metadata,
+  direct extraction and 5–10 representative samples; only then decide whether
+  OCR or a provenance-recorded Internet cross-check is needed.
+- Safety verification: `git diff --exit-code -- songs.js` passed; production
+  remains 121 songs. This phase stops before any TVCHH import.
+
+## Phase 3A.1 — TVCHH Drive inventory & Priority Batch 1 matching (2026-09-23)
+
+- Read-only Google Drive inventory completed for the user-provided folder:
+  389 items, including 388 PDFs and one XLSX catalog. There are 387 unique
+  numeric PDFs covering `1.pdf` through `387.pdf` with no numeric gap or
+  duplicate; one additional aggregate `Ton-vinh-Chua-hang-huu.pdf` is recorded
+  as source provenance only and was not downloaded or extracted.
+- Priority Batch 1 contains 84 requested / 84 unique numbers. All 84 are
+  FOUND by exact numeric filename; MISSING 0, DUPLICATE 0, AMBIGUOUS 0.
+  The user-entered brace forms for 216/217 were treated only as requests for
+  numeric IDs 216 and 217, not as canonical filenames.
+- Created `data/import-manifests/tvchh-priority-batch-1.json`: an
+  identity/provenance/status-only inventory manifest with Drive file ID, exact
+  filename, MIME type, size, URL and modified time. It contains no lyrics,
+  chords, canonical data, production data, or approval state.
+- Proposed later bounded pilot numbers: 1, 102, 216, 268, 337 and 386. This
+  covers range edges/interior and gives future comparison candidates for
+  legacy 268/337, but does not claim any PDF content/layout/chord property.
+- Google Drive remains the current source location. No Cloudflare/R2 sync,
+  bulk download, extraction, OCR, Internet cross-check, TVCHH import or song
+  data change occurred. Next gate is a read-only extraction experiment on the
+  approved pilot PDFs, retaining raw snapshots and DRAFT-only outputs.
+- Safety: production baseline remains 121 songs; `songs.js` was not changed.
+  No commit was made in this phase.
+
+## Phase 3A.2 — TVCHH direct PDF extraction pilot (2026-09-23)
+
+- Read-only bounded acquisition downloaded exactly six inventoried Google Drive
+  PDFs—1, 102, 216, 268, 337 and 386—into ignored
+  `reports/tvchh-extraction/raw/`. No other numbered file, aggregate PDF,
+  Cloudflare/R2 resource, Internet cross-check or upload was used.
+- Direct benchmark used Poppler 24.02.0 (`pdfinfo`, `pdffonts`,
+  `pdfimages -list`, `pdftotext`, `pdftotext -layout`, `pdftohtml -xml` and
+  `pdftoppm`). Per-file raw PDFs, SHA-256, PDF metadata, font listings, image
+  listings, plain/layout snapshots, coordinate XML and two visual renders are
+  generated/ignored under `reports/tvchh-extraction/`.
+- All six are IMAGE/SCAN score PDFs for direct-extraction purposes: 11 image
+  strips in each one-page sample, 15 across 337's two pages; plain/layout
+  extraction contains only page line feeds and coordinate XML contains zero
+  text nodes. Direct collection/title/credit/key/meter/lyrics/chord/section
+  extraction and chord positioning are therefore NOT EXTRACTABLE. No OCR or
+  OMR was installed or run.
+- Limited visual golden checks: 268 and 337 title words match legacy with
+  presentation-only casing differences. Their visible score key/chord
+  presentations differ from legacy (A-flat-family vs F for 268; Gm/two-flat
+  score vs Dm legacy for 337), classified SOURCE_DIFFERENCE/REVIEW REQUIRED.
+  Exact lyrics, chord token/order/count/placement and sections remain
+  UNRESOLVED because there is no direct machine text.
+- Decision gate: **OMR_REQUIRED**. Direct text/coordinate extraction is not
+  viable for a TVCHH parser. The next bounded work is Phase 3A.3 OMR/OCR
+  benchmark design/execution with raw snapshots and DRAFT-only output; do not
+  build a production importer yet.
+- Safety: production remains 121 songs; `songs.js`, legacy 268/337 and all
+  song data are unchanged. No DRAFT was approved and no commit was made.
+
+## Phase 3A.3 — TVCHH OCR/OMR bounded benchmark (2026-09-23)
+
+- Scope: bounded, read-only benchmark of exactly six existing pilot PDFs (1,
+  102, 216, 268, 337 and 386; 337 has two pages) from the previously
+  inventoried Google Drive source. PDF Drive remains primary. No production
+  song, TVCHH import, approval, Cloudflare/R2 operation, bulk download, or
+  commit occurred.
+- Image baseline: each source is an indexed 8-bit 200-DPI image-strip PDF;
+  raw 300-DPI 2481×3509 PNG renders were compared with generated grayscale +
+  0.5%-autocontrast copies. No skew/crop/contrast evidence justified deskew or
+  crop. Preprocessing lowered peak OCR memory slightly but made no material
+  recognition improvement, so it is not a normalization policy.
+- OCR: native package installation was unavailable without system-admin
+  credentials. A local temporary Tesseract.js 5.1.0-288-g2a9c1 benchmark with
+  local `vie+eng` traineddata ran on all seven rendered pages. It retains raw
+  text, TSV/hOCR boxes, blocks and engine confidence under ignored reports.
+  Vietnamese text, simple titles/credits and several chord tokens are usable
+  candidate evidence; notation-heavy lyric regions have substantial OCR noise
+  and diacritic errors. OCR boxes are available, but engine confidence never
+  approves a field.
+- OMR: Audiveris 5.11.0 was downloaded from its official release and unpacked
+  only under `/tmp`; it was not system-installed or committed. Full headless
+  export processing on pilot 1 reached BEAMS but exceeded the execution
+  runner's limit before valid MusicXML. GRID-only staff/layout processing
+  completed on all six: 2–9 systems, 14.46–29.96 seconds and 305–402 MiB peak
+  RSS. Audiveris had no configured native tessdata in this environment, so it
+  provided no validated OMR text. Full OMR remains heavy/unmeasured to
+  completion; GRID is acceptable only as layout support.
+- Fusion: a geometry-only OCR probe made 34 experimental chord-to-lyric
+  candidates for 268/337. Every record carries page/bounding-box/source-token
+  evidence and `REVIEW REQUIRED`. Parallel lyric lines and OCR musical noise
+  make automatic chord placement unsafe. Chord token recognition is MEDIUM;
+  chord-to-lyric association is LOW/REVIEW REQUIRED.
+- Legacy comparison: OCR confirms candidate A-flat-family tokens for 268 and
+  Gm/D/F#/Cm/D7-family tokens for 337, while preserving Phase 3A.2's PDF-vs-
+  legacy SOURCE_DIFFERENCE finding (268 PDF family vs legacy F; 337 PDF family
+  vs legacy D). Title casing is presentation-only where visually matched;
+  exact lyrics/chord order/placement remain unresolved. Neither legacy nor OCR
+  was selected as canonical.
+- Decision: **HUMAN_ASSISTED_REQUIRED**. A future bounded Phase 3B may build a
+  provenance-rich OCR `DRAFT` prototype with raw snapshots, field evidence,
+  geometry and mandatory visual review. It must not auto-repair lyrics/chords
+  or export to `songs.js`. Re-test complete Audiveris/MusicXML on a runner that
+  permits longer execution and configured OCR data before adopting it.
+- New documentation: `docs/TVCHH_OCR_OMR_BENCHMARK.md`. Generated artifacts
+  are ignored via the existing `reports/tvchh-extraction/` rule. Final safety
+  checks passed: `npm run check` (Validator: 121 songs, 0 errors, 2 legacy
+  bracket warnings, 64 info; Text QA: 910 non-blocking findings; Vitest: 10
+  files/68 tests), `git diff --check`, and
+  `git diff --exit-code -- songs.js`. No data change is authorized.
+
+## Phase 3A closeout — TVCHH extraction research checkpoint (2026-09-23)
+
+- **Phase 3A is closed.** This checkpoint consolidates the source survey,
+  Drive inventory, Priority Batch 1 manifest, direct extraction pilot and
+  bounded OCR/OMR benchmark. It does not start Phase 3B, create an importer,
+  create an approved record, or modify production song data.
+- **Source strategy:** Google Drive PDF is the primary source. The inventory
+  establishes 387 unique numeric PDFs (`1.pdf`–`387.pdf`) plus one aggregate
+  PDF. Priority Batch 1 is **84/84 FOUND**, with 0 MISSING, 0 DUPLICATE and 0
+  AMBIGUOUS. The manifest is identity/provenance-only, with no lyrics, chords
+  or production records.
+- **Direct extraction:** the six bounded pilots (1, 102, 216, 268, 337 and
+  386) prove that this source is IMAGE/SCAN for extraction purposes; it has no
+  selectable score text or PDF text boxes. Direct text parsing is not a viable
+  TVCHH import path.
+- **OCR-first Phase 3B architecture:** `PDF → Render → OCR vie+eng → Raw OCR
+  Snapshot + Bounding Boxes → Parse candidates → Canonical DRAFT → Visual
+  Review → Human corrections → Validation`. The pipeline stops at Validation.
+  It must not approve, write `songs.js`, or export production data in Phase
+  3B. OCR is local/light and supplies TSV/hOCR geometry suitable for evidence-
+  rich DRAFTs, but cannot auto-approve lyrics, chords, placement, credits,
+  keys or structure.
+- **OMR strategy:** Audiveris GRID staff recognition is useful and resource-
+  acceptable as optional research/layout support. Full OMR is heavy and did
+  not yield valid lyrics, chords or MusicXML in the bounded benchmark. It is
+  not on the default Phase 3B import path; retain it only as an optional future
+  fallback/research tool after a suitable longer-running benchmark.
+- **Decision:** **HUMAN_ASSISTED_REQUIRED.** OCR candidates and any spatial
+  chord association remain DRAFT/REVIEW REQUIRED, never automatic production
+  data.
+- **Legacy 268/337:** PDF source and legacy records have a
+  SOURCE_DIFFERENCE in key/chord presentation. Do not modify legacy, treat it
+  as comparison rather than absolute ground truth, replace PDF with legacy, or
+  merge either source automatically. All differences remain REVIEW REQUIRED.
+- **Changeset/security review:** intended checkpoint content is the five TVCHH
+  reports, the Priority Batch 1 provenance manifest, this log and the required
+  `reports/tvchh-extraction/` ignore rule. Git tracks no PDF, render, OCR TSV/
+  hOCR, OMR output, Audiveris binary, model or cache. A targeted credential
+  scan found no credential/secret material; matching words in documentation
+  were ordinary technical terms only. No unnecessary local machine path or
+  personal data is included in the tracked changes.
+- Verification before checkpoint: `npm run check` passed (Validator: 121 songs,
+  0 errors, 2 legacy bracket warnings, 64 info; data revision valid; Text QA:
+  910 non-blocking findings; Vitest: 10 files/68 tests). Required production
+  baseline remains 121 songs. Run final `git diff --check` and
+  `git diff --exit-code -- songs.js`, then commit only
+  `docs: establish TVCHH extraction strategy`, do not push, and stop. Next
+  phase: **PHASE 3B — bounded OCR DRAFT prototype**.
+- Checkpoint commit was created locally with that exact message. It contains
+  the reviewed source/inventory/pilot/benchmark documentation, provenance
+  manifest, Project Log and ignore rule only; it contains no production song
+  data or generated artifact. No push was performed.
