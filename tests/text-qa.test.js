@@ -173,8 +173,8 @@ describe("reporting and integration", () => {
     expect(manifest.calibration.songIds).toHaveLength(8);
     expect(manifest.batches).toHaveLength(15);
     const ids = manifest.batches.flatMap(batch => batch.songIds);
-    expect(ids).toHaveLength(121);
-    expect(new Set(ids).size).toBe(121);
+    expect(ids).toHaveLength(122);
+    expect(new Set(ids).size).toBe(122);
     const songs = await loadSongs("songs.js");
     expect(new Set(ids)).toEqual(new Set(songs.map(song => song.id)));
     expect(manifest.calibration.positions).toEqual(manifest.calibration.songIds.map(id => songs.findIndex(song => song.id === id) + 1));
@@ -185,7 +185,7 @@ describe("reporting and integration", () => {
       expect(songs.slice(batch.positions.start - 1, batch.positions.end).map(song => song.id)).toEqual(batch.songIds);
       nextPosition = batch.positions.end + 1;
     }
-    expect(nextPosition).toBe(122);
+    expect(nextPosition).toBe(123);
   });
 
   it("rejects a policy bound to another dataset revision", () => {

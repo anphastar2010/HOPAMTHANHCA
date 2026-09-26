@@ -39,7 +39,7 @@ describe("PDF resolver", () => {
 describe("PDF-linked song library", () => {
   it("contains only approved retained records and normalized TVCHH titles", async () => {
     const songs = await loadSongs(path.join(root, "songs.js"));
-    expect(songs).toHaveLength(121);
+    expect(songs).toHaveLength(122);
     expect(songs.find(song => song.id === 1767000271760)).toBeUndefined();
     expect(songs.find(song => song.id === 1782288509642)).toBeUndefined();
     expect(songs.find(song => song.id === 1782379843052)?.title).toBe("[118] YÊN VUI MỘT ĐỜI");

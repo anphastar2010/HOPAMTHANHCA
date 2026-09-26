@@ -1,4 +1,4 @@
-import { parseAudioLinks, transposeChord, transposeText } from "./src/chords.js";
+import { parseAudioLinks, transposeChord, transposeText, transposeKey } from "./src/chords.js";
 import { resolvePdfUrl } from "./src/pdf-links.js";
 
 let currentActiveSong = null;
@@ -81,8 +81,9 @@ function renderSong(song) {
   currentActiveSong = song; directoryContainer.style.display = "none"; songDisplay.style.display = "block"; songTools.style.display = "flex";
   document.getElementById("displayTitle").textContent = song.title;
   document.getElementById("displayArtist").textContent = song.artist || "Tác giả: Chưa rõ";
-  document.getElementById("currentKeyDisplay").textContent = transposeChord(song.key || "C", transposeSteps);
-  const content = document.getElementById("displayContent"); renderSongContent(content, transposeText(song.content || "", transposeSteps)); content.style.fontSize = currentFontSize + "px";
+  const targetKey = transposeKey(song.key || "C", transposeSteps);
+  document.getElementById("currentKeyDisplay").textContent = targetKey;
+  const content = document.getElementById("displayContent"); renderSongContent(content, transposeText(song.content || "", transposeSteps, targetKey)); content.style.fontSize = currentFontSize + "px";
   const audio = document.getElementById("audioElement"); audio.pause(); audio.removeAttribute("src"); audio.load(); audio.style.display = "none"; currentPlayingButton = null;
   const container = document.getElementById("audioContainer"); container.replaceChildren(); const versions = parseAudioLinks(song.audio);
   if (!versions.length) { const unavailable = makeButton("audio-button", "🎵 Chưa có audio"); unavailable.disabled = true; container.append(unavailable); }
@@ -94,6 +95,9 @@ document.getElementById("audioElement").addEventListener("ended", () => { if (cu
 document.getElementById("backDirectoryBtn").addEventListener("click", showDirectory);
 document.getElementById("transposeDownBtn").addEventListener("click", () => transpose(-1));
 document.getElementById("transposeUpBtn").addEventListener("click", () => transpose(1));
+const resetBtn = document.getElementById("transposeResetBtn");
+if (resetBtn) resetBtn.addEventListener("click", () => { if (currentActiveSong && transposeSteps !== 0) { transposeSteps = 0; renderSong(currentActiveSong); } });
+document.getElementById("currentKeyDisplay").addEventListener("click", () => { if (currentActiveSong && transposeSteps !== 0) { transposeSteps = 0; renderSong(currentActiveSong); } });
 document.getElementById("fontDownBtn").addEventListener("click", () => changeFontSize(-2));
 document.getElementById("fontUpBtn").addEventListener("click", () => changeFontSize(2));
 document.getElementById("viewSheetBtn").addEventListener("click", openSheet);

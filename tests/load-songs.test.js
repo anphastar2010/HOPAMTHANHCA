@@ -11,7 +11,7 @@ describe("songs.js integration", () => {
     const songs = await loadSongs(path.join(root, "songs.js"));
     const summary = summarizeFindings(validateLibrary(songs));
 
-    expect(songs).toHaveLength(121);
+    expect(songs).toHaveLength(122);
     expect(summary.error).toBe(0);
   });
 });

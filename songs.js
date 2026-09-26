@@ -13,9 +13,9 @@ const songs = [
     "title": "[1] AI SẼ NGỰ TRÊN NÚI THÁNH",
     "artist": "Trịnh Chúc",
     "key": "A",
-    "audio": "Ver 1|https://drive.google.com/file/d/1v8mADchmkRvx9wcVPlH2BpbIjUlUgyB8/view?usp=sharing;;Ver 2|https://drive.google.com/file/d/18MJkLVBbfNPG_Xn2EvELkwnJZxIAhL2T/view?usp=sharing;;Ver 3|https://drive.google.com/file/d/1aMjiEL5h-0zKebnwlIWAWrAkNPGa35wT/view?usp=sharing",
-    "sheet": "https://drive.google.com/file/d/10-gQn2mO70NWpP_Oaoh6LmBbOhK4hIyR/view?usp=sharing",
-    "content": "\nLạy [Am]Chúa ai sẽ trú trên đền tạm Ngài nào ai, Chúa ơi? \nVà [F]ai sẽ ngự trên núi thánh [E]Ngài nào ai Chúa [Am]ơi? \n[A]Ấy [Dm]là người bước đi thẳng [E]ngay. Làm điều công [C]chính [A]Làm điều công [Dm]chính [E]và nói thật trong[Am]lòng.\nLạy Chúa [A]người không cho vay lời [Dm]không làm chuyện bất [E]công để [C]hại người[E]khác, \nnào [Am]ai tuân giữ điều [Dm]này sẽ không không bao [E]giờ không bao giờ rung [Am]động.\n\n[A]Người có lưỡi không nói [D]hành không làm điều ác[E]gian thiệt hại bạn [A]hữu\n[F#m]Và không lăng [Bm]nhục người [E]lân cận[A]mình\n[D]Mắt khinh [Bm]thường ác [A]gian [E]lòng tin yêu ai nơi [A]Cha\n[F#m]Người thế đã hứa nguyện dẫu rằng dẫu [E]rằng tổn thương cũng không bao [D]giờ [E]đổi[A]thay\n  "
+    "audio": "",
+    "sheet": "https://pdf.alpha2026.dpdns.org/thanhca/1.pdf",
+    "content": "Lạy [Am]Chúa ai sẽ trú trên đền tạm Ngài nào ai, Chúa ơi? \nVà [F]ai sẽ ngự trên núi thánh [E]Ngài nào ai Chúa [Am]ơi? \n[A]Ấy [Dm]là người bước đi thẳng [E]ngay. \nLàm điều công [C]chính [A]làm điều công [Dm]chính\n[E]và nói thật trong[Am]lòng.\nLạy Chúa [A]người không cho vay lời \n[Dm]không làm chuyện bất [E]công để [C]hại người[E]khác, \nnào [Am]ai tuân giữ điều [Dm]này sẽ không \nkhông bao [E]giờ không bao giờ rung [Am]động.\n\n[A]Người có lưỡi không nói [D]hành \nkhông làm điều ác[E]gian thiệt hại bạn [A]hữu\n[F#m]Và không lăng [Bm]nhục người [E]lân cận[A]mình\n[D]Mắt khinh [Bm]thường ác [A]gian\n[E]lòng tin yêu ai nơi [A]Cha\n[F#m]Người thế đã hứa nguyện dẫu rằng dẫu [E]rằng\ntổn thương cũng không bao [D]giờ [E]đổi[A]thay"
   },
   {
     "id": 1779961590654,
@@ -1087,5 +1087,16 @@ const songs = [
     "audio": "",
     "sheet": "",
     "content": "1. Ngài là [F] ai mà triệu người khắp năm [Bb] châu trần [Gm7] gian\nđã suy [C] tôn làm Vua của đời [F] mình?\nNgài là [F] ai mà mọi lòng có an [Bb] vui tình [Gm] thương\nnếu vâng [C] theo lời Ngài đã khuyên [F] răn\n\nNgài làm [F] cho bao đau thương sẽ vơi [Dm] đi nếu đến [Bb] bên chân [F] Ngài\nMọi lòng [F] đói có bánh sống nước suối [Dm] cho hồn tàn [Bbm] héo\nÁnh sáng [F] soi nẻo tối [Gm] tăm nơi vực [C] sâu trong bóng [F] đêm\n \n2. Nhờ lời [F] Ngài mà cuộc đời biết bao [Bb] nhiêu tội [Gm] nhân\nđã đổi [C] thay còn đâu chuỗi ngày [F] buồn\nLòng nhiều [F] người đầy tuyệt vọng đã vui [Bb] tươi tràn [Gm] dâng\nhát suy [C] tôn Giê-xu Chúa yêu [F] thương\n\nMọi giông [F] tố hay chông gai sẽ tiêu [Dm] tan nếu lắng [Bb] nghe lời [F] Ngài\nĐường tăm [F] tối có ánh sáng nếu bước [Dm] đi bằng lời [Bbm] sống\nChúa xót [F] thương mỗi cánh [Gm] chim đang lầm [C] lạc nơi bến [F] mê"
+  },
+  {
+    "id": 1790386343331,
+    "title": "[18] CHÚA HẰNG CHĂN GIỮ TÔI",
+    "artist": "Dịch lời của Walter Martin",
+    "key": "Eb",
+    "audio": "",
+    "sheet": "https://pdf.alpha2026.dpdns.org/thanhca/18.pdf",
+    "content": "1. Tôi vẫn tin [Eb]Ngài dầu khi gặp cảnh [Fm7]khổ nào\nHoặc nơi an [Bb7]tĩnh hay chìm trong bể [Eb]thẳm sâu\nTôi sống mỗi [Cm]ngày, nương [Bb]Chúa không [Ab]thôi\n[Fm]Chúa [F]Cha trên [Cm]trời hằng chăm nom [Fm]tôi [Bb]mọi [Eb]nơi.\n\nĐK: \n[Ab]Lòng [Eb]này hằng [Fm7]tin có [Bb]Chúa luôn [Bb7]luôn đi [Eb]cùng\n[Cm7]Trên nơi [Eb]non [Ab]cao, hay [Cm]trong đại dương sâu [Bb]thẳm\n[Bb7]Ngài hằng là [Eb]Chúa chăn giữ thân [Ab]tôi\n[Fm]Chúa Cha trên [Gm]trời hằng chăm nom [Cm]tôi [Bb]mọi [Eb]nơi.\n\n2. Cha chúng ta [Eb]hằng chăm nom gìn giữ [Fm7]bông hồng\nNgài đưa dắt [Bb7]lối cho từng chim nhỏ [Eb]bé kia\nTôi vững tin [Cm]Ngài, luôn [Bb]nhớ thân [Ab]tôi\n[Fm]Chúa [F]Cha trên [Cm]trời hằng chăm nom [Fm]tôi [Bb]mọi [Eb]nơi.",
+    "sourceUrl": "https://hopamchuan.com/song/52641/chua-hang-chan-giu-toi/nguyenhbkhoa",
+    "importedAt": "2026-09-26T01:32:23.331Z"
   }
 ];
