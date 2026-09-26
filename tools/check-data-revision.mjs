@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+import { execFileSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const expected = String(process.argv[2] || "").trim();
+const expected = String(process.argv[2] || execFileSync("git", ["rev-list", "-1", "HEAD", "--", "songs.js"], { cwd: new URL("../", import.meta.url), encoding: "utf8" })).trim();
 if (!/^[0-9a-f]{40}$/.test(expected)) {
   console.error("ERROR data-revision — thiếu revision Git hợp lệ của songs.js.");
   process.exit(1);

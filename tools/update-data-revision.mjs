@@ -1,1 +1,2 @@
-import fs from "node:fs/promises";const r=String(process.argv[2]||"").trim();if(!/^[0-9a-f]{40}$/.test(r))throw new Error("Không tìm thấy revision Git hợp lệ.");await fs.writeFile("data-revision.js",`window.HOPAM_DATA_REVISION = ${JSON.stringify(r)};\n`);console.log(r);
+import { execFileSync } from "node:child_process";
+import fs from "node:fs/promises";const r=String(process.argv[2] || execFileSync("git", ["rev-list", "-1", "HEAD", "--", "songs.js"], { cwd: new URL("../", import.meta.url), encoding: "utf8" })).trim();if(!/^[0-9a-f]{40}$/.test(r))throw new Error("Không tìm thấy revision Git hợp lệ.");await fs.writeFile("data-revision.js",`window.HOPAM_DATA_REVISION = ${JSON.stringify(r)};\n`);console.log(r);
