@@ -642,3 +642,11 @@ placeholder for number 18.
   the reviewed source/inventory/pilot/benchmark documentation, provenance
   manifest, Project Log and ignore rule only; it contains no production song
   data or generated artifact. No push was performed.
+
+
+## 2026-09-28T14:54:42.786Z — Song publication
+
+- Songs: 122 -> 123.
+- Changed IDs: 1790607195612.
+- Data revision: d7a6ab4b19c3c9770066f9695433c21d560994a6.
+- Source and drafts preserved; validation, QA and tests run in isolated checkout.
