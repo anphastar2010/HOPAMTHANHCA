@@ -110,11 +110,11 @@ const songs = [
   {
     "id": 1780038640379,
     "title": "[10] CẢM TẠ DANH CHÚA",
-    "artist": "TRỊNH CHÚC",
+    "artist": "Trịnh Trúc",
     "key": "Em",
     "audio": "",
     "sheet": "",
-    "content": "\n[Em]Lạy Đức Chúa [C][D]Trời chúng tôi cảm tạ [Em]Chúa \nChúng [B][Em][D]tôi cảm tạ [Em]Chúa \n[G]Vì danh [Em]Ngài thật gần chúng [Am]tôi \n[D]Vì danh Ngài thật gần chúng [Em]tôi \nLạy Đức Chúa [C]Trời chúng [Dm]tôi cảm tạ Chúa chúng [Em][B]tôi [Em]cảm [D]tạ [Em]Chúa \n[G]Vì danh [Em]Ngài thật gần chúng [Am]tôi \n[D]Vì danh Ngài thật gần chúng [Em]tôi \n[D]Vì mọi người tường thuật những [G]việc diệu kỳ \n[Em]Khi đến thời [C]điểm mà ta đã [Am]định thì [B]ta phán xét công [Em]bình \n[G]Khi trái [Em]đất và cả dân [Am]cư run [D]rẩy rung [Em]động \nThì [Am]chính chính ta sẽ [Em]giữ nền móng [B]nó vững bền. \n[Em]Lạy Đức Chúa [C]Trời chúng [D]tôi cảm tạ Chúa chúng [Em][B]tôi [Em]cảm [D]tạ [Em]Chúa.\n  "
+    "content": "[Em]Lạy Đức Chúa [C][D]Trời chúng tôi cảm tạ [Em]Chúa \nChúng [B][Em][D]tôi cảm tạ [Em]Chúa \n[G]Vì danh [Em]Ngài thật gần chúng [Am]tôi \n[D]Vì danh Ngài thật gần chúng [Em]tôi \nLạy Đức Chúa [C]Trời chúng [Dm]tôi cảm tạ Chúa chúng [Em][B]tôi [Em]cảm [D]tạ [Em]Chúa \n[G]Vì danh [Em]Ngài thật gần chúng [Am]tôi \n[D]Vì danh Ngài thật gần chúng [Em]tôi \n[D]Vì mọi người tường thuật những [G]việc diệu kỳ \n[Em]Khi đến thời [C]điểm mà ta đã [Am]định thì [B]ta phán xét công [Em]bình \n[G]Khi trái [Em]đất và cả dân [Am]cư run [D]rẩy rung [Em]động \nThì [Am]chính chính ta sẽ [Em]giữ nền móng [B]nó vững bền. \n[Em]Lạy Đức Chúa [C]Trời chúng [D]tôi cảm tạ Chúa chúng [Em][B]tôi [Em]cảm [D]tạ [Em]Chúa."
   },
   {
     "id": 1780039017099,
@@ -947,11 +947,11 @@ const songs = [
   {
     "id": 1782360753277,
     "title": "[106] VỊ NGHỆ SỸ THIÊN THƯỢNG",
-    "artist": "TRỊNH CHÚC",
+    "artist": "Trịnh Chúc",
     "key": "Am",
     "audio": "",
     "sheet": "",
-    "content": "\n1. [Am]Ôi thật tuyệt [Em]vời những công [C]trình của [E]Chúa \nKhông Thần nào ví [Am]bằng \n[G]Kìa sông, kìa núi với bao [E]vĩ hùng\n[Dm]cây xanh xanh lá Ánh lửa đỏ [Am]hồng \nTình yêu [C]kia thăm thẳm ngọt [Am]ngào\nÁnh chiếu [E]dương ôm tỏa thế [Am]gian\nĐêm [F]tối đêm tối bao [C]trùm\ncảnh [E]vật cảnh vật trước sau\nCơn [Am]gió thoảng [A]nhẹ thoảng nhẹ mây [Dm]trôi\nhạt [E]mưa tan [F]tác trong gió [Am]mưa\n \n[A]ÔI Chúa tôi quyền [E]năng \nquyền [F#m]năng cao vời khôn [E]ví\nphục thay thiên tài nghệ [A]sĩ\nTuyệt [D]tác ấy chính nhờ Ngài\nXin ca [E]ngợi lòng tôn kính [A]thay\nnguyện dâng bức tranh đời [D]con\nlàm của lễ mọn [E]hèn Ơn Ngài cao [A]sâu\n\n2. [Am]Con nhìn bầu [Em]trời những tạo [C]vật của [E]Chúa \nÔi kỳ diệu lắm [Am]thay\n[G]Xoay quanh trái đất với ánh [E]mặt trời\n[Dm]soi đưa tia nắng Cánh hoa thắm [Am]màu\nBầu trời [C]đêm lung linh vì [Am]sao\nMúa hát [E]ca thay đổi không [Am]gian\nÔi [F]Chúa vua Đấng tác [C]tạo\nnhờ [E]Ngài mọi sự đã nên\nDo [Am]chính tay [A]Ngài tuyệt vời không [Dm]nguôi\nvần [E]xoay năm [F]tháng trong ý [Am]Ngài\n  "
+    "content": "1. [Am]Ôi thật tuyệt [Em]vời những công [C]trình của [E]Chúa \nKhông Thần nào ví [Am]bằng \n[G]Kìa sông, kìa núi với bao [E]vĩ hùng\n[Dm]cây xanh xanh lá Ánh lửa đỏ [Am]hồng \nTình yêu [C]kia thăm thẳm ngọt [Am]ngào\nÁnh chiếu [E]dương ôm tỏa thế [Am]gian\nĐêm [F]tối đêm tối bao [C]trùm\ncảnh [E]vật cảnh vật trước sau\nCơn [Am]gió thoảng [A]nhẹ thoảng nhẹ mây [Dm]trôi\nhạt [E]mưa tan [F]tác trong gió [Am]mưa\n \n[A]ÔI Chúa tôi quyền [E]năng \nquyền [F#m]năng cao vời khôn [E]ví\nphục thay thiên tài nghệ [A]sĩ\nTuyệt [D]tác ấy chính nhờ Ngài\nXin ca [E]ngợi lòng tôn kính [A]thay\nnguyện dâng bức tranh đời [D]con\nlàm của lễ mọn [E]hèn Ơn Ngài cao [A]sâu\n\n2. [Am]Con nhìn bầu [Em]trời những tạo [C]vật của [E]Chúa \nÔi kỳ diệu lắm [Am]thay\n[G]Xoay quanh trái đất với ánh [E]mặt trời\n[Dm]soi đưa tia nắng Cánh hoa thắm [Am]màu\nBầu trời [C]đêm lung linh vì [Am]sao\nMúa hát [E]ca thay đổi không [Am]gian\nÔi [F]Chúa vua Đấng tác [C]tạo\nnhờ [E]Ngài mọi sự đã nên\nDo [Am]chính tay [A]Ngài tuyệt vời không [Dm]nguôi\nvần [E]xoay năm [F]tháng trong ý [Am]Ngài"
   },
   {
     "id": 1782374162217,
@@ -1106,8 +1106,17 @@ const songs = [
     "key": "Em",
     "audio": "",
     "sheet": "https://pdf.alpha2026.dpdns.org/tvchh/1.pdf",
-    "content": "[Em]Từ cõi lòng sâu thẳm, [D]con xin Thần Linh Chúa\n[C]hiện diện đầy vinh hiển trong lòng [G]này.[B7]\n[Em]Nguyện Thần Ngài tuôn đổ [D]làm mọi lòng tươi mới.\n[C]Lời nguyện cầu tha [Am]thiết với Cha tình [Bsus4]yêu[B7]\n\nĐK: Lạy [Em]Chúa chúng con khẩn thiết xin Ngài [G]đến\nban nước [E7]sống tưới mát chúng [Am]con, \nđưa hồn [G]linh chúng con đến với [B7]Cha. \nHỡi Chúa xin [Em]Chúa khiến cho mỗi [D]lòng hiệp [G]nhất,\nđến với [E]Chúa với tấm lòng vỡ [Am]tan, \nđến với [Bm]Chúa với tấm lòng biết [Em]ơn.",
+    "content": "[Em]Từ cõi lòng sâu thẳm, [D]con xin Thần Linh Chúa\n[C]hiện diện đầy vinh hiển trong lòng [G]này.[F#m7][B7]\n[Em]Nguyện Thần Ngài tuôn đổ [D]làm mọi lòng tươi mới.\n[C]Lời nguyện cầu tha [Am]thiết với Cha tình [Bsus4]yêu[B7]\nĐK: \nLạy [Em]Chúa chúng con khẩn thiết [D7]xin Ngài [G]đến\nban nước [E7]sống tưới mát chúng [Am]con, \nđưa hồn [G]linh chúng con đến với [G]Cha.[F#7][B7]\nHỡi [Em]Chúa, xin Chúa khiến cho mỗi [D7]lòng hiệp [G]nhất,\nđến với [E7]Chúa với tấm lòng vỡ [Am]tan, \nđến với [B7]Chúa với tấm lòng biết [Em]ơn.",
     "sourceUrl": "https://www.thanhcatinlanh.com/ton-vinh-chua-hang-huu/001-xin-than-linh-den.html",
     "importedAt": "2026-09-28T14:53:15.612Z"
+  },
+  {
+    "id": 1790948115255,
+    "title": "[2-TVCHH] TRỌN CẢ TẤM LÒNG",
+    "artist": "Khuyết Danh",
+    "key": "G",
+    "audio": "",
+    "sheet": "https://pdf.alpha2026.dpdns.org/tvchh/2.pdf",
+    "content": "1. Giờ [G]này [D/F#]trọn cả tâm hồn [Em]con hướng [G/D]lên nơi Cha từ [C]ái,\nlòng con ước [D]ao khát khao gặp [D7]Ngài.\nLạy Cha [G]yêu nguyện được [D/F#]nghe tiếng Cha dạy [Em]khuyên,\n[Bm]dẫn đưa con từng [C]bước, dìu con đi [A7]theo đường lối [D7]Cha.\n\nĐK: [D7]Nguyện làm [D]theo Thánh ý [G]Chúa, vâng phục [B7]luôn luôn trong đức [Em]tin.\n[Cmaj7]Dâng Chúa cuộc đời [C]này, yêu thương [D]thờ phượng Ngài không [D7]thôi.\nNguyện làm [D]theo thánh ý [G]Chúa, vâng phục [B7]luôn luôn trong đức [Em]tin.[Em7/D]\nCon [Cmaj7]quyết đi theo Ngài [Dsus4]không [D7]đổi [G]thay.\n\n2. [D7]Trọn [G]đời [D/F#]nguyện chỉ theo Ngài [Em]thôi, Đấng [G/D]cứu chuộc linh hồn [C]con,\nNgài đã thứ [D]tha con bao lỗi [D7]lầm.\nLạy Cha [G]yêu, nguyện lời [D/F#]Cha dẫn đưa đời [Em]con, [Bm]dưỡng nuôi linh hồn [C]con.\nĐổi thay tâm [A7]con nên mới [D7]luôn."
   }
 ];
