@@ -650,3 +650,11 @@ placeholder for number 18.
 - Changed IDs: 1790607195612.
 - Data revision: d7a6ab4b19c3c9770066f9695433c21d560994a6.
 - Source and drafts preserved; validation, QA and tests run in isolated checkout.
+
+
+## 2026-10-02T13:43:11.205Z — Song publication
+
+- Songs: 123 -> 124.
+- Changed IDs: 1780038640379, 1782360753277, 1790607195612, 1790948115255.
+- Data revision: 0a56cc49d9dc7e338adcf5175b67e9f52ac77d3e.
+- Source and drafts preserved; validation, QA and tests run in isolated checkout.
