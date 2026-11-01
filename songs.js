@@ -1098,5 +1098,16 @@ const songs = [
     "content": "1. Tôi vẫn tin [Eb]Ngài dầu khi gặp cảnh [Fm7]khổ nào\nHoặc nơi an [Bb7]tĩnh hay chìm trong bể [Eb]thẳm sâu\nTôi sống mỗi [Cm]ngày, nương [Bb]Chúa không [Ab]thôi\n[Fm]Chúa [F]Cha trên [Cm]trời hằng chăm nom [Fm]tôi [Bb]mọi [Eb]nơi.\n\nĐK: \n[Ab]Lòng [Eb]này hằng [Fm7]tin có [Bb]Chúa luôn [Bb7]luôn đi [Eb]cùng\n[Cm7]Trên nơi [Eb]non [Ab]cao, hay [Cm]trong đại dương sâu [Bb]thẳm\n[Bb7]Ngài hằng là [Eb]Chúa chăn giữ thân [Ab]tôi\n[Fm]Chúa Cha trên [Gm]trời hằng chăm nom [Cm]tôi [Bb]mọi [Eb]nơi.\n\n2. Cha chúng ta [Eb]hằng chăm nom gìn giữ [Fm7]bông hồng\nNgài đưa dắt [Bb7]lối cho từng chim nhỏ [Eb]bé kia\nTôi vững tin [Cm]Ngài, luôn [Bb]nhớ thân [Ab]tôi\n[Fm]Chúa [F]Cha trên [Cm]trời hằng chăm nom [Fm]tôi [Bb]mọi [Eb]nơi.",
     "sourceUrl": "https://hopamchuan.com/song/52641/chua-hang-chan-giu-toi/nguyenhbkhoa",
     "importedAt": "2026-09-26T01:32:23.331Z"
+  },
+  {
+    "id": 1790607195612,
+    "title": "[1-TVCHH] XIN THẦN LINH ĐẾN",
+    "artist": "Nguyễn Đình Thôn",
+    "key": "Em",
+    "audio": "",
+    "sheet": "https://pdf.alpha2026.dpdns.org/tvchh/1.pdf",
+    "content": "[Em]Từ cõi lòng sâu thẳm, [D]con xin Thần Linh Chúa\n[C]hiện diện đầy vinh hiển trong lòng [G]này.[B7]\n[Em]Nguyện Thần Ngài tuôn đổ [D]làm mọi lòng tươi mới.\n[C]Lời nguyện cầu tha [Am]thiết với Cha tình [Bsus4]yêu[B7]\n\nĐK: Lạy [Em]Chúa chúng con khẩn thiết xin Ngài [G]đến\nban nước [E7]sống tưới mát chúng [Am]con, \nđưa hồn [G]linh chúng con đến với [B7]Cha. \nHỡi Chúa xin [Em]Chúa khiến cho mỗi [D]lòng hiệp [G]nhất,\nđến với [E]Chúa với tấm lòng vỡ [Am]tan, \nđến với [Bm]Chúa với tấm lòng biết [Em]ơn.",
+    "sourceUrl": "https://www.thanhcatinlanh.com/ton-vinh-chua-hang-huu/001-xin-than-linh-den.html",
+    "importedAt": "2026-09-28T14:53:15.612Z"
   }
 ];

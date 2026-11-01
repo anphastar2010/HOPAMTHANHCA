@@ -1,1 +1,286 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Song Studio</title><link rel="stylesheet" href="studio.css"></head><body><header><h1>🎼 Song Studio</h1><p>Nhập MusicXML MuseScore · chỉnh lời & hợp âm · xuất songs.js</p></header><main><div class="card row"><div><b>Nhập MusicXML</b><input id="xml" type="file" accept=".musicxml,.xml"></div><div><button id="new">+ Bài mới</button> <button id="out">⬇ Xuất songs.js</button><p id="status" class="muted"></p></div></div><div class="card"><b>Dán nội dung đã sao chép</b><label>URL nguồn<input id="sourceUrl"></label><label>Lời và hợp âm<textarea id="hacPaste"></textarea></label><button id="importPaste">Đưa vào trình chỉnh sửa</button></div><div class="card"><b>Cộng tác</b><label>Tên người sửa<input id="editorName"></label><button id="exportChanges">Xuất changeset</button><p id="collabStatus" class="muted"></p></div><div class="grid"><aside class="card"><b>Thư viện</b><input id="search" placeholder="Tìm bài hát"><div id="list" class="list"></div></aside><section class="card"><h2 id="heading">Thêm bài hát</h2><div class="row"><label>Tên bài<input id="title"></label><label>Tác giả<input id="artist"></label><label>Giọng<input id="key"></label></div><div class="row"><label>Audio<input id="audio"></label><label>Sheet PDF<input id="sheet"></label></div><label>Lời và hợp âm<textarea id="content"></textarea></label><p id="valid" class="muted"></p><button id="save">Lưu tạm</button> <button id="remove">Xóa</button> <button id="undo">Hoàn tác</button><h3>Xem trước</h3><div id="preview" class="preview"></div></section></div></main><script src="songs.js"></script><script src="data-revision.js"></script><script type="module" src="studio.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Song Studio — Hợp Âm Thờ Phượng</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="studio.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1>🎼 Song Studio</h1>
+        <p class="header-sub">Biên tập bài hát · Tự lưu nháp · Xem trước chuẩn trang chính · Cập nhật an toàn</p>
+      </div>
+      <div class="header-status">
+        <span id="libStatusBadge" class="badge badge-info">Đang kết nối...</span>
+        <span id="draftStatusBadge" class="badge badge-neutral">Chưa có bản nháp</span>
+        <a href="index.html" class="badge badge-outline" style="text-decoration:none; color:white; border-color:rgba(255,255,255,0.4)">← Về trang tra cứu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- DRAFT CONFLICT BANNER -->
+    <div id="draftConflictBanner" class="card" style="display:none; border:2px solid var(--danger); background:var(--danger-pale); margin-bottom:16px">
+      <div style="font-weight:700; font-size:1.05rem; margin-bottom:6px; color:var(--danger)">⚠️ PHÁT HIỆN XUNG ĐỘT BẢN NHÁP (PHIÊN KHÁC / TAB KHÁC)</div>
+      <p id="draftConflictMessage" style="margin:0 0 10px; font-size:0.95rem; color:#7f1d1d"></p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap">
+        <button id="btnExportConflictDraft" type="button" class="btn-secondary" style="padding:6px 12px; font-size:0.85rem">💾 Xuất bản nháp riêng (JSON)</button>
+        <button id="btnReloadConflictDraft" type="button" class="btn-outline" style="padding:6px 12px; font-size:0.85rem">🔄 Tải lại bản nháp từ máy chủ</button>
+        <button id="btnDismissConflictBanner" type="button" class="btn-outline" style="padding:6px 12px; font-size:0.85rem">Đóng thông báo</button>
+      </div>
+    </div>
+
+    <!-- TOP CARDS: Import MusicXML, Paste internet content, Collaboration -->
+    <div class="top-cards">
+      <div class="card">
+        <h3 class="card-title">📥 Dán nội dung internet</h3>
+        <label>URL nguồn (tự động ghi provenance)
+          <input id="sourceUrl" placeholder="https://hopamchuan.com/song/..." autocomplete="off">
+        </label>
+        <label style="margin-top:8px">Lời và hợp âm đã sao chép
+          <textarea id="hacPaste" style="min-height:100px" placeholder="Bôi đen và dán lời kèm hợp âm từ internet vào đây..."></textarea>
+        </label>
+        <button id="importPaste" class="btn-secondary" style="margin-top:8px; width:100%">Đưa vào trình chỉnh sửa</button>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">🎵 Nhập MusicXML MuseScore</h3>
+        <p class="muted" style="margin:0 0 8px; font-size:0.85rem">Đọc tiêu đề, tác giả, tông, lời và hòa âm từ file .musicxml hoặc .xml</p>
+        <input id="xml" type="file" accept=".musicxml,.xml" style="margin-bottom:10px">
+        <p id="status" class="muted" style="font-size:0.85rem; margin:0"></p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">👥 Cộng tác & Xuất dự phòng</h3>
+        <label>Tên người sửa
+          <input id="editorName" placeholder="Tên của bạn" value="Studio">
+        </label>
+        <div style="display:flex; gap:8px; margin-top:8px">
+          <button id="exportChanges" class="btn-outline" style="flex:1">Xuất changeset</button>
+          <button id="out" class="btn-outline" style="flex:1">⬇ Xuất songs.js</button>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:8px">
+          <button id="btnBackups" class="btn-outline" style="flex:1">📦 Bản sao lưu</button>
+          <button id="btnCheckPublish" class="btn-outline" style="flex:1">🌐 Kiểm tra trước khi đăng</button>
+        </div>
+        <p id="collabStatus" class="muted" style="font-size:0.85rem; margin:6px 0 0"></p>
+      </div>
+    </div>
+
+    <!-- MAIN GRID: Song list on left, Editor + Preview on right -->
+    <div class="grid">
+      <!-- SIDEBAR: List of songs -->
+      <aside class="card">
+        <div class="card-title">
+          <span>📚 Thư viện</span>
+          <span id="songCountDisplay" class="badge badge-neutral">0 bài</span>
+        </div>
+
+        <div class="list-actions">
+          <button id="new" class="btn-success" style="width:100%">+ Thêm bài mới</button>
+          <button id="updateLibraryBtn" class="btn-warn" style="width:100%; display:none">🚀 Cập nhật thư viện (<span id="pendingChangesCount">0</span>)</button>
+        </div>
+
+        <div class="search-box">
+          <input id="search" placeholder="🔍 Tìm bài theo tên, tác giả, lời..." autocomplete="off">
+        </div>
+
+        <div id="list" class="list"></div>
+      </aside>
+
+      <!-- EDITOR & PREVIEW SECTION -->
+      <section class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px">
+          <h2 id="heading" style="margin:0; font-size:1.3rem; color:var(--navy)">Thêm bài hát</h2>
+          <div style="display:flex; gap:8px">
+            <button id="save" class="btn-success">Lưu nháp</button>
+            <button id="undo" class="btn-outline" title="Hoàn tác thay đổi vừa thực hiện">Hoàn tác</button>
+            <button id="remove" class="btn-danger" title="Xóa bài hát khỏi danh sách">Xóa bài</button>
+          </div>
+        </div>
+
+        <!-- Form fields -->
+        <div class="row">
+          <label>Tên bài hát <span style="color:var(--danger)">*</span>
+            <input id="title" placeholder="Ví dụ: [121] TÌNH YÊU CHÚA CAO VỜI">
+          </label>
+          <label>Tác giả
+            <input id="artist" placeholder="Ví dụ: Nguyễn Văn A">
+          </label>
+          <label style="max-width:140px">Tông (Key)
+            <input id="key" placeholder="C, G, Am..." value="C">
+          </label>
+        </div>
+
+        <div class="row">
+          <label>Audio URL (tùy chọn)
+            <input id="audio" placeholder="Nhãn: https://drive.google.com/...">
+          </label>
+          <label>Sheet PDF (tùy chọn)
+            <input id="sheet" placeholder="https://... (Bộ chính tự động liên kết)">
+          </label>
+        </div>
+
+        <!-- Insertion Toolbar for Chords and Structure -->
+        <div class="insert-toolbar" id="insertToolbar">
+          <span class="insert-toolbar-title">Chèn nhanh:</span>
+          <!-- Common chords -->
+          <button type="button" class="btn-chip" data-insert="[C]">[C]</button>
+          <button type="button" class="btn-chip" data-insert="[D]">[D]</button>
+          <button type="button" class="btn-chip" data-insert="[E]">[E]</button>
+          <button type="button" class="btn-chip" data-insert="[F]">[F]</button>
+          <button type="button" class="btn-chip" data-insert="[G]">[G]</button>
+          <button type="button" class="btn-chip" data-insert="[A]">[A]</button>
+          <button type="button" class="btn-chip" data-insert="[B]">[B]</button>
+          <button type="button" class="btn-chip" data-insert="[Am]">[Am]</button>
+          <button type="button" class="btn-chip" data-insert="[Em]">[Em]</button>
+          <button type="button" class="btn-chip" data-insert="[Dm]">[Dm]</button>
+          <button type="button" class="btn-chip" data-insert="[D7]">[D7]</button>
+          <button type="button" class="btn-chip" data-insert="[G7]">[G7]</button>
+          <button type="button" class="btn-chip" id="btnCustomChord">+ Hợp âm...</button>
+          <!-- Section markers adhering to project conventions (NO brackets around Intro) -->
+          <button type="button" class="btn-chip btn-chip-tag" data-insert="&#10;ĐK: ">ĐK:</button>
+          <button type="button" class="btn-chip btn-chip-tag" data-insert="&#10;1. ">1.</button>
+          <button type="button" class="btn-chip btn-chip-tag" data-insert="&#10;2. ">2.</button>
+          <button type="button" class="btn-chip btn-chip-tag" data-insert="&#10;3. ">3.</button>
+          <button type="button" class="btn-chip btn-chip-tag" data-insert="&#10;Intro: ">Intro:</button>
+        </div>
+
+        <label>Lời và hợp âm <span style="color:var(--danger)">*</span>
+          <textarea id="content" placeholder="Ví dụ:&#10;1. Giờ [G]này trọn cả tâm hồn [Em]con hướng lên Cha từ [C]ái..."></textarea>
+        </label>
+
+        <!-- Real-time validation warning box -->
+        <div id="valid" class="validation-box ok">Sẵn sàng lưu.</div>
+
+        <!-- LIVE PREVIEW SECTION (Standard Main Site Rendering) -->
+        <div class="preview-container">
+          <div class="preview-header">
+            <h3 style="margin:0; color:var(--navy)">👁 Xem trước trực tiếp (Trình bày chuẩn trang chính)</h3>
+            <div class="preview-tools">
+              <!-- Transposition test in preview -->
+              <span class="muted" style="font-size:0.85rem">Thử đổi tông:</span>
+              <button type="button" id="previewTransDown" class="btn-outline" style="padding:4px 8px">−</button>
+              <span id="previewKeyDisplay" class="badge badge-info" style="font-family:'JetBrains Mono',monospace">C</span>
+              <button type="button" id="previewTransUp" class="btn-outline" style="padding:4px 8px">+</button>
+              <button type="button" id="previewTransReset" class="btn-outline" style="padding:4px 8px; font-size:0.78rem">Gốc</button>
+              <span style="border-left:1px solid var(--line); height:18px; margin:0 4px"></span>
+              <!-- Toggle mobile preview -->
+              <button type="button" id="previewToggleMobile" class="btn-outline" style="font-size:0.82rem">📱 Khổ điện thoại (375px)</button>
+            </div>
+          </div>
+
+          <div id="previewStage" class="preview-stage">
+            <div style="width:100%; display:flex; flex-direction:column; align-items:center">
+              <div style="width:100%; max-width:48rem; margin-bottom:8px">
+                <h2 id="previewTitle" style="margin:0; font-size:1.4rem; color:var(--navy)">Tiêu đề bài hát</h2>
+                <div id="previewArtist" class="muted" style="font-size:0.9rem; margin-top:4px">Tác giả: Chưa rõ</div>
+              </div>
+              <div id="displayContent"></div>
+              <!-- Hidden for smoke tests compatibility -->
+              <div id="preview" style="display:none"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- MODAL: Cập nhật thư viện (Diff Review & Confirmation) -->
+  <div id="updateModal" class="modal-backdrop" style="display:none">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>🚀 Xác nhận cập nhật thư viện songs.js</h3>
+        <button type="button" id="closeUpdateModalBtn" class="btn-outline" style="padding:4px 8px">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-top:0">Dữ liệu sau đây sẽ được ghi an toàn vào file <b>songs.js</b> trong repository cục bộ. Hệ thống sẽ tự động tạo một bản sao lưu phục hồi trước khi ghi.</p>
+
+        <div id="modalSummaryBox" class="validation-box ok">Đang phân tích thay đổi...</div>
+
+        <h4>Danh sách bài thay đổi:</h4>
+        <div id="modalDiffList" class="diff-list"></div>
+
+        <h4>Cảnh báo & Rủi ro:</h4>
+        <div id="modalRisksList" class="muted" style="font-size:0.9rem">Không có rủi ro nào.</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancelUpdateBtn" class="btn-secondary">Hủy bỏ</button>
+        <button type="button" id="confirmUpdateBtn" class="btn-success">Xác nhận ghi vào songs.js</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Lịch sử sao lưu & Phục hồi -->
+  <div id="backupsModal" class="modal-backdrop" style="display:none">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>📦 Lịch sử bản sao lưu & Phục hồi (Backups)</h3>
+        <button type="button" id="closeBackupsModalBtn" class="btn-outline" style="padding:4px 8px">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-top:0">Mỗi lần Cập nhật thư viện hoặc Phục hồi, hệ thống đều tự động tạo một bản sao lưu trong <code>.studio/backups/</code>. Bạn có thể khôi phục lại bất kỳ bản sao lưu nào bên dưới.</p>
+        <div id="backupsListContainer">Đang tải danh sách bản sao lưu...</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="closeBackupsBtn" class="btn-secondary">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Kiểm tra trước khi đăng website (Publish Preflight) -->
+  <div id="publishModal" class="modal-backdrop" style="display:none">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>🌐 Kiểm tra trước khi đăng website (GitHub Pages)</h3>
+        <button type="button" id="closePublishModalBtn" class="btn-outline" style="padding:4px 8px">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="validation-box warn" style="margin-bottom:12px">
+          <b>⚠️ Tính năng đăng tự động: CHƯA HOÀN THÀNH.</b><br>
+          Studio cục bộ KHÔNG tự động push remote hay kích hoạt deploy. Modal này đóng vai trò <b>Kiểm tra trước khi đăng</b> để đảm bảo an toàn trước khi người vận hành thực hiện commit và push thủ công.
+        </div>
+
+        <div id="publishStatusBox" class="validation-box ok">Đang kiểm tra trạng thái Git repository...</div>
+        <div id="publishDetails"></div>
+
+        <div class="card" style="margin-top:12px; background:#fbfcfe; border-color:#d0e2f2">
+          <h4 style="margin:0 0 6px; color:var(--navy)">ℹ️ Quy trình đăng an toàn (Chuẩn 6 bước):</h4>
+          <ol style="margin:0; padding-left:20px; font-size:0.88rem; line-height:1.6">
+            <li><b>Cập nhật thư viện cục bộ:</b> Bấm <i>🚀 Cập nhật thư viện</i> để ghi dữ liệu vào <code>songs.js</code> kèm bản sao lưu.</li>
+            <li><b>Kiểm tra dữ liệu ứng viên:</b> Chạy <code>node tools/validate-songs.mjs</code> và <code>node tools/report-text-qa.mjs</code>.</li>
+            <li><b>Commit riêng dữ liệu bài hát:</b>
+              <br><code>git add songs.js</code>
+              <br><code>git diff --staged</code> <i>(kiểm tra staging chỉ có đúng songs.js, không kèm file khác)</i>
+              <br><code>git commit -m "data: update songs library"</code>
+            </li>
+            <li><b>Sinh data-revision từ commit vừa tạo:</b> Chạy <code>npm run update:data-revision</code> để cập nhật <code>data-revision.js</code> mang đúng SHA commit dữ liệu.</li>
+            <li><b>Cập nhật phạm vi QA & Kiểm tra trạng thái cuối:</b>
+              <br>• Cập nhật <code>datasetRevision</code> trong <code>qa/text-qa-policy.json</code> và <code>qa/batches.json</code>.
+              <br>• Nếu có <b>thêm/xóa bài</b>: Cập nhật <code>qa/batches.json</code> mở rộng/thu hẹp batch cuối để bảo đảm các batch phủ kín 100% thư viện (không chỉ đổi revision).
+              <br>• Chạy <code>npm run check</code> đảm bảo toàn bộ kiểm tra đều PASS.
+            </li>
+            <li><b>Commit metadata & Push lên GitHub:</b>
+              <br><code>git add data-revision.js qa/text-qa-policy.json qa/batches.json</code>
+              <br><code>git diff --staged</code> <i>(xác minh chỉ stage 3 file metadata đã kiểm tra)</i>
+              <br><code>git commit -m "chore: sync data revision and qa metadata"</code>
+              <br><code>git push origin main</code> <i>(GitHub Actions CI sẽ tự động build và deploy lên GitHub Pages)</i>.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="closePublishBtn" class="btn-secondary">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="songs.js"></script>
+  <script src="data-revision.js"></script>
+  <script type="module" src="studio.js"></script>
+</body>
+</html>
